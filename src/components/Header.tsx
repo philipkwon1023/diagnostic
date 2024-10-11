@@ -19,22 +19,22 @@ const Header: React.FC = () => {
         <h1 className="text-xl font-bold cursor-pointer" onClick={() => navigate('/')}>
           Math-Ray
         </h1>
-        <nav className="flex space-x-4">
+        <nav className="flex items-center w-full">
           <button
             onClick={() => navigate('/')}
-            className="hover:underline"
+            className="hover:underline mr-4"
           >
             홈
           </button>
           <button
             onClick={() => navigate('/results')}
-            className="hover:underline"
+            className="hover:underline mr-4"
           >
             결과 보기
           </button>
           <button
             onClick={handleLogout}
-            className="flex items-center bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-150 ease-in-out"
+            className="ml-auto flex items-center bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-150 ease-in-out"
           >
             <LogOut className="mr-2 h-5 w-5" />
             로그아웃
