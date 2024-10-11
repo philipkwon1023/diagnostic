@@ -1,3 +1,1 @@
-# diagnostic
-
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/veryhungryface/diagnostic)
+당신의 수학실력 그 뼈속까지 진단하는 Math-Ray Service
