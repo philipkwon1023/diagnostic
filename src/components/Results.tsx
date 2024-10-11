@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { InlineMath, BlockMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -13,13 +15,35 @@ interface Question {
   correctAnswer: number;
   difficulty: number;
   concept: number;
+  hasImage: boolean;
+  imageUrl: string;
 }
+
+interface ResultsState {
+  userAnswers: number[];
+  timeSpent: number[];
+  questions: Question[];
+}
+
+const parseMathText = (text: string) => {
+  const parts = text.split(/(\$\$[^\$]+\$\$|\$[^\$]+\$)/g);
+  
+  return parts.map((part, index) => {
+    if (part.startsWith('$$') && part.endsWith('$$')) {
+      return <BlockMath key={index}>{part.slice(2, -2)}</BlockMath>;
+    } else if (part.startsWith('$') && part.endsWith('$')) {
+      return <InlineMath key={index}>{part.slice(1, -1)}</InlineMath>;
+    } else {
+      return <span key={index}>{part}</span>;
+    }
+  });
+};
 
 const Results: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { userAnswers, timeSpent, questions } = location.state as ResultsState;
   const { user } = useUser();
-  const { userAnswers, timeSpent, questions } = location.state as { userAnswers: number[], timeSpent: number[], questions: Question[] };
 
   const score = userAnswers.reduce((acc, answer, index) => acc + (answer === questions[index].correctAnswer ? 1 : 0), 0);
   const totalQuestions = questions.length;
@@ -59,7 +83,7 @@ const Results: React.FC = () => {
   };
 
   const handleRetry = () => {
-    navigate('/test');
+    navigate('/test', { replace: true });
   };
 
   return (
@@ -81,38 +105,30 @@ const Results: React.FC = () => {
         </div>
         <div className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">문항별 결과</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm text-left text-gray-500">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3">문항</th>
-                  <th className="px-6 py-3">정답 여부</th>
-                  <th className="px-6 py-3">소요 시간</th>
-                  <th className="px-6 py-3">난이도</th>
-                  <th className="px-6 py-3">연관 개념</th>
-                </tr>
-              </thead>
-              <tbody>
-                {questions.map((question, index) => (
-                  <tr key={question.id} className="bg-white border-b">
-                    <td className="px-6 py-4">문제 {index + 1}</td>
-                    <td className="px-6 py-4">
-                      {index < userAnswers.length ? 
-                        (userAnswers[index] === question.correctAnswer ? 
-                          <span className="text-green-600">정답</span> : 
-                          <span className="text-red-600">오답</span>
-                        ) : 
-                        <span className="text-yellow-600">미응답</span>
-                      }
-                    </td>
-                    <td className="px-6 py-4">{timeSpent[index] ? `${timeSpent[index].toFixed(2)}초` : 'N/A'}</td>
-                    <td className="px-6 py-4">{question.difficulty}/5</td>
-                    <td className="px-6 py-4">{question.concept}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {questions.map((question, index) => (
+        <div 
+          key={question.id} 
+          className={`mb-4 p-4 rounded-lg ${
+            userAnswers[index] === question.correctAnswer 
+              ? 'bg-gray-100' 
+              : 'bg-[rgb(255,207,207)]'
+          }`}
+        >
+          <h3 className="text-xl font-semibold mb-2">문제 {index + 1}</h3>
+          <div className="mb-2">{parseMathText(question.text)}</div>
+          {question.hasImage && (
+            <div className="mt-2 mb-2">
+              <img src={question.imageUrl} alt="문제 이미지" className="max-w-full h-auto" />
+            </div>
+          )}
+          <p className="mb-2">사용자 답변: {parseMathText(question.options[userAnswers[index]])}</p>
+          <p className="mb-2">정답: {parseMathText(question.options[question.correctAnswer])}</p>
+          <p>소요 시간: {timeSpent[index].toFixed(2)}초</p>
+          <p className="mt-2 font-semibold">
+            {userAnswers[index] === question.correctAnswer ? '정답' : '오답'}
+          </p>
+        </div>
+      ))}
         </div>
         <div className="text-center">
           <button

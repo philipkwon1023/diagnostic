@@ -4,6 +4,8 @@ import { useUser } from '../contexts/UserContext';
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import { LogOut } from 'lucide-react';
+import { selectNextQuestion, isTestComplete } from '../utils/adaptiveTestAlgorithm';
+import { questions as allQuestions } from '../data/questions';
 
 interface Question {
   id: number;
@@ -12,28 +14,57 @@ interface Question {
   correctAnswer: number;
   difficulty: number;
   concept: number;
+  hasImage: boolean;
+  imageUrl: string;
 }
 
-const DiagnosticTest: React.FC = () => {
-  const [questions] = useState<Question[]>([
-    { id: 1, text: "다음 적분을 계산하시오: \\int_{0}^{\\pi} \\sin x dx", options: ["0", "1", "2", "-1", "\\pi"], correctAnswer: 1, difficulty: 3, concept: 12 },
-    { id: 2, text: "함수 f(x) = x^2의 x = 3에서의 미분 계수를 구하시오.", options: ["3", "6", "9", "12", "18"], correctAnswer: 1, difficulty: 2, concept: 5 },
-    { id: 3, text: "다음 극한값을 구하시오: \\lim_{x \\to 0} \\frac{\\sin x}{x}", options: ["0", "\\frac{1}{2}", "1", "\\pi", "\\infty"], correctAnswer: 2, difficulty: 4, concept: 8 },
-    { id: 4, text: "함수 f(x) = e^x의 역함수를 구하시오.", options: ["\\ln x", "\\log x", "e^{-x}", "\\frac{1}{x}", "x^e"], correctAnswer: 0, difficulty: 3, concept: 15 },
-    { id: 5, text: "다음 급수의 합을 구하시오: \\sum_{n=1}^{\\infty} \\frac{1}{n^2}", options: ["\\frac{\\pi^2}{3}", "\\frac{\\pi^2}{6}", "\\frac{\\pi^2}{12}", "\\pi", "2\\pi"], correctAnswer: 1, difficulty: 5, concept: 20 },
-    { id: 6, text: "함수 f(x) = x^3 - 3x + 1의 극값을 구하시오.", options: ["1, -1", "2, -2", "3, -3", "0, 0", "1, -2"], correctAnswer: 0, difficulty: 3, concept: 7 },
-    { id: 7, text: "다음 미분방정식을 풀어라: \\frac{dy}{dx} = 2x", options: ["y = x^2 + C", "y = 2x + C", "y = x^2 - C", "y = 2x^2 + C", "y = \\frac{1}{2}x^2 + C"], correctAnswer: 0, difficulty: 4, concept: 18 },
-    { id: 8, text: "함수 f(x) = \\sin x의 2차 테일러 다항식을 구하시오.", options: ["x", "x - \\frac{x^2}{2}", "x - \\frac{x^3}{6}", "1 - \\frac{x^2}{2}", "x + \\frac{x^3}{6}"], correctAnswer: 2, difficulty: 5, concept: 25 },
-    { id: 9, text: "다음 적분을 계산하시오: \\int \\frac{dx}{1+x^2}", options: ["\\tan^{-1}x + C", "\\sin^{-1}x + C", "\\ln|x| + C", "\\frac{1}{x} + C", "x + C"], correctAnswer: 0, difficulty: 3, concept: 14 },
-    { id: 10, text: "함수 f(x,y) = x^2 + y^2의 (1,1)에서의 그래디언트를 구하시오.", options: ["(1,1)", "(2,2)", "(0,0)", "(1,2)", "(2,1)"], correctAnswer: 1, difficulty: 4, concept: 30 },
-  ]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+interface DiagnosticTestProps {
+  setIsLoggedIn: (value: boolean) => void;
+}
+
+// 수식을 파싱하여 수식과 텍스트를 분리하는 함수
+const parseMathText = (text: string) => {
+  // $$...$$와 $...$를 모두 처리할 수 있는 정규식
+  const parts = text.split(/(\$\$[^\$]+\$\$|\$[^\$]+\$)/g); 
+  
+  return parts.map((part, index) => {
+    if (part.startsWith('$$') && part.endsWith('$$')) {
+      // $$로 감싸진 부분은 BlockMath로 줄바꿈 수식 처리
+      return <BlockMath key={index}>{part.slice(2, -2)}</BlockMath>;
+    } else if (part.startsWith('$') && part.endsWith('$')) {
+      // $로 감싸진 부분은 InlineMath로 인라인 수식 처리
+      return <InlineMath key={index}>{part.slice(1, -1)}</InlineMath>;
+    } else {
+      // 나머지는 일반 텍스트로 처리
+      return <span key={index}>{part}</span>;
+    }
+  });
+};
+
+const DiagnosticTest: React.FC<DiagnosticTestProps> = ({ setIsLoggedIn }) => {
+  const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
+  useEffect(() => {
+    setCurrentQuestion(null);
+    setAnsweredQuestions([]);
+    setUserAnswers([]);
+    setTimeSpent([]);
+    setStartTime(Date.now());
+    setElapsedTime(0);
+  }, []);
+  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
   const [userAnswers, setUserAnswers] = useState<number[]>([]);
   const [timeSpent, setTimeSpent] = useState<number[]>([]);
   const [startTime, setStartTime] = useState(Date.now());
   const [elapsedTime, setElapsedTime] = useState(0);
   const navigate = useNavigate();
   const { user, setUser } = useUser();
+
+  useEffect(() => {
+    if (allQuestions.length > 0 && currentQuestion === null) {
+      const nextQuestion = selectNextQuestion(allQuestions, answeredQuestions, userAnswers);
+      setCurrentQuestion(nextQuestion);
+    }
+  }, [allQuestions, answeredQuestions, userAnswers, currentQuestion]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -46,6 +77,7 @@ const DiagnosticTest: React.FC = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     setUser(null);
+    setIsLoggedIn(false); // 로그인 상태 업데이트
     navigate('/login');
   };
 
@@ -53,24 +85,32 @@ const DiagnosticTest: React.FC = () => {
     const timeElapsed = (Date.now() - startTime) / 1000;
     const newUserAnswers = [...userAnswers, answerIndex];
     const newTimeSpent = [...timeSpent, timeElapsed];
+    const newAnsweredQuestions = [...answeredQuestions, currentQuestion!.id];
+  
     setUserAnswers(newUserAnswers);
     setTimeSpent(newTimeSpent);
-
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    setAnsweredQuestions(newAnsweredQuestions);
+  
+    if (!isTestComplete(newAnsweredQuestions)) {
+      const nextQuestion = selectNextQuestion(allQuestions, newAnsweredQuestions, newUserAnswers);
+      setCurrentQuestion(nextQuestion);
       setStartTime(Date.now());
       setElapsedTime(0);
     } else {
-      // Test is complete, navigate to results
-      navigate('/results', { state: { userAnswers: newUserAnswers, timeSpent: newTimeSpent, questions } });
+      const answeredQuestionObjects = newAnsweredQuestions.map(id => allQuestions.find(q => q.id === id)!);
+      navigate('/results', { 
+        state: { 
+          userAnswers: newUserAnswers, 
+          timeSpent: newTimeSpent, 
+          questions: answeredQuestionObjects 
+        } 
+      });
     }
   };
 
-  if (questions.length === 0) {
+  if (currentQuestion === null) {
     return <div>Loading...</div>;
   }
-
-  const currentQuestion = questions[currentQuestionIndex];
 
   return (
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
@@ -87,27 +127,31 @@ const DiagnosticTest: React.FC = () => {
         </div>
         <div className="flex justify-between items-center mb-6">
           <p className="text-lg font-semibold">
-            문제 {currentQuestionIndex + 1} / {questions.length}
+            문제 {answeredQuestions.length + 1} / 10
           </p>
           <p className="text-lg font-semibold">
             경과 시간: {elapsedTime.toFixed(0)}초
           </p>
         </div>
-        <div className="mb-8">
-          <h2 className="text-xl mb-4">
-            <BlockMath>{currentQuestion.text}</BlockMath>
-          </h2>
-          <div className="space-y-3">
-            {currentQuestion.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswer(index)}
-                className="w-full p-3 text-left border rounded-lg hover:bg-blue-50 transition duration-150 ease-in-out"
-              >
-                <InlineMath>{option}</InlineMath>
-              </button>
-            ))}
-          </div>
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-2">문제:</h2>
+          <div className="text-lg">{parseMathText(currentQuestion.text)}</div>
+          {currentQuestion.hasImage && (
+            <div className="mt-4">
+              <img src={currentQuestion.imageUrl} alt="문제 이미지" className="max-w-full h-auto" />
+            </div>
+          )}
+        </div>
+        <div className="space-y-4">
+          {currentQuestion.options.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswer(index)}
+              className="w-full p-4 text-left bg-white border border-gray-300 rounded-lg hover:bg-blue-50 transition duration-150 ease-in-out"
+            >
+              {parseMathText(option)}
+            </button>
+          ))}
         </div>
       </div>
     </div>

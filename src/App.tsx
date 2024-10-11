@@ -29,7 +29,7 @@ function App() {
         <div className="min-h-screen bg-gray-100">
           <Routes>
             <Route path="/login" element={!isLoggedIn ? <Login setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/test" />} />
-            <Route path="/test" element={isLoggedIn ? <DiagnosticTest /> : <Navigate to="/login" />} />
+            <Route path="/test" element={isLoggedIn ? <DiagnosticTest setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/login" />} />
             <Route path="/results" element={isLoggedIn ? <Results /> : <Navigate to="/login" />} />
             <Route path="*" element={<Navigate to={isLoggedIn ? "/test" : "/login"} />} />
           </Routes>
