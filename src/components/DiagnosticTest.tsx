@@ -6,6 +6,7 @@ import 'katex/dist/katex.min.css';
 import { LogOut } from 'lucide-react';
 import { selectNextQuestion, isTestComplete } from '../utils/adaptiveTestAlgorithm';
 import { questions as allQuestions } from '../data/questions';
+import Header from './Header'; // Header 컴포넌트 가져오기
 
 interface Question {
   id: number;
@@ -122,6 +123,7 @@ const DiagnosticTest: React.FC = () => {
   }
 
   return (
+    <Header />
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <div className="flex flex-wrap justify-between items-center mb-6">
