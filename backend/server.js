@@ -7,6 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const cors = require('cors'); // CORS 패키지 추가
 
 const apikey = process.env.GEMINI_API_KEY
 const genAI = new GoogleGenerativeAI(apikey);
