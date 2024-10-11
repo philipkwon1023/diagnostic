@@ -219,6 +219,7 @@ structure={
   }
 
   return (
+    <>
     <Header />
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
@@ -286,6 +287,7 @@ structure={
         </div>
       </div>
     </div>
+  </>
   );
 };
 
