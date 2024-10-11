@@ -7,15 +7,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const cors = require('cors'); // CORS 패키지 추가
-
 const apikey = process.env.GEMINI_API_KEY
 const genAI = new GoogleGenerativeAI(apikey);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-console.log('apikey:', genAI);
+//console.log('apikey:', genAI);
 
 app.post('/api/gemini', async (req, res) => {
+    console.log('요청들어옴');
     const { userRawData, prompt } = req.body;
   
     try {
