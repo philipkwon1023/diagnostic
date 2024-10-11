@@ -23,5 +23,5 @@ export const questions: Question[] = [
     { id: 20, text: "함수 $f(x) = e^x$의 테일러 급수 표현을 구하시오.", options: ["$$1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + \\dots$$", "$$1 - x + \\frac{x^2}{2!}$$", "$$x + \\frac{x^2}{2!} + \\dots$$", "$$e^x - 1$$", "$$x^2 + \\frac{x^3}{3!}$$"], correctAnswer: 0, difficulty: 5, concept: 25, hasImage: false, imageUrl: "" },
     { id: 21, text: "다음 삼각형의 넓이를 구하시오.", options: ["$$10$$", "$$15$$", "$$20$$", "$$25$$", "$$30$$"], correctAnswer: 2, difficulty: 3, concept: 35, hasImage: true, imageUrl: "https://aeopp.github.io/assets/img/Triangle1.png" },
     { id: 22, text: "다음 그림에서 $x$를 구하시오.", options: ["$$10$$", "$$11$$", "$$12$$", "$$13$$", "$$14$$"], correctAnswer: 2, difficulty: 2, concept: 36, hasImage: true, imageUrl: "https://cdn.teamturing.com/cms/1635175929-5.jpg" },
-    { id: 23, text: "다음 사각형의 넓이를 구하시오.", options: ["$$5$$", "$$10$$", "$$\\sqrt{50}$$", "$$15$$", "$$20$$"], correctAnswer: 2, difficulty: 4, concept: 37, hasImage: true, imageUrl: "https://cdn.imweb.me/upload/S20200116a4ee6ee864a51/06ab7374ab9a2.gif" }
+    { id: 23, text: "다음 사각형의 넓이를 구하시오.", options: ["$$20$$", "$$32$$", "$$\\sqrt{1503}$$", "$$47$$", "$$61$$"], correctAnswer: 3, difficulty: 4, concept: 37, hasImage: true, imageUrl: "https://cdn.imweb.me/upload/S20200116a4ee6ee864a51/06ab7374ab9a2.gif" }
 ];
