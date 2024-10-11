@@ -6,6 +6,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import { LogOut } from 'lucide-react';
+import Header from './Header'; // Header 컴포넌트 가져오기
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -218,6 +219,7 @@ structure={
   }
 
   return (
+    <Header />
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold mb-6 text-center text-blue-600">Math-Ray 분석결과</h1>
