@@ -167,6 +167,7 @@ const DiagnosticTest: React.FC = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 
