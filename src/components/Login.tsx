@@ -26,7 +26,12 @@ const Login: React.FC<LoginProps> = ({ setIsLoggedIn }) => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-white">
       <div className="px-8 py-6 mt-4 text-left bg-white shadow-lg rounded-lg w-full max-w-md">
-        <h3 className="text-3xl font-bold text-center text-blue-600 mb-6">수학 진단평가 로그인</h3>
+        <img 
+          src="https://i.ibb.co/KmS3Vwr/DALL-E-2024-10-11-17-59-36-Main-image-for-a-math-skills-diagnostic-service-using-AI-with-an-X-ray-th.webp" 
+          alt="Math Skills Diagnostic Service" 
+          className="w-full h-auto mb-6 rounded-lg object-cover"
+        />
+        <h3 className="text-3xl font-bold text-center text-blue-600 mb-6">Math-Ray 로그인</h3>
         <form onSubmit={handleLogin}>
           <div className="mt-4">
             <div className="mb-4">

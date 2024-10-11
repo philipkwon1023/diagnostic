@@ -69,7 +69,7 @@ const Results: React.FC = () => {
       },
       title: {
         display: true,
-        text: '진단평가 결과',
+        text: 'Math-Ray 분석결과',
       },
     },
   };
@@ -89,7 +89,7 @@ const Results: React.FC = () => {
   return (
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-3xl font-bold mb-6 text-center text-blue-600">진단평가 결과</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-blue-600">Math-Ray 분석결과</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
             <p className="text-lg mb-2">정답률: <span className="font-semibold">{((score / answeredQuestions) * 100).toFixed(2)}%</span></p>
@@ -114,7 +114,9 @@ const Results: React.FC = () => {
               : 'bg-[rgb(255,207,207)]'
           }`}
         >
-          <h3 className="text-xl font-semibold mb-2">문제 {index + 1}</h3>
+          <h3 className="text-xl font-semibold mb-2">
+            문제 {index + 1} {Array(5).fill('★').fill('☆', question.difficulty).join('')}
+          </h3>
           <div className="mb-2">{parseMathText(question.text)}</div>
           {question.hasImage && (
             <div className="mt-2 mb-2">

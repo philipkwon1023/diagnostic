@@ -43,6 +43,12 @@ const parseMathText = (text: string) => {
 
 const DiagnosticTest: React.FC<DiagnosticTestProps> = ({ setIsLoggedIn }) => {
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
+  const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
+
+  const shuffleOptions = (options: string[]) => {
+    return [...options].sort(() => Math.random() - 0.5);
+  };
+  
   useEffect(() => {
     setCurrentQuestion(null);
     setAnsweredQuestions([]);
@@ -73,6 +79,12 @@ const DiagnosticTest: React.FC<DiagnosticTestProps> = ({ setIsLoggedIn }) => {
 
     return () => clearInterval(timer);
   }, [startTime]);
+
+  useEffect(() => {
+    if (currentQuestion) {
+      setShuffledOptions(shuffleOptions(currentQuestion.options));
+    }
+  }, [currentQuestion]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -116,7 +128,7 @@ const DiagnosticTest: React.FC<DiagnosticTestProps> = ({ setIsLoggedIn }) => {
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-blue-600">AI 수학 진단평가</h1>
+          <h1 className="text-3xl font-bold text-blue-600">Math-Ray 진단평가</h1>
           <button
             onClick={handleLogout}
             className="flex items-center px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-150 ease-in-out"
@@ -142,12 +154,12 @@ const DiagnosticTest: React.FC<DiagnosticTestProps> = ({ setIsLoggedIn }) => {
             </div>
           )}
         </div>
-        <div className="space-y-4">
-          {currentQuestion.options.map((option, index) => (
+        <div className="space-y-2">
+          {shuffledOptions.map((option, index) => (
             <button
               key={index}
-              onClick={() => handleAnswer(index)}
-              className="w-full p-4 text-left bg-white border border-gray-300 rounded-lg hover:bg-blue-50 transition duration-150 ease-in-out"
+              onClick={() => handleAnswer(currentQuestion.options.indexOf(option))}
+              className="w-full p-2 text-left bg-white border border-gray-300 rounded-lg hover:bg-blue-50 transition duration-150 ease-in-out"
             >
               {parseMathText(option)}
             </button>
