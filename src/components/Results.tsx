@@ -221,7 +221,7 @@ structure={
   return (
     <>
     <Header />
-    <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
+    <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen mt-20">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold mb-6 text-center text-blue-600">Math-Ray 분석결과</h1>
         <div className="flex justify-between items-center mb-6">
