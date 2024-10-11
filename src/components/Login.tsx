@@ -3,23 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 import { LogIn, User } from 'lucide-react';
 
-interface LoginProps {
-  setIsLoggedIn: (value: boolean) => void;
-}
-
-const Login: React.FC<LoginProps> = ({ setIsLoggedIn }) => {
+const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { setUser } = useUser();
+  const { setUser, setIsLoggedIn } = useUser(); // 전역 상태에서 로그인 함수 가져오기
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement actual login logic here
-    // For now, we'll just simulate a successful login
+    // 실제 로그인 로직 구현 부분 (현재는 임시 로그인 처리)
     localStorage.setItem('token', 'fake-jwt-token');
-    setIsLoggedIn(true);
-    setUser({ username });
+    setIsLoggedIn(true); // 로그인 상태를 true로 설정
+    setUser({ username }); // 사용자 정보 설정
     navigate('/test');
   };
 

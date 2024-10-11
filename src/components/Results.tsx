@@ -5,6 +5,7 @@ import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
+import { LogOut } from 'lucide-react';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -43,7 +44,7 @@ const Results: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { userAnswers, timeSpent, questions } = location.state as ResultsState;
-  const { user } = useUser();
+  const { user, setUser, setIsLoggedIn } = useUser(); // 컴포넌트 최상단에서 훅 호출
 
   const score = userAnswers.reduce((acc, answer, index) => acc + (answer === questions[index].correctAnswer ? 1 : 0), 0);
   const totalQuestions = questions.length;
@@ -86,10 +87,27 @@ const Results: React.FC = () => {
     navigate('/test', { replace: true });
   };
 
+  const handleLogout = () => {
+    //console.log('로그아웃 시작');
+    localStorage.removeItem('token');
+    setUser(null);
+    setIsLoggedIn(false);
+    navigate('/login', { replace: true });
+  };
+
   return (
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold mb-6 text-center text-blue-600">Math-Ray 분석결과</h1>
+        <div className="flex justify-between items-center mb-6">
+          <button
+            onClick={handleLogout}
+            className="flex items-center px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-150 ease-in-out ml-auto"
+          >
+            <LogOut className="mr-2 h-5 w-5" />
+            로그아웃
+          </button>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
             <p className="text-lg mb-2">정답률: <span className="font-semibold">{((score / answeredQuestions) * 100).toFixed(2)}%</span></p>
@@ -106,31 +124,31 @@ const Results: React.FC = () => {
         <div className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">문항별 결과</h2>
           {questions.map((question, index) => (
-        <div 
-          key={question.id} 
-          className={`mb-4 p-4 rounded-lg ${
-            userAnswers[index] === question.correctAnswer 
-              ? 'bg-gray-100' 
-              : 'bg-[rgb(255,207,207)]'
-          }`}
-        >
-          <h3 className="text-xl font-semibold mb-2">
-            문제 {index + 1} {Array(5).fill('★').fill('☆', question.difficulty).join('')}
-          </h3>
-          <div className="mb-2">{parseMathText(question.text)}</div>
-          {question.hasImage && (
-            <div className="mt-2 mb-2">
-              <img src={question.imageUrl} alt="문제 이미지" className="max-w-full h-auto" />
+            <div 
+              key={question.id} 
+              className={`mb-4 p-4 rounded-lg ${
+                userAnswers[index] === question.correctAnswer 
+                  ? 'bg-gray-100' 
+                  : 'bg-[rgb(255,207,207)]'
+              }`}
+            >
+              <h3 className="text-xl font-semibold mb-2">
+                문제 {index + 1} {Array(5).fill('★').fill('☆', question.difficulty).join('')}
+              </h3>
+              <div className="mb-2">{parseMathText(question.text)}</div>
+              {question.hasImage && (
+                <div className="mt-2 mb-2">
+                  <img src={question.imageUrl} alt="문제 이미지" className="max-w-full h-auto" />
+                </div>
+              )}
+              <p className="mb-2">사용자 답변: {parseMathText(question.options[userAnswers[index]])}</p>
+              <p className="mb-2">정답: {parseMathText(question.options[question.correctAnswer])}</p>
+              <p>소요 시간: {timeSpent[index].toFixed(2)}초</p>
+              <p className="mt-2 font-semibold">
+                {userAnswers[index] === question.correctAnswer ? '정답' : '오답'}
+              </p>
             </div>
-          )}
-          <p className="mb-2">사용자 답변: {parseMathText(question.options[userAnswers[index]])}</p>
-          <p className="mb-2">정답: {parseMathText(question.options[question.correctAnswer])}</p>
-          <p>소요 시간: {timeSpent[index].toFixed(2)}초</p>
-          <p className="mt-2 font-semibold">
-            {userAnswers[index] === question.correctAnswer ? '정답' : '오답'}
-          </p>
-        </div>
-      ))}
+          ))}
         </div>
         <div className="text-center">
           <button

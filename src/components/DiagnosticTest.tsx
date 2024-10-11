@@ -18,10 +18,6 @@ interface Question {
   imageUrl: string;
 }
 
-interface DiagnosticTestProps {
-  setIsLoggedIn: (value: boolean) => void;
-}
-
 // 수식을 파싱하여 수식과 텍스트를 분리하는 함수
 const parseMathText = (text: string) => {
   // $$...$$와 $...$를 모두 처리할 수 있는 정규식
@@ -41,9 +37,16 @@ const parseMathText = (text: string) => {
   });
 };
 
-const DiagnosticTest: React.FC<DiagnosticTestProps> = ({ setIsLoggedIn }) => {
+const DiagnosticTest: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
+  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
+  const [userAnswers, setUserAnswers] = useState<number[]>([]);
+  const [timeSpent, setTimeSpent] = useState<number[]>([]);
+  const [startTime, setStartTime] = useState(Date.now());
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const navigate = useNavigate();
+  const { user, setUser, setIsLoggedIn } = useUser(); // useUser 훅에서 로그인 상태 관리 함수 가져오기
 
   const shuffleOptions = (options: string[]) => {
     return [...options].sort(() => Math.random() - 0.5);
@@ -57,13 +60,6 @@ const DiagnosticTest: React.FC<DiagnosticTestProps> = ({ setIsLoggedIn }) => {
     setStartTime(Date.now());
     setElapsedTime(0);
   }, []);
-  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
-  const [userAnswers, setUserAnswers] = useState<number[]>([]);
-  const [timeSpent, setTimeSpent] = useState<number[]>([]);
-  const [startTime, setStartTime] = useState(Date.now());
-  const [elapsedTime, setElapsedTime] = useState(0);
-  const navigate = useNavigate();
-  const { user, setUser } = useUser();
 
   useEffect(() => {
     if (allQuestions.length > 0 && currentQuestion === null) {
@@ -87,10 +83,11 @@ const DiagnosticTest: React.FC<DiagnosticTestProps> = ({ setIsLoggedIn }) => {
   }, [currentQuestion]);
 
   const handleLogout = () => {
+    //console.log('로그아웃 시작');
     localStorage.removeItem('token');
     setUser(null);
-    setIsLoggedIn(false); // 로그인 상태 업데이트
-    navigate('/login');
+    setIsLoggedIn(false);
+    navigate('/login', { replace: true });
   };
 
   const handleAnswer = (answerIndex: number) => {

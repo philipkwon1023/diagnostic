@@ -1,21 +1,25 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-interface User {
-  username: string;
+interface UserContextProps {
+  user: any;
+  setUser: React.Dispatch<React.SetStateAction<any>>;
+  isLoggedIn: boolean;
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface UserContextType {
-  user: User | null;
-  setUser: (user: User | null) => void;
-}
+const UserContext = createContext<UserContextProps | undefined>(undefined);
 
-const UserContext = createContext<UserContextType | undefined>(undefined);
+export const UserProvider: React.FC = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setIsLoggedIn(!!token);
+  }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, isLoggedIn, setIsLoggedIn }}>
       {children}
     </UserContext.Provider>
   );
