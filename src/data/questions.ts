@@ -445,7 +445,7 @@ export const questions: Question[] = [
         "options": [
             "$$(0,3)$$", "$$(1,5), (-3, -3)$$", "$$(2,7)$$", "$$(1,5)$$", "$$( -1,1 )$$"
         ], 
-        "correctAnswer": 3, 
+        "correctAnswer": 4, 
         "difficulty": 3, 
         "concept": 6, 
         "hasImage": false, 
@@ -455,7 +455,7 @@ export const questions: Question[] = [
         "id": 44, 
         "text": "영희는 15000원을 가지고 있습니다. 매주 동일한 금액을 저축할 때, 6주 후에 총 저축액이 21000원이 되도록 하려면 영희는 매주 얼마를 저축해야 하나요?", 
         "options": ["$$500원$$", "$$750원$$", "$$1000원$$", "$$1250원$$", "$$1500원$$"], 
-        "correctAnswer": 0, 
+        "correctAnswer": 2, 
         "difficulty": 3, 
         "concept": 5, 
         "hasImage": false, 
@@ -661,7 +661,7 @@ export const questions: Question[] = [
     },
     { 
         "id": 61, 
-        "text": "다음 부등식을 만족하는 모든 자연수 $$n$$의 합을 구하시오: $$n^2 - 5n + 6 < 0$$", 
+        "text": "다음 부등식을 만족하는 모든 자연수 $n$의 합을 구하시오: $$n^2 - 5n + 35 \leq 6x+5$$", 
         "options": [
             "$$5$$", 
             "$$7$$", 
@@ -713,7 +713,7 @@ export const questions: Question[] = [
         "options": [
             "$$\\ln 2$$", 
             "$$1$$", 
-            "$$\\ln 2$$에 수렴하지 않음", 
+            "$$\\수렴하지 않음", 
             "$$0$$", 
             "$$\\frac{1}{2}$$"
         ], 
