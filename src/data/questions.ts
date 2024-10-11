@@ -579,7 +579,6 @@ export const questions: Question[] = [
         "hasImage": false, 
         "imageUrl": "" 
     },
-    [
     { 
         "id": 56, 
         "text": "수열 $$\\{a_n\\}$$이 첫째항이 $$a_1 = 2$$이고, 모든 $$n \\geq 1$$에 대해 $$a_{n+1} = 3a_n + 1$$을 만족한다. 이 수열의 일반항 $$a_n$$을 구하시오.", 
