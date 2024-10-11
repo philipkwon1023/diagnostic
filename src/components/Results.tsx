@@ -53,7 +53,7 @@ const parseMathText = (text: string) => {
 // Google Gemini API 호출 함수
 const callGeminiAPI = async (userRawData: string, prompt: string) => {
   try {
-    const response = await fetch('http://211.46.130.171:4000/api/gemini', { // 백엔드로 요청
+    const response = await fetch('https://211.46.130.171:4000/api/gemini', { // 백엔드로 요청
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
