@@ -124,13 +124,13 @@ const DiagnosticTest: React.FC = () => {
   return (
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen">
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-blue-600">Math-Ray 진단평가</h1>
+        <div className="flex flex-wrap justify-between items-center mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-blue-600 mr-4">Math-Ray 진단평가</h1>
           <button
             onClick={handleLogout}
-            className="flex items-center px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-150 ease-in-out"
+            className="flex items-center px-3 py-1 sm:px-4 sm:py-2 bg-red-500 text-white text-sm sm:text-base rounded hover:bg-red-600 transition duration-150 ease-in-out"
           >
-            <LogOut className="mr-2 h-5 w-5" />
+            <LogOut className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             로그아웃
           </button>
         </div>
@@ -156,7 +156,7 @@ const DiagnosticTest: React.FC = () => {
             <button
               key={index}
               onClick={() => handleAnswer(currentQuestion.options.indexOf(option))}
-              className="w-full p-2 text-left bg-white border border-gray-300 rounded-lg hover:bg-blue-50 transition duration-150 ease-in-out"
+              className="w-full px-2 py-0.1 text-left bg-white border border-gray-300 rounded-lg hover:bg-blue-50 transition duration-150 ease-in-out"
             >
               {parseMathText(option)}
             </button>
