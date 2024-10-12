@@ -21,7 +21,7 @@ const Header: React.FC = () => {
         </h1>
         <nav className="flex items-center w-full">
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/test')}
             className="hover:underline mr-4"
           >
             홈
