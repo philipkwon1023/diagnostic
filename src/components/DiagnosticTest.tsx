@@ -146,7 +146,6 @@ const DiagnosticTest: React.FC = () => {
           </p>
         </div>
         <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">문제:</h2>
           <div className="text-lg">{parseMathText(currentQuestion.text)}</div>
           {currentQuestion.hasImage && (
             <div className="mt-4">
