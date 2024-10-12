@@ -126,7 +126,7 @@ const DiagnosticTest: React.FC = () => {
     <>
     <Header />
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen mt-20">
-      <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+      <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-0">
         {/*<div className="flex flex-wrap justify-between items-center mb-6">
           <h1 className="text-2xl sm:text-3xl font-bold text-blue-600 mr-4">Math-Ray 진단평가</h1>
           <button
