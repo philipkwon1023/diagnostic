@@ -26,7 +26,7 @@ const Login: React.FC = () => {
         alt="Math Skills Diagnostic Service" 
         className="w-full h-auto mb-4 rounded-lg object-cover"
       />
-      <h3 className="text-2xl font-bold text-center text-blue-600 mb-4">Math-Ray 로그인</h3>
+      <h3 className="text-2xl font-bold text-center text-blue-600 mb-4">Math-Ray</h3>
       <form onSubmit={handleLogin}>
         <div>
           <div className="mb-4">
