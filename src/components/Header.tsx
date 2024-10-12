@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   return (
     <header className="bg-blue-600 text-white p-1 shadow-md fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold cursor-pointer" onClick={() => navigate('/')}>
+        <h1 className="text-xl font-bold cursor-pointer whitespace-nowrap" onClick={() => navigate('/')}>
           Math-Ray
         </h1>
         <nav className="flex items-center w-full">
