@@ -224,15 +224,6 @@ structure={
     <div className="container mx-auto p-4 bg-gradient-to-b from-blue-100 to-white min-h-screen mt-20">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold mb-6 text-center text-blue-600">Math-Ray 분석결과</h1>
-        <div className="flex justify-between items-center mb-6">
-          <button
-            onClick={handleLogout}
-            className="flex items-center px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-150 ease-in-out ml-auto"
-          >
-            <LogOut className="mr-2 h-5 w-5" />
-            로그아웃
-          </button>
-        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
             <p className="text-lg mb-2">정답률: <span className="font-semibold">{((score / answeredQuestions) * 100).toFixed(2)}%</span></p>
@@ -271,10 +262,7 @@ structure={
             )}
             <p className="mb-2">사용자 답변: {parseMathText(question.options[userAnswers[index]])}</p>
             <p className="mb-2">정답: {parseMathText(question.options[question.correctAnswer])}</p>
-            <p>소요 시간: {timeSpent[index].toFixed(2)}초</p>
-            <p className="mt-2 font-semibold">
-              {userAnswers[index] === question.correctAnswer ? '정답' : '오답'}
-            </p>
+            <p>소요 시간: {timeSpent[index].toFixed(0)}초</p>
           </div>
         ))}
         <div className="text-center">
