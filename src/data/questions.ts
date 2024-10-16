@@ -387,7 +387,7 @@ export const questions: Question[] = [
     },
     {
         "id": 25,
-        "text": "\"전체집합 $U=\\{x \\mid x$ 는 100 이하의 자연수 $\\}$ 의 두 부분집합 $A, B$ 가\n\n$$\n\\begin{aligned}\n& A=\\left\\{x \\mid \\log _2 x \\text { 는 자연수, } x \\in U\\right\\},$$ $$B=\\left\\{x \\mid \\log _3 x \\text { 는 자연수, } x \\in U\\right\\}\n\\end{aligned}\n$$\n\n\n일 때, 집합 $A \\cup B$ 의 원소의 개수는?\"",
+        "text": "\"전체집합 $U=\\{x \\mid x$ 는 100 이하의 자연수 $\\}$ 의 두 부분집합 $A, B$ 가\n\n$$\n\\begin{aligned}\n& $$A=\\left\\{x \\mid \\log _2 x \\text { 는 자연수, } x \\in U\\right\\},$$ $$B=\\left\\{x \\mid \\log _3 x \\text { 는 자연수, } x \\in U\\right\\}\n\\end{aligned}\n$$\n\n\n일 때, 집합 $A \\cup B$ 의 원소의 개수는?\"",
         "options": [
             "10",
             "6",
