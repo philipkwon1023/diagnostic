@@ -387,16 +387,14 @@ export const questions: Question[] = [
     },
     {
         "id": 25,
-        "text": "전체집합 \(U=\{x \mid x \text{는 } 100 \text{ 이하의 자연수}\}\)의 두 부분집합 \(A, B\)가
-
+        "text": "전체집합 $U=\{x \mid x \text{는 } 100 \text{ 이하의 자연수}\}$의 두 부분집합 $A, B$가
 $$
 \begin{aligned}
 & A=\left\{x \mid \log_2 x \text{가 자연수인 } x \in U\right\}, \
 & B=\left\{x \mid \log_3 x \text{가 자연수인 } x \in U\right\}
 \end{aligned}
 $$
-
-일 때, 집합 \(A \cup B\)의 원소의 개수는?",
+일 때, 집합 $A \cup B$의 원소의 개수는?",
         "options": [
             "10",
             "6",
