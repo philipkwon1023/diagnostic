@@ -227,7 +227,7 @@ export const questions: Question[] = [
     },
     {
         "id": 15,
-        "text": "$\left(\frac{n}{2}\right)^{\frac{1}{2}},\left(\frac{n}{3}\right)^{\frac{1}{3}}$ 이 모두 자연수가 되도록 하는 자연수 $n$ 의 최솟값을 구하시오.\"\",
+        "text": "$\left(\frac{n}{2}\right)^{\frac{1}{2}},\left(\frac{n}{3}\right)^{\frac{1}{3}}$ 이 모두 자연수가 되도록 하는 자연수 $n$ 의 최솟값을 구하시오.",
         "options": [
             "648",
             "1296",
