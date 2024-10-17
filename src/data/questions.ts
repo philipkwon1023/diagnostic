@@ -44,11 +44,7 @@ export const questions: Question[] = [
     {
         "id": 5,
         "text": "소리의 진동수는 반음 1 개만큼 높아질 때마다 일정한 비율로 증가한다. 다음을 이용하여\n‘도'음보다 반음 4 개만큼 높은 ‘미음의 진동수는 '도’음의 진동수의 몇 배인지 구하시오.\n- 한 옥타브는 12 개의 반음으로 이루어져 있다.\n- 음이 한 옥타브 올라가면 진동수는 2 배가 된다.",
-        "options": ["$$\sqrt[]{2}$$",
-            "$$\sqrt[4]{2}$$", "$$\sqrt[]{3}$$",
-            "$$\sqrt[2]{2}$$",
-            "$$\sqrt[5]{2}$$"
-        ],
+        "options": ["$$ \sqrt[]{2}$$", "$$ \sqrt[4]{2}$$", "$$ \sqrt[]{3}$$", "$$ \sqrt[2]{2}$$", "$$ \sqrt[5]{2}$$"],
         "correctAnswer": 1,
         "difficulty": 1,
         "concept": 3,
@@ -57,7 +53,7 @@ export const questions: Question[] = [
     },
     {
         "id": 6,
-        "text": "실수 전체의 집합의 부분집합 $A, B, C$ 를\n\n$$\begin{aligned}& A=\{-3,-2,2,3\}, \& B=\{|a| \mid a \in A\}, \& C=\{x \mid x=\sqrt[b]{a}, a \in A, \quad b \in B\}\end{aligned}$$\n\n\n라 할 때, 집합 $C$ 의 원소의 개수를 구하시오.",
+        "text": "실수 전체의 집합의 부분집합 $A, B, C$ 를 $$ \begin{aligned}& A=\{-3,-2,2,3\}, \& B=\{|a| \mid a \in A\}, \& C=\{x \mid x=\sqrt[b]{a}, a \in A, \quad b \in B\}\end{aligned}$$\n\n\n라 할 때, 집합 $C$ 의 원소의 개수를 구하시오.",
         "options": ["$$ 6 $$", "$$ 5 $$", "$$ 3 $$", "$$ 4 $$", "$$ 7 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -215,7 +211,7 @@ export const questions: Question[] = [
     },
     {
         "id": 21,
-        "text": "이차방정식 $x^2-6 x+2=0$ 의 두 근을 $\alpha, \beta$ 라 할 때,\n\n$$\log _3(\alpha+1)+\log _3(\beta+1)$$\n\n\n의 값을 구하시오.",
+        "text": "이차방정식 $x^2-6 x+2=0$ 의 두 근을 $\alpha$, $\beta$ 라 할 때,\n$$\log_3(\alpha+1)+\log_3(\beta+1)$$\n의 값을 구하시오.",
         "options": ["$$ 2 $$", "$$ 3 $$", "$$ 4 $$", "$$ 1 $$", "$$ 0 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -225,7 +221,7 @@ export const questions: Question[] = [
     },
     {
         "id": 22,
-        "text": "$\log _3 20$ 의 정수 부분을 $a$, 소수 부분을 $b$ 라 할 때, $9\left(2^a+3^b\right)$ 의 값은?",
+        "text": "$\log_3 20$ 의 정수 부분을 $a$, 소수 부분을 $b$ 라 할 때, $9 \left(2^a+3^b \right)$ 의 값은?",
         "options": ["$$ 56 $$", "$$ 29 $$", "$$ 38 $$", "$$ 47 $$", "$$ 65 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -255,7 +251,7 @@ export const questions: Question[] = [
     },
     {
         "id": 25,
-        "text": "전체집합 $U=\{x \mid x \text{는 } 100 \text{ 이하의 자연수}\}$의 두 부분집합 $A, B$가 $$\begin{aligned}& A=\left\{x \mid \log_2 x \text{가 자연수인 } x \in U\right\}, \& B=\left\{x \mid \log_3 x \text{가 자연수인 } x \in U\right\}\end{aligned}$$일 때, 집합 $A \cup B$의 원소의 개수는??",
+        "text": "전체집합 $U=\{x \mid x \text{는 } 100 \text{ 이하의 자연수}\}$의 두 부분집합 $A$, $B$가 $$\begin{aligned}& A=\left\{x \mid \log_2 x \text{가 자연수인 } x \in U\right\}, \& B=\left\{x \mid \log_3 x \text{가 자연수인 } x \in U\right\}\end{aligned}$$일 때, 집합 $A \cup B$의 원소의 개수는??",
         "options": ["$$ 10 $$", "$$ 6 $$", "$$ 8 $$", "$$ 5 $$", "$$ 11 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -628,7 +624,7 @@ export const questions: Question[] = [
     },
     {
         "id": 62,
-        "text": "$y=\log (x+a)+b$ 의 그래프가 오른쪽 그림과 같을 때, 상수 $a, b$ 에 대하여 $a+b$ 의 값을 구하시오.",
+        "text": "$y=\log(x+a)+b$ 의 그래프가 오른쪽 그림과 같을 때, 상수 $a, b$ 에 대하여 $a+b$ 의 값을 구하시오.",
         "options": ["$$ 1 $$", "$$ 0 $$", "$$ -1 $$", "$$ -2 $$", "$$ 2 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
