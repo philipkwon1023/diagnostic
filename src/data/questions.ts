@@ -158,11 +158,8 @@ export const questions: Question[] = [
     },
     {
         "id": 16,
-        "text": "오른쪽 그림과 같이 선분 AB 를 지름으로 하는 원 위의 두 점 $\mathrm{P}, \mathrm{Q}$ 에 대하여 두 선분 $\mathrm{AB}, \mathrm{PQ}$ 의 교점을 R 라 하자. $\overline{\mathrm{AP}}=\overline{\mathrm{BP}}$ 이 고, $\overline{\mathrm{AR}}=4 \sqrt[3]{3}, \overline{\mathrm{BR}}=3 \sqrt[3]{3}$ 일 때, $\frac{5}{7} \overline{\mathrm{BQ}}$ 의 값은?",
-        "options": ["$$\sqrt[]{81}$$",
-            "$$24\sqrt[3]{27}$$", "$$24\sqrt[]{27}$$",
-            "$$24\sqrt[3]{3}$$", "$$24\sqrt[]{3}$$"
-        ],
+        "text": "오른쪽 그림과 같이 선분 $\\mathrm{AB}$ 를 지름으로 하는 원 위의 두 점 $\\mathrm{P}, \\mathrm{Q}$ 에 대하여 두 선분 $\\mathrm{AB}, \\mathrm{PQ}$ 의 교점을 $R$ 라 하자. $\\overline{\\mathrm{AP}} = \\overline{\\mathrm{BP}}$ 이 고, $\\overline{\\mathrm{AR}} = 4 \\sqrt[3]{3}, \\overline{\\mathrm{BR}} = 3 \\sqrt[3]{3}$ 일 때, $\\frac{5}{7} \\overline{\\mathrm{BQ}}$ 의 값은?",
+        "options": ["$$\sqrt[]{81}$$", "$$24\sqrt[3]{27}$$", "$$24\sqrt[]{27}$$", "$$24\sqrt[3]{3}$$", "$$24\sqrt[]{3}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
         "concept": 2,
