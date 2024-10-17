@@ -217,7 +217,7 @@ export const questions: Question[] = [
             "$$-\frac{1}{z}$$",
             "$$\frac{1}{z}$$",
             "z",
-            "2z    "
+            "2z"
         ],
         "correctAnswer": 1,
         "difficulty": 3,
