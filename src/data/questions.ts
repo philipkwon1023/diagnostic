@@ -111,7 +111,7 @@ export const questions: Question[] = [
         "difficulty": 2,
         "concept": 2,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/kX0j093"
+        "imageUrl": "https://i.ibb.co/1TK1Kds/image.png"
     },
     {
         "id": 8,
@@ -255,7 +255,7 @@ export const questions: Question[] = [
         "difficulty": 4,
         "concept": 2,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/W6hXN5S"
+        "imageUrl": "https://i.ibb.co/JK1TWtX/image.png"
     },
     {
         "id": 17,
@@ -415,7 +415,7 @@ export const questions: Question[] = [
         "difficulty": 2,
         "concept": 2,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/HxM1YS3"
+        "imageUrl": "https://i.ibb.co/ZYwtKj7/image.png"
     },
     {
         "id": 27,
@@ -831,7 +831,7 @@ export const questions: Question[] = [
         "difficulty": 3,
         "concept": 2,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/QrCHm9D"
+        "imageUrl": "https://i.ibb.co/jgWw4hJ/image.png"
     },
     {
         "id": 53,
@@ -895,7 +895,7 @@ export const questions: Question[] = [
         "difficulty": 4,
         "concept": 2,
         "hasImage": true,
-        "imageUrl": ""
+        "imageUrl": "https://i.ibb.co/JRLcHLj/20241017-182055.png"
     },
     {
         "id": 57,
@@ -959,7 +959,7 @@ export const questions: Question[] = [
         "difficulty": 4,
         "concept": 2,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/09Q38dD"
+        "imageUrl": "https://i.ibb.co/B6wRdSz/image.png"
     },
     {
         "id": 61,
@@ -991,7 +991,7 @@ export const questions: Question[] = [
         "difficulty": 1,
         "concept": 3,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/BN1GP7G"
+        "imageUrl": "https://i.ibb.co/749QzTQ/image.png"
     },
     {
         "id": 63,
@@ -1199,7 +1199,7 @@ export const questions: Question[] = [
         "difficulty": 3,
         "concept": 3,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/CzdxrZg"
+        "imageUrl": "https://i.ibb.co/g31snpN/image.png"
     },
     {
         "id": 76,
@@ -1231,7 +1231,7 @@ export const questions: Question[] = [
         "difficulty": 4,
         "concept": 2,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/DVXLSnH"
+        "imageUrl": "https://i.ibb.co/6nhNf57/image.png"
     },
     {
         "id": 78,
@@ -1247,7 +1247,7 @@ export const questions: Question[] = [
         "difficulty": 4,
         "concept": 2,
         "hasImage": true,
-        "imageUrl": "https://ibb.co/BGjXCzd"
+        "imageUrl": "https://i.ibb.co/hcHPm7h/image.png"
     },
     {
         "id": 79,
