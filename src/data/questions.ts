@@ -53,7 +53,7 @@ export const questions: Question[] = [
     },
     {
         "id": 6,
-        "text": "실수 전체의 집합의 부분집합 $A, B, C$ 를 $$ \begin{aligned}& A=\{-3,-2,2,3\}, \& B=\{|a| \mid a \in A\}, \& C=\{x \mid x=\sqrt[b]{a}, a \in A, \quad b \in B\}\end{aligned}$$\n\n\n라 할 때, 집합 $C$ 의 원소의 개수를 구하시오.",
+        "text": "실수 전체의 집합의 부분집합 $A, B, C$ 를 $$ A=\\{-3,-2,2,3\\}, B=\\{|a| \\mid a \\in A\\}, C=\\{x \\mid x=\\sqrt[b]{a}, a \\in A, b \\in B\\} $$ 라 할 때, 집합 $C$ 의 원소의 개수를 구하시오.",
         "options": ["$$ 6 $$", "$$ 5 $$", "$$ 3 $$", "$$ 4 $$", "$$ 7 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -171,7 +171,7 @@ export const questions: Question[] = [
     },
     {
         "id": 17,
-        "text": "$\begin{aligned} & \text a b c \neq 0 \text { 인 세 실수 } a, b, c \text { 에 대하여 } \ & \qquad 2^a=3^b=6^c,(a-4)(b-4)=16 \ & \text { 일 때, } c \text { 의 값을 구하시오. I }\end{aligned}$",
+        "text": "$abc \\neq 0$인 세 실수 $a, b, c$에 대하여 $$2^a = 3^b = 6^c, (a-4)(b-4) = 16$$ 일 때, $c$의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 1 $$", "$$ 6 $$", "$$ 2 $$", "$$ 3 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -251,7 +251,7 @@ export const questions: Question[] = [
     },
     {
         "id": 25,
-        "text": "전체집합 $U=\{x \mid x \text{는 } 100 \text{ 이하의 자연수}\}$의 두 부분집합 $A$, $B$가 $$\begin{aligned}& A=\left\{x \mid \log_2 x \text{가 자연수인 } x \in U\right\}, \& B=\left\{x \mid \log_3 x \text{가 자연수인 } x \in U\right\}\end{aligned}$$일 때, 집합 $A \cup B$의 원소의 개수는??",
+        "text": "전체집합 $U=\\{x \\mid x \\text{는 } 100 \\text{ 이하의 자연수}\\}$의 두 부분집합 $A$, $B$가 $$A=\\left\\{x \\mid \\log_2 x \\text{가 자연수인 } x \\in U\\right\\}, B=\\left\\{x \\mid \\log_3 x \\text{가 자연수인 } x \\in U\\right\\}$$ 일 때, 집합 $A \\cup B$의 원소의 개수는?",
         "options": ["$$ 10 $$", "$$ 6 $$", "$$ 8 $$", "$$ 5 $$", "$$ 11 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -381,7 +381,7 @@ export const questions: Question[] = [
     },
     {
         "id": 38,
-        "text": "양수 $x$ 에 대하여\n\n$$\log _3 x=f(x)+g(x) \quad(f(x) \text { 는 정수, } 0 \leq g(x)<1)$$\n\n\n라 할 때,\n\n$$\begin{aligned}& 1 \cdot 3^{q(1)-f(1)}+2 \cdot 3^{q\left(\frac{1}{2}\right)-f\left(\frac{1}{2}\right)}+3 \cdot 3^{q\left(\frac{1}{3}\right)-f\left(\frac{1}{3}\right)} \& +4 \cdot 3^{q\left(\frac{1}{4}\right)-f\left(\frac{1}{4}\right)}+5 \cdot 3^{q\left(\frac{1}{5}\right)-f\left(\frac{1}{5}\right)}\end{aligned}$$\n\n\n의 값을 구하시오.",
+        "text": "양수 $x$ 에 대하여 $$\\log _3 x=f(x)+g(x) \\quad (f(x) \\text { 는 정수, } 0 \\leq g(x)<1)$$ 라 할 때, $$1 \\cdot 3^{q(1)-f(1)} + 2 \\cdot 3^{q\\left(\\frac{1}{2}\\right)-f\\left(\\frac{1}{2}\\right)} + 3 \\cdot 3^{q\\left(\\frac{1}{3}\\right)-f\\left(\\frac{1}{3}\\right)} + 4 \\cdot 3^{q\\left(\\frac{1}{4}\\right)-f\\left(\\frac{1}{4}\\right)} + 5 \\cdot 3^{q\\left(\\frac{1}{5}\\right)-f\\left(\\frac{1}{5}\\right)}$$ 의 값을 구하시오.",
         "options": ["$$ 181 $$", "$$ 100 $$", "$$ 262 $$", "$$ 180 $$", "$$ 90 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -594,7 +594,7 @@ export const questions: Question[] = [
     },
     {
         "id": 59,
-        "text": "어느 금융상품에 초기자산 $W_0$ 을 투자하고 $t$ 년이 지난 시점에서의 기대자산 $W$ 가 다음과 같이 주어진다고 한다.\n\n$$\begin{aligned}& W=\frac{W_0}{2} 10^{a t}\left(1+10^{a t}\right) \& \text { (단, } W_0>0, t \geq 0 \text { 이고, } a \text { 는 상수이다.) }\end{aligned}$$\n\n\n이 금융상품에 초기자산 $w_0$ 을 투자하고 15 년이 지난 시점에서의 기대자산은 초기자산의 3 배이다. 이 금융상품에 초기자산 $w_0$ 을 투자하고 30 년이 지난 시점에서의 기대자산이 초기자산의 $k$ 배일 때, 실수 $k$ 의 값은? (단, $w_0>0$ )",
+        "text": "어느 금융상품에 초기자산 $W_0$ 을 투자하고 $t$ 년이 지난 시점에서의 기대자산 $W$ 가 다음과 같이 주어진다고 한다. $$W=\\frac{W_0}{2} 10^{a t}\\left(1+10^{a t}\\right)$$ (단, $W_0>0$, $t \\geq 0$, $a$ 는 상수이다.) 이 금융상품에 초기자산 $w_0$ 을 투자하고 15 년이 지난 시점에서의 기대자산은 초기자산의 3 배이다. 이 금융상품에 초기자산 $w_0$ 을 투자하고 30 년이 지난 시점에서의 기대자산이 초기자산의 $k$ 배일 때, 실수 $k$ 의 값은? (단, $w_0>0$)",
         "options": ["$$ 10 $$", "$$ 9 $$", "$$ 11 $$", "$$ 12 $$", "$$ 13 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -724,7 +724,7 @@ export const questions: Question[] = [
     },
     {
         "id": 72,
-        "text": "두 집합\n\n$$\begin{aligned}& A=\left\{x \mid 3^{x(x-2)} \leq 3^{2 x-3}\right\}, \& B=\left\{x \mid \log _2\left(x^2+a x+b\right) \leq \log _2 2 x\right\}\end{aligned}$$\n\n\n가 서로 같을 때, 상수 $a, b$ 에 대하여 $a b$ 의 값을 구하시오.\n(다, $a^2<4 b$ )",
+        "text": "두 집합 $$A=\\left\\{x \\mid 3^{x(x-2)} \\leq 3^{2 x-3}\\right\\}, B=\\left\\{x \\mid \\log _2\\left(x^2+a x+b\\right) \\leq \\log _2 2 x\\right\\}$$ 가 서로 같을 때, 상수 $a, b$ 에 대하여 $a b$ 의 값을 구하시오. (단, $a^2<4 b$)",
         "options": ["$$ -6 $$", "$$ 6 $$", "$$ -3 $$", "$$ 3 $$", "$$ 4 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
