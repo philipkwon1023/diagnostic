@@ -455,13 +455,7 @@ export const questions: Question[] = [
     },
     {
         "id": 45,
-        "text": "연립방정식 $\left\{
-\begin{array}{l}
-2^{x-1} + 3^{y+1} = 11 \\
-2^{x+2} - 3^{y-1} = 15
-\end{array}
-\right.$ 의 해를 $x = \alpha, y = \beta$ 라 할 때, $\alpha \beta$ 의 값은?
-",
+        "text": "연립방정식 $\left\{\begin{array}{l}2^{x-1} + 3^{y+1} = 11 \\2^{x+2} - 3^{y-1} = 15\end{array}\right.$ 의 해를 $x = \alpha, y = \beta$ 라 할 때, $\alpha \beta$ 의 값은?",
         "options": ["$$ 2 $$", "$$ -3 $$", "$$ -2 $$", "$$ -1 $$", "$$ 1 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
