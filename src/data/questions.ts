@@ -45,7 +45,7 @@ export const questions: Question[] = [
         "id": 5,
         "text": "소리의 진동수는 반음 1 개만큼 높아질 때마다 일정한 비율로 증가한다. 다음을 이용하여\n‘도'음보다 반음 4 개만큼 높은 ‘미음의 진동수는 '도’음의 진동수의 몇 배인지 구하시오.\n- 한 옥타브는 12 개의 반음으로 이루어져 있다.\n- 음이 한 옥타브 올라가면 진동수는 2 배가 된다.",
         "options": ["$$\sqrt[]{2}$$",
-            "$$\sqrt[4]{2}$$",$$\sqrt[]{3}$$",
+            "$$\sqrt[4]{2}$$", "$$\sqrt[]{3}$$",
             "$$\sqrt[2]{2}$$",
             "$$\sqrt[5]{2}$$"
         ],
@@ -164,8 +164,8 @@ export const questions: Question[] = [
         "id": 16,
         "text": "오른쪽 그림과 같이 선분 AB 를 지름으로 하는 원 위의 두 점 $\mathrm{P}, \mathrm{Q}$ 에 대하여 두 선분 $\mathrm{AB}, \mathrm{PQ}$ 의 교점을 R 라 하자. $\overline{\mathrm{AP}}=\overline{\mathrm{BP}}$ 이 고, $\overline{\mathrm{AR}}=4 \sqrt[3]{3}, \overline{\mathrm{BR}}=3 \sqrt[3]{3}$ 일 때, $\frac{5}{7} \overline{\mathrm{BQ}}$ 의 값은?",
         "options": ["$$\sqrt[]{81}$$",
-            "$$24\sqrt[3]{27}$$",$$24\sqrt[]{27}$$",
-            "$$24\sqrt[3]{3}$$",$$24\sqrt[]{3}$$"
+            "$$24\sqrt[3]{27}$$", "$$24\sqrt[]{27}$$",
+            "$$24\sqrt[3]{3}$$", "$$24\sqrt[]{3}$$"
         ],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -533,7 +533,7 @@ export const questions: Question[] = [
         "id": 52,
         "text": "오른쪽 그림과 같이 $y$ 축 위의 두 점 $\mathrm{A}, \mathrm{B}$ 에 대하여 두 함수 $y=2^x, y=a^x$ 의 그래프와 점 B 를 지나는 직선 $y=k(k>1)$ 가 만나는 점을 각각 $\mathrm{C}, \mathrm{D}$ 라 하자. 삼각형 ACB 의 넓이가 삼각형 ADC 의 넓이의 2 배일 때, 상수 $a$ 의 값을 구하시오. (단, $1<a<2$ )",
         "options": ["$$\sqrt[]{4}$$",
-            "$$\sqrt[2]{4}$$",$$\sqrt[]{2}$$",$$\sqrt[]{8}$$",
+            "$$\sqrt[2]{4}$$", "$$\sqrt[]{2}$$", "$$\sqrt[]{8}$$",
             "$$\sqrt[2]{8}$$"
         ],
         "correctAnswer": 1,
