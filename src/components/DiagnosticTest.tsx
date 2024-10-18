@@ -152,7 +152,7 @@ const DiagnosticTest: React.FC = () => {
           <div className="text-lg">{parseMathText(currentQuestion.text)}</div>
           {currentQuestion.hasImage && (
             <div className="mt-4 flex justify-center">
-              <img src={currentQuestion.imageUrl} alt="문제 이미지" className="max-w-full h-auto" />
+              <img src={currentQuestion.imageUrl} alt="문제 이미지" className="max-w-5/3 h-auto" />
             </div>
 
           )}
