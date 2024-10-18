@@ -54,29 +54,26 @@ const parseMathText = (text: string) => {
 // Google Gemini API 호출 함수
 const callGeminiAPI = async (userRawData: string, prompt: string) => {
   try {
-    const response = await fetch('http://211.46.130.171:4000/api/gemini', { // 백엔드로 요청
+    const response = await fetch('http://107.173.210.224:3000/api/gemini', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        userRawData,
-        prompt,
-      }),
+      body: JSON.stringify({ userRawData, prompt }),
     });
 
     if (!response.ok) {
-      throw new Error(`API 요청 실패: ${response.status} ${response.statusText}`);
+      throw new Error('API 요청이 실패했습니다.');
     }
 
     const data = await response.json();
-    // 마크다운 형식의 결과를 반환
-    return data.result;
+    return data;
   } catch (error) {
-    console.error('Gemini API 호출 중 오류 발생:', error);
+    console.error('API 요청 중 오류 발생:', error);
     return '진단 결과를 생성하는 중 오류가 발생했습니다. 네트워크 상태를 확인하거나 나중에 다시 시도해주세요.';
   }
 };
+
 
 // 진단 결과를 표시하는 컴포넌트
 const DiagnosticResult: React.FC<{ markdown: string }> = ({ markdown }) => {
