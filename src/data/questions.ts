@@ -445,7 +445,7 @@ export const questions: Question[] = [
     },
     {
         "id": 44,
-        "text": "정의역이 $\{x \\mid-1 \\leq x \\leq 2\}$ 인 함수 $y=4^x-2^{x+1}+3$ 이 $x=a$ 에서 최댓값 $b, x=c$ 에서 최솟값 $d$ 를 가질 때, $a+b+c-d$ 의 값은?",
+        "text": "정의역이 $\\{x \\mid-1 \\leq x \\leq 2\\}$ 인 함수 $y=4^x-2^{x+1}+3$ 이 $x=a$ 에서 최댓값 $b, x=c$ 에서 최솟값 $d$ 를 가질 때, $a+b+c-d$ 의 값은?",
         "options": ["$$ 11 $$", "$$ 13 $$", "$$ 15 $$", "$$ 17 $$", "$$ 19 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
