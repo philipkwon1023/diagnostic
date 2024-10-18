@@ -175,7 +175,8 @@ export const questions: Question[] = [
     },
     {
         "id": 17,
-        "text": "$abc \<br />eq 0$인 세 실수 $a, b, c$에 대하여 $$2^a = 3^b = 6^c, (a-4)(b-4) = 16$$ 일 때, $c$의 값을 구하시오.",
+        "text": "$abc \
+ 0$인 세 실수 $a, b, c$에 대하여 $$2^a = 3^b = 6^c, (a-4)(b-4) = 16$$ 일 때, $c$의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 1 $$", "$$ 6 $$", "$$ 2 $$", "$$ 3 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -558,7 +559,7 @@ export const questions: Question[] = [
     },
     {
         "id": 55,
-        "text": "부등식 $\\left(x^2-2 x+1\\right)^{x-1}<1$ 의 해의 집합을 $S$ 라 할 때, 다음 중 집합 $S$ 의 원소가 아닌 것은? (단, $x \<br />eq 1$ )",
+        "text": "부등식 $\\left(x^2-2 x+1\\right)^{x-1}<1$ 의 해의 집합을 $S$ 라 할 때, 다음 중 집합 $S$ 의 원소가 아닌 것은? (단, $x \\neq 1$ )",
         "options": ["$$\\frac{1}{2}$$", "$$\\frac{3}{2}$$", "$$-\\frac{3}{2}$$", "$$-\\frac{1}{2}$$", "$$-\\frac{5}{2}$$"],
         "correctAnswer": 1,
         "difficulty": 3,
