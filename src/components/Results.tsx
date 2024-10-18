@@ -54,7 +54,7 @@ const parseMathText = (text: string) => {
 // Google Gemini API 호출 함수
 const callGeminiAPI = async (userRawData: string, prompt: string) => {
   try {
-    const response = await fetch('http://107.173.210.224:3000/api/gemini', {
+    const response = await fetch('/api/gemini', {  // Vercel의 프록시를 사용하도록 상대 경로로 설정
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -73,6 +73,7 @@ const callGeminiAPI = async (userRawData: string, prompt: string) => {
     return '진단 결과를 생성하는 중 오류가 발생했습니다. 네트워크 상태를 확인하거나 나중에 다시 시도해주세요.';
   }
 };
+
 
 
 // 진단 결과를 표시하는 컴포넌트
