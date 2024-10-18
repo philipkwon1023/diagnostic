@@ -4,7 +4,6 @@ import { useUser } from '../contexts/UserContext';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { InlineMath, BlockMath } from 'react-katex';
-import ReactMarkdown from 'react-markdown';
 import 'katex/dist/katex.min.css';
 import { LogOut } from 'lucide-react';
 import Header from './Header';
@@ -75,10 +74,10 @@ const callGeminiAPI = async (userRawData: string, prompt: string) => {
   }
 };
 
-const DiagnosticResult: React.FC<{ markdown: string }> = ({ markdown }) => {
+const DiagnosticResult: React.FC<{ content: string }> = ({ content }) => {
   return (
     <div className="markdown-content bg-gray-100 p-4 rounded-lg shadow-md">
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 };
@@ -143,7 +142,13 @@ structure={
         console.log('API 응답:', result);
         // API 응답이 JSON 형식인 경우 파싱하고, 그렇지 않은 경우 그대로 사용
         const parsedResult = typeof result === 'string' ? result : JSON.parse(result);
-        setDiagnosticResult(parsedResult.content || parsedResult);
+        // Markdown을 간단한 HTML로 변환
+        const htmlContent = parsedResult.content || parsedResult;
+        const formattedContent = htmlContent
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/\n/g, '<br>');
+        setDiagnosticResult(formattedContent);
       } catch (error) {
         console.error("Gemini API 호출 오류:", error);
         setDiagnosticResult(`진단 결과를 불러오는 중 오류가 발생했습니다: ${error.message}`);
