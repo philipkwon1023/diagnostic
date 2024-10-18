@@ -769,7 +769,7 @@ export const questions: Question[] = [
     {
         "id": 76,
         "text": "옳은 것만을 보기에서 있는 대로 고르시오.<br \>[보 기]<br \>ㄱ. $x>1$ 이면 $\\log _2 x>\\log _3 x$ 이다.<br \>ㄴ. $1<x<2$ 이면 $\\log _2 x<\\log _3(x+1)$ 이다.<br \>ㄷ. 방정식 $2^x+\\log _2 x=0$ 의 해를 $x=\\alpha$ 라 하면 $\\frac{1}{2}<\\alpha<1$ 이다.",
-        "options": ["$$text{ㄱ,ㄴ}$$", "$$text{ㄱ}$$", "$$text{ㄱ,ㄴ,ㄷ}$$", "$$text{ㄴ}$$", "$$text{ㄴ,ㄷ}$$],
+        "options": ["$$text{ㄱ,ㄴ}$$", "$$text{ㄱ}$$", "$$text{ㄱ,ㄴ,ㄷ}$$", "$$text{ㄴ}$$", "$$text{ㄴ,ㄷ}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
         "concept": 1,
