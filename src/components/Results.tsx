@@ -64,7 +64,7 @@ const callGeminiAPI = async (userRawData: string, prompt: string) => {
     }
 
     const data = await response.json();
-    console.log('API 응답 데이터:', data.response);
+    //console.log('API 응답 데이터:', data.response);
 
     return data.response;
   } catch (error) {
@@ -149,7 +149,7 @@ structure={
     
     try {
       const result = await callGeminiAPI(userRawData, prompt);
-      console.log('API 응답:', result);
+      //console.log('API 응답:', result);
       setDebugInfo(prev => prev + `API 응답 타입: ${typeof result}\n`);
       setDebugInfo(prev => prev + `API 응답 내용: ${JSON.stringify(result, null, 2)}\n`);
 
