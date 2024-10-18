@@ -105,7 +105,7 @@ const Results: React.FC = () => {
     const generateDiagnosticResult = async () => {
       setIsLoading(true);
       
-      const userRawData = 
+      const userRawData = `
         총점: ${score}/${totalQuestions}
         평균 소요 시간: ${averageTime.toFixed(2)}초
         문항별 결과:
@@ -115,10 +115,10 @@ const Results: React.FC = () => {
           소요 시간: ${timeSpent[i].toFixed(2)}초
           난이도: ${q.difficulty}
           개념: ${q.concept}
-        ).join('\n')}
+        ).join('\n')}`
       ;
 
-      const prompt = 
+      const prompt = `
 위 데이터를 바탕으로 사용자의 수학 학습 상태를 진단하고, 강점과 약점을 분석해주세요. 
 참고로 난이도는 1~4 사이의 정수로 표현되며, 난이도가 높을수록 어려운 문제를 의미합니다. 
 출력 형식은 불필요한 제목은 없이 바로 다음 structure와 유사한 구조를 유지하고 마크다운 언어로 출력해주세요. 
@@ -145,7 +145,7 @@ structure={
 
 **따뜻한 한마디**
 *수학은 조금만 노력하면 재미를 느낄 수 있는 학문입니다. 꾸준한 노력과 재미를 느끼며 수학을 공부해보세요. 힘내요!*
-}
+}`
 ;
 
        try {
