@@ -99,7 +99,8 @@ const Results: React.FC = () => {
 
   const [diagnosticResult, setDiagnosticResult] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
+  const [debugInfo, setDebugInfo] = useState<string>('');
+  
   useEffect(() => {
     const generateDiagnosticResult = async () => {
       setIsLoading(true);
