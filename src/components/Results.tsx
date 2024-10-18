@@ -67,7 +67,8 @@ const callGeminiAPI = async (userRawData: string, prompt: string) => {
     }
 
     const data = await response.json();
-    
+    console.log('API 응답 데이터:', data.response); // 응답 데이터 확인
+
     // 데이터가 문자열 형식일 경우 객체로 변환
     if (typeof data.response === 'string') {
       const parsedData = JSON.parse(data.response.replace(/```json|```/g, '')); // JSON의 백틱 제거 후 파싱
