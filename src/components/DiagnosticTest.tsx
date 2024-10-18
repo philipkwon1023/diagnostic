@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
-import { LogOut } from 'lucide-react';
 import { selectNextQuestion, isTestComplete } from '../utils/adaptiveTestAlgorithm';
 import { questions as allQuestions } from '../data/questions';
 import Header from './Header'; // Header 컴포넌트 가져오기
@@ -40,6 +39,7 @@ const DiagnosticTest: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
   const [shuffledCorrectIndex, setShuffledCorrectIndex] = useState<number | null>(null);
+  const [shuffledToOriginalIndices, setShuffledToOriginalIndices] = useState<number[]>([]); // 추가된 상태
   const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
   const [userAnswers, setUserAnswers] = useState<number[]>([]);
   const [timeSpent, setTimeSpent] = useState<number[]>([]);
@@ -60,7 +60,10 @@ const DiagnosticTest: React.FC = () => {
     const newOptions = shuffled.map(item => item.option);
     const newCorrectIndex = shuffled.findIndex(item => item.index === correctAnswerIndex); // 섞인 배열에서 정답 인덱스 찾기
 
-    return { newOptions, newCorrectIndex };
+    // 셔플된 인덱스에서 원본 인덱스로의 매핑 생성
+    const shuffledToOriginalIndices = shuffled.map(item => item.index);
+
+    return { newOptions, newCorrectIndex, shuffledToOriginalIndices };
   };
 
   useEffect(() => {
@@ -89,9 +92,10 @@ const DiagnosticTest: React.FC = () => {
 
   useEffect(() => {
     if (currentQuestion) {
-      const { newOptions, newCorrectIndex } = shuffleOptions(currentQuestion.options, currentQuestion.correctAnswer - 1); // correctAnswer에 -1을 해줌
+      const { newOptions, newCorrectIndex, shuffledToOriginalIndices } = shuffleOptions(currentQuestion.options, currentQuestion.correctAnswer - 1); // correctAnswer에 -1을 해줌
       setShuffledOptions(newOptions);
       setShuffledCorrectIndex(newCorrectIndex); // 섞인 후의 정답 인덱스 저장
+      setShuffledToOriginalIndices(shuffledToOriginalIndices); // 셔플된 인덱스 매핑 저장
     }
   }, [currentQuestion]);
 
@@ -104,14 +108,18 @@ const DiagnosticTest: React.FC = () => {
 
   const handleAnswer = (answerIndex: number) => {
     const timeElapsed = (Date.now() - startTime) / 1000;
-    const newUserAnswers = [...userAnswers, answerIndex];
+
+    // 선택한 셔플된 인덱스를 원본 인덱스로 변환
+    const originalAnswerIndex = shuffledToOriginalIndices[answerIndex];
+
+    const newUserAnswers = [...userAnswers, originalAnswerIndex]; // 원본 인덱스를 저장
     const newTimeSpent = [...timeSpent, timeElapsed];
     const newAnsweredQuestions = [...answeredQuestions, currentQuestion!.id];
 
-    // 정답 여부를 검토
-    const isCorrect = answerIndex === shuffledCorrectIndex;
+    // 정답 여부를 검토 (correctAnswer에 -1을 해줌)
+    const isCorrect = originalAnswerIndex === currentQuestion!.correctAnswer - 1;
 
-    console.log(`선택: ${answerIndex+1}, 정답: ${shuffledCorrectIndex+1}, 정답 여부: ${isCorrect}`);
+    console.log(`선택한 원본 인덱스: ${originalAnswerIndex + 1}, 정답 인덱스: ${currentQuestion!.correctAnswer}, 정답 여부: ${isCorrect}`);
 
     setUserAnswers(newUserAnswers);
     setTimeSpent(newTimeSpent);
