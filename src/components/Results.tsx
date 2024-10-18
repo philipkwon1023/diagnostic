@@ -157,6 +157,7 @@ structure={
 
       try {
         const result = await callGeminiAPI(userRawData, prompt);
+        console.log('API 응답:', result); // 응답 데이터 확인
         setDiagnosticResult(result);
       } catch (error) {
         console.error("Gemini API 호출 오류:", error);
