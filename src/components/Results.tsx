@@ -254,13 +254,13 @@ structure={
           <DiagnosticResult content={diagnosticResult} />
         </div>
 
-        {/* 디버그 정보 표시 */}
+{/*         {/* 디버그 정보 표시 */}
           {debugInfo && (
             <div className="mt-8 p-4 bg-gray-100 rounded">
               <h3 className="text-xl font-semibold mb-2">디버그 정보</h3>
               <pre className="whitespace-pre-wrap">{debugInfo}</pre>
             </div>
-          )}
+          )} */}
         
         <h2 className="text-2xl font-semibold mb-4">문항별 결과</h2>
         {questions.map((question, index) => (
