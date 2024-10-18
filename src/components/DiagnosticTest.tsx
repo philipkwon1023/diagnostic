@@ -22,7 +22,7 @@ interface Question {
 // 수식을 파싱하고 줄바꿈 태그를 처리하는 함수
 const parseMathText = (text: string) => {
   const parts = text.split(/(\$\$[^\$]+\$\$|\$[^\$]+\$|<br\s*\/?>)/g);
-  
+
   return parts.map((part, index) => {
     if (part.startsWith('$$') && part.endsWith('$$')) {
       return <BlockMath key={index}>{part.slice(2, -2)}</BlockMath>;
@@ -89,7 +89,7 @@ const DiagnosticTest: React.FC = () => {
 
   useEffect(() => {
     if (currentQuestion) {
-      const { newOptions, newCorrectIndex } = shuffleOptions(currentQuestion.options, currentQuestion.correctAnswer);
+      const { newOptions, newCorrectIndex } = shuffleOptions(currentQuestion.options, currentQuestion.correctAnswer - 1); // correctAnswer에 -1을 해줌
       setShuffledOptions(newOptions);
       setShuffledCorrectIndex(newCorrectIndex); // 섞인 후의 정답 인덱스 저장
     }
