@@ -19,10 +19,10 @@ interface Question {
   imageUrl: string;
 }
 
-// 수식을 파싱하여 수식과 텍스트를 분리하는 함수
+// 수식을 파싱하고 줄바꿈 태그를 처리하는 함수
 const parseMathText = (text: string) => {
-  // $$...$$와 $...$를 모두 처리할 수 있는 정규식
-  const parts = text.split(/(\$\$[^\$]+\$\$|\$[^\$]+\$)/g); 
+  // $$...$$와 $...$ 및 <br />을 모두 처리할 수 있는 정규식
+  const parts = text.split(/(\$\$[^\$]+\$\$|\$[^\$]+\$|<br\s*\/?>)/g);
   
   return parts.map((part, index) => {
     if (part.startsWith('$$') && part.endsWith('$$')) {
@@ -31,6 +31,9 @@ const parseMathText = (text: string) => {
     } else if (part.startsWith('$') && part.endsWith('$')) {
       // $로 감싸진 부분은 InlineMath로 인라인 수식 처리
       return <InlineMath key={index}>{part.slice(1, -1)}</InlineMath>;
+    } else if (part === '<br />' || part === '<br>') {
+      // <br /> 태그는 줄바꿈으로 처리
+      return <br key={index} />;
     } else {
       // 나머지는 일반 텍스트로 처리
       return <span key={index}>{part}</span>;
