@@ -4,13 +4,13 @@ import { useUser } from '../contexts/UserContext';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { InlineMath, BlockMath } from 'react-katex';
+import ReactMarkdown from 'react-markdown';
 import 'katex/dist/katex.min.css';
 import { LogOut } from 'lucide-react';
-import Header from './Header'; // Header 컴포넌트 가져오기
+import Header from './Header';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-// 로딩 애니메이션 컴포넌트
 const LoadingSpinner: React.FC = () => (
   <div className="flex flex-col justify-center items-center min-h-screen bg-white">
     <div className="spinner-border animate-spin inline-block w-60 h-60 border-6 rounded-full text-blue-4600 flex items-center justify-center" role="status">
@@ -51,7 +51,6 @@ const parseMathText = (text: string) => {
   });
 };
 
-// Google Gemini API 호출 함수
 const callGeminiAPI = async (userRawData: string, prompt: string) => {
   try {
     const response = await fetch('/api/gemini', {
@@ -67,9 +66,8 @@ const callGeminiAPI = async (userRawData: string, prompt: string) => {
     }
 
     const data = await response.json();
-    console.log('API 응답 데이터:', data.response); // 응답 데이터 확인
+    console.log('API 응답 데이터:', data.response);
 
-    // Markdown 형식으로 처리하기
     return data.response;
   } catch (error) {
     console.error('API 요청 중 오류 발생:', error);
@@ -77,29 +75,10 @@ const callGeminiAPI = async (userRawData: string, prompt: string) => {
   }
 };
 
-
-
-
-// 진단 결과를 표시하는 컴포넌트
 const DiagnosticResult: React.FC<{ markdown: string }> = ({ markdown }) => {
-  const convertMarkdownToHtml = (markdown: string) => {
-    const html = markdown
-      .replace(/^# (.*$)/gm, '<h1 class="bg-gray-100 p-2">$1</h1>')
-      .replace(/^## (.*$)/gm, '<h2 class="bg-gray-100 p-2">$1</h2>')
-      .replace(/^### (.*$)/gm, '<h3 class="bg-gray-100 p-2">$1</h3>')
-      .replace(/\*\*(.*)\*\*/gm, '<strong class="bg-gray-100 p-1">$1</strong>')
-      .replace(/\*(.*)\*/gm, '<em class="bg-gray-100 p-1">$1</em>')
-      .replace(/\n/gm, '<br>')
-      .replace(/^(.+)$/gm, '<p class="bg-gray-100 p-2">$1</p>');
-
-    return html;
-  };
-
-  const htmlContent = convertMarkdownToHtml(markdown);
-
   return (
-    <div className="markdown-content bg-gray-100 p-4 rounded-lg shadow-md"> {/* 회색 박스 스타일 추가 */}
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    <div className="markdown-content bg-gray-100 p-4 rounded-lg shadow-md">
+      <ReactMarkdown>{markdown}</ReactMarkdown>
     </div>
   );
 };
@@ -108,7 +87,7 @@ const Results: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { userAnswers, timeSpent, questions } = location.state as ResultsState;
-  const { user, setUser, setIsLoggedIn } = useUser(); // 컴포넌트 최상단에서 훅 호출
+  const { user, setUser, setIsLoggedIn } = useUser();
 
   const score = userAnswers.reduce((acc, answer, index) => acc + (answer === questions[index].correctAnswer ? 1 : 0), 0);
   const totalQuestions = questions.length;
@@ -161,12 +140,13 @@ structure={
 
       try {
         const result = await callGeminiAPI(userRawData, prompt);
-        console.log('API 응답:', result); // 응답 데이터 확인
-        setDiagnosticResult(result);
+        console.log('API 응답:', result);
+        // API 응답이 JSON 형식인 경우 파싱하고, 그렇지 않은 경우 그대로 사용
+        const parsedResult = typeof result === 'string' ? result : JSON.parse(result);
+        setDiagnosticResult(parsedResult.content || parsedResult);
       } catch (error) {
         console.error("Gemini API 호출 오류:", error);
         setDiagnosticResult(`진단 결과를 불러오는 중 오류가 발생했습니다: ${error.message}`);
-
       } finally {
         setIsLoading(false);
       }
@@ -219,7 +199,7 @@ structure={
   };
 
   if (isLoading) {
-    return <LoadingSpinner />; // 로딩 중일 때 표시
+    return <LoadingSpinner />;
   }
 
   return (
