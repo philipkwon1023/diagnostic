@@ -175,8 +175,7 @@ export const questions: Question[] = [
     },
     {
         "id": 17,
-        "text": "$abc \
- 0$인 세 실수 $a, b, c$에 대하여 $$2^a = 3^b = 6^c, (a-4)(b-4) = 16$$ 일 때, $c$의 값을 구하시오.",
+        "text": "$abc \\neq 0$인 세 실수 $a, b, c$에 대하여 $$2^a = 3^b = 6^c, (a-4)(b-4) = 16$$ 일 때, $c$의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 1 $$", "$$ 6 $$", "$$ 2 $$", "$$ 3 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
