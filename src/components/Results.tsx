@@ -96,9 +96,12 @@ const Results: React.FC = () => {
   const [diagnosticResult, setDiagnosticResult] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const [debugInfo, setDebugInfo] = useState<string>('');
+  
   useEffect(() => {
     const generateDiagnosticResult = async () => {
       setIsLoading(true);
+      setDebugInfo(''); // 디버그 정보 초기화
       const userRawData = `
         총점: ${score}/${totalQuestions}
         평균 소요 시간: ${averageTime.toFixed(2)}초
@@ -137,21 +140,37 @@ structure={
 }
 `;
 
-      try {
+       try {
         const result = await callGeminiAPI(userRawData, prompt);
         console.log('API 응답:', result);
-        // API 응답이 JSON 형식인 경우 파싱하고, 그렇지 않은 경우 그대로 사용
-        const parsedResult = typeof result === 'string' ? result : JSON.parse(result);
+        setDebugInfo(prev => prev + `API 응답 타입: ${typeof result}\n`);
+        setDebugInfo(prev => prev + `API 응답 내용: ${JSON.stringify(result, null, 2)}\n`);
+
+        let contentToDisplay = '';
+
+        if (typeof result === 'string') {
+          // 문자열인 경우 그대로 사용
+          contentToDisplay = result;
+        } else if (typeof result === 'object') {
+          // 객체인 경우 'content' 필드 확인
+          contentToDisplay = result.content || JSON.stringify(result);
+        } else {
+          // 예상치 못한 타입인 경우
+          throw new Error(`Unexpected response type: ${typeof result}`);
+        }
+
         // Markdown을 간단한 HTML로 변환
-        const htmlContent = parsedResult.content || parsedResult;
-        const formattedContent = htmlContent
+        const formattedContent = contentToDisplay
           .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
           .replace(/\*(.*?)\*/g, '<em>$1</em>')
           .replace(/\n/g, '<br>');
+
         setDiagnosticResult(formattedContent);
+        setDebugInfo(prev => prev + `처리된 내용: ${formattedContent}\n`);
       } catch (error) {
         console.error("Gemini API 호출 오류:", error);
         setDiagnosticResult(`진단 결과를 불러오는 중 오류가 발생했습니다: ${error.message}`);
+        setDebugInfo(prev => prev + `오류 발생: ${error.message}\n`);
       } finally {
         setIsLoading(false);
       }
@@ -228,8 +247,17 @@ structure={
         </div>
         <div className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">진단 해석</h2>
-          <DiagnosticResult markdown={diagnosticResult} />
+          <DiagnosticResult content={diagnosticResult} />
         </div>
+
+        {/* 디버그 정보 표시 */}
+          {debugInfo && (
+            <div className="mt-8 p-4 bg-gray-100 rounded">
+              <h3 className="text-xl font-semibold mb-2">디버그 정보</h3>
+              <pre className="whitespace-pre-wrap">{debugInfo}</pre>
+            </div>
+          )}
+        
         <h2 className="text-2xl font-semibold mb-4">문항별 결과</h2>
         {questions.map((question, index) => (
           <div 
