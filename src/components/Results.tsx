@@ -103,7 +103,7 @@ const Results: React.FC = () => {
   useEffect(() => {
     const generateDiagnosticResult = async () => {
       setIsLoading(true);
-      setDebugInfo(''); // 디버그 정보 초기화
+      
       const userRawData = 
         총점: ${score}/${totalQuestions}
         평균 소요 시간: ${averageTime.toFixed(2)}초
