@@ -426,7 +426,7 @@ export const questions: Question[] = [
     {
         "id": 42,
         "text": "함수 $f(x)=a^x(a>0, a \<br \>eq 1)$ 에 대하여 $f(2)=\\frac{1}{9}$ 일 때, $y=f(x)$ 에 대한 설명으로 옳은 것만을 [보기]에서 있는 대로 고른 것은?$$\\text{ㄱ.} f(-4)=16$$ $$\\text{ㄴ. 그래프는 점 } (-1,3) \\text{을 지난다.}$$ $$\\text{ㄷ. 그래프의 점근선은} $x$ \\text{축이다.}$$ $$ \\text{ㄹ.} x \\text{의 값이 증가하면} y \\text{의 값도 증가한다.}$$",
-        "options": ["$$text{ㄱ,ㄴ}$$", "$$text{ㄱ,ㄷ}$$", "$$text{ㄱ,ㄹ}$$", "$$text{ㄴ,ㄷ}$$", "$$text{ㄷ,ㄹ}$$],
+        "options": ["$$text{ㄱ,ㄴ}$$", "$$text{ㄱ,ㄷ}$$", "$$text{ㄱ,ㄹ}$$", "$$text{ㄴ,ㄷ}$$", "$$text{ㄷ,ㄹ}$$"],
         "correctAnswer": 1,
         "difficulty": 1,
         "concept": 2,
