@@ -69,18 +69,14 @@ const callGeminiAPI = async (userRawData: string, prompt: string) => {
     const data = await response.json();
     console.log('API 응답 데이터:', data.response); // 응답 데이터 확인
 
-    // 데이터가 문자열 형식일 경우 객체로 변환
-    if (typeof data.response === 'string') {
-      const parsedData = JSON.parse(data.response.replace(/```json|```/g, '')); // JSON의 백틱 제거 후 파싱
-      return parsedData;
-    }
-    
-    return data;
+    // Markdown 형식으로 처리하기
+    return data.response;
   } catch (error) {
     console.error('API 요청 중 오류 발생:', error);
     return '진단 결과를 생성하는 중 오류가 발생했습니다. 네트워크 상태를 확인하거나 나중에 다시 시도해주세요.';
   }
 };
+
 
 
 
@@ -169,7 +165,8 @@ structure={
         setDiagnosticResult(result);
       } catch (error) {
         console.error("Gemini API 호출 오류:", error);
-        setDiagnosticResult("진단 결과를 불러오는 중 오류가 발생했습니다.");
+        setDiagnosticResult(`진단 결과를 불러오는 중 오류가 발생했습니다: ${error.message}`);
+
       } finally {
         setIsLoading(false);
       }
