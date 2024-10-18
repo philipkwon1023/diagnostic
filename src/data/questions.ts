@@ -3,7 +3,7 @@ import { Question } from '../types/question';
 export const questions: Question[] = [
     {
         "id": 1,
-        "text": "다음을 계산하시오.<br \><br \>$$\\sqrt{(-2)^2}+\\sqrt[3]{(-3)^3}+\\sqrt[4]{(-4)^4}+\\cdots+\\sqrt[10]{(-10)^{10}}$$",
+        "text": "다음을 계산하시오.<br /><br />$$\\sqrt{(-2)^2}+\\sqrt[3]{(-3)^3}+\\sqrt[4]{(-4)^4}+\\cdots+\\sqrt[10]{(-10)^{10}}$$",
         "options": ["$$ 6 $$", "$$ -6 $$", "$$ 54 $$", "$$ 5 $$", "$$ 4 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -43,7 +43,7 @@ export const questions: Question[] = [
     },
     {
         "id": 5,
-        "text": "소리의 진동수는 반음 1 개만큼 높아질 때마다 일정한 비율로 증가한다. 다음을 이용하여<br \>‘도'음보다 반음 4 개만큼 높은 ‘미음의 진동수는 '도’음의 진동수의 몇 배인지 구하시오.<br \>- 한 옥타브는 12 개의 반음으로 이루어져 있다.<br \>- 음이 한 옥타브 올라가면 진동수는 2 배가 된다.",
+        "text": "소리의 진동수는 반음 1 개만큼 높아질 때마다 일정한 비율로 증가한다. 다음을 이용하여<br />‘도'음보다 반음 4 개만큼 높은 ‘미음의 진동수는 '도’음의 진동수의 몇 배인지 구하시오.<br />- 한 옥타브는 12 개의 반음으로 이루어져 있다.<br />- 음이 한 옥타브 올라가면 진동수는 2 배가 된다.",
         "options": ["$$\\sqrt[]{2}$$",
             "$$\\sqrt[4]{2}$$", "$$\\sqrt[]{3}$$",
             "$$\\sqrt[2]{2}$$",
@@ -87,7 +87,7 @@ export const questions: Question[] = [
     },
     {
         "id": 9,
-        "text": "다음 조건을 모두 만족시키는 1 이 아닌 세 양수 $a, b, c$ 에 대하여 $a c=b^k$ 이다. 이때 실수 $k$ 의 값을 구하시오.<br \>(가) $a^2$ 은 $b$ 의 세제곱근이다.<br \>(나) $b^3$ 은 $c$ 의 제곱근이다.",
+        "text": "다음 조건을 모두 만족시키는 1 이 아닌 세 양수 $a, b, c$ 에 대하여 $a c=b^k$ 이다. 이때 실수 $k$ 의 값을 구하시오.<br />(가) $a^2$ 은 $b$ 의 세제곱근이다.<br />(나) $b^3$ 은 $c$ 의 제곱근이다.",
         "options": ["$$\\frac{37}{6}$$", "$$\\frac{31}{6}$$", "$$\\frac{25}{6}$$", "$$ 6 $$", "$$ 5 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -107,7 +107,7 @@ export const questions: Question[] = [
     },
     {
         "id": 11,
-        "text": "실수 $x$ 와 자연수 $n$ 에 대하여 $x$ 의 $n$ 제곱근 중에서 실수인 것의 개수를 $R(x, n)$ )이라 하자.<br \><br \>이때<br \><br \>$$R(10,10)+R(\\sqrt{10}, 5)+R(-\\sqrt{10}, 5)+R(-10,10)$$<br \><br \><br \>의 값을 구하시오.",
+        "text": "실수 $x$ 와 자연수 $n$ 에 대하여 $x$ 의 $n$ 제곱근 중에서 실수인 것의 개수를 $R(x, n)$ )이라 하자.<br /><br />이때<br /><br />$$R(10,10)+R(\\sqrt{10}, 5)+R(-\\sqrt{10}, 5)+R(-10,10)$$<br /><br /><br />의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 5 $$", "$$ 6 $$", "$$ 2 $$", "$$ 3 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -142,7 +142,7 @@ export const questions: Question[] = [
     },
     {
         "id": 14,
-        "text": "$2^x=3^{-y}, 9^y=6^z$ 일 때, $\\frac{1}{x}-\\frac{1}{y}$ 을 $z$ 를 이용하여 나타내면? (단, $x y z \<br \>eq 0$ )",
+        "text": "$2^x=3^{-y}, 9^y=6^z$ 일 때, $\\frac{1}{x}-\\frac{1}{y}$ 을 $z$ 를 이용하여 나타내면? (단, $x y z \<br />eq 0$ )",
         "options": ["$$-\\frac{2}{z}$$", "$$-\\frac{1}{z}$$", "$$\\frac{1}{z}$$", "$$ z $$", "$$ 2z $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -175,7 +175,7 @@ export const questions: Question[] = [
     },
     {
         "id": 17,
-        "text": "$abc \<br \>eq 0$인 세 실수 $a, b, c$에 대하여 $$2^a = 3^b = 6^c, (a-4)(b-4) = 16$$ 일 때, $c$의 값을 구하시오.",
+        "text": "$abc \<br />eq 0$인 세 실수 $a, b, c$에 대하여 $$2^a = 3^b = 6^c, (a-4)(b-4) = 16$$ 일 때, $c$의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 1 $$", "$$ 6 $$", "$$ 2 $$", "$$ 3 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -205,7 +205,7 @@ export const questions: Question[] = [
     },
     {
         "id": 20,
-        "text": "실수 $x$ 와 2 이상의 자연수 $n$ 에 대하여 $x$ 의 $n$ 제곱근 중에서 실수인 것의 개수를 $f_n(x)$ 라 할 때,<br \><br \>$$f_3\\left(\\sqrt[5]{(-1)^5}\\right)+f_4\\left(\\sqrt[3]{-\\frac{27}{8}}\\right)+f_5\\left(\\left(-\\frac{1}{3}\\right)^4\\right)$$<br \><br \><br \>의 값을 구하시오.",
+        "text": "실수 $x$ 와 2 이상의 자연수 $n$ 에 대하여 $x$ 의 $n$ 제곱근 중에서 실수인 것의 개수를 $f_n(x)$ 라 할 때,<br /><br />$$f_3\\left(\\sqrt[5]{(-1)^5}\\right)+f_4\\left(\\sqrt[3]{-\\frac{27}{8}}\\right)+f_5\\left(\\left(-\\frac{1}{3}\\right)^4\\right)$$<br /><br /><br />의 값을 구하시오.",
         "options": ["$$ 2 $$", "$$ 3 $$", "$$ 4 $$", "$$ 5 $$", "$$ 1 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -215,7 +215,7 @@ export const questions: Question[] = [
     },
     {
         "id": 21,
-        "text": "이차방정식 $x^2-6 x+2=0$ 의 두 근을 $\\alpha, \\beta$ 라 할 때,<br \><br \>$$\\log _3(\\alpha+1)+\\log _3(\\beta+1)$$<br \><br \><br \>의 값을 구하시오.",
+        "text": "이차방정식 $x^2-6 x+2=0$ 의 두 근을 $\\alpha, \\beta$ 라 할 때,<br /><br />$$\\log _3(\\alpha+1)+\\log _3(\\beta+1)$$<br /><br /><br />의 값을 구하시오.",
         "options": ["$$ 2 $$", "$$ 3 $$", "$$ 4 $$", "$$ 1 $$", "$$ 0 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -235,7 +235,7 @@ export const questions: Question[] = [
     },
     {
         "id": 23,
-        "text": "1 이 아닌 양수 $x$ 에 대하여<br \><br \>$$\\frac{1}{\\log _2 x}+\\frac{1}{\\log _3 x}+\\frac{1}{\\log _4 x}=\\log _x k$$<br \><br \><br \>를 만족시키는 $k$ 의 값을 구하시오.",
+        "text": "1 이 아닌 양수 $x$ 에 대하여<br /><br />$$\\frac{1}{\\log _2 x}+\\frac{1}{\\log _3 x}+\\frac{1}{\\log _4 x}=\\log _x k$$<br /><br /><br />를 만족시키는 $k$ 의 값을 구하시오.",
         "options": ["$$ 24 $$", "$$ 12 $$", "$$ 9 $$", "$$ 8 $$", "$$ 16 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -345,7 +345,7 @@ export const questions: Question[] = [
     },
     {
         "id": 34,
-        "text": "216 의 모든 양의 약수를 $a_1, a_2, a_3, \\cdots, a_{10}$ 이라 할 때,<br \><br \>$$\\log _6 a_1+\\log _6 a_2+\\log _6 a_3+\\cdots+\\log _6 a_{10}$$\"<br \><br \><br \>의 값을 구하시오.",
+        "text": "216 의 모든 양의 약수를 $a_1, a_2, a_3, \\cdots, a_{10}$ 이라 할 때,<br /><br />$$\\log _6 a_1+\\log _6 a_2+\\log _6 a_3+\\cdots+\\log _6 a_{10}$$\"<br /><br /><br />의 값을 구하시오.",
         "options": ["$$ 24 $$", "$$ 26 $$", "$$ 22 $$", "$$ 20 $$", "$$ 18 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -355,7 +355,7 @@ export const questions: Question[] = [
     },
     {
         "id": 35,
-        "text": "빛이 어떤 유리 한 장을 통과할 때마다 그 밝기가 $19 \%$ 씩 감소한다고 한다. 빛이 이 유리 를 5 장 통과하였을 때의 빛의 밝기는 처음 밝기의 몇 \% 인지 구하시오.<br \>(단, $\\log 3=0.48, \\log 3.99=0.6$ 으로 계산한다.)",
+        "text": "빛이 어떤 유리 한 장을 통과할 때마다 그 밝기가 $19 \%$ 씩 감소한다고 한다. 빛이 이 유리 를 5 장 통과하였을 때의 빛의 밝기는 처음 밝기의 몇 \% 인지 구하시오.<br />(단, $\\log 3=0.48, \\log 3.99=0.6$ 으로 계산한다.)",
         "options": ["$$ 39.9 $$", "$$ 3.99 $$", "$$ 8.1 $$", "$$ 31.8 $$", "$$ 48 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -365,7 +365,7 @@ export const questions: Question[] = [
     },
     {
         "id": 36,
-        "text": "자연수 $n$ 에 대하여 다음 조건을 모두 만족시키는 두 자연수 $a, b$ 의 순서쌍 $(a, b)$ 의 개수 를 $f(n)$ 이라 하자.<br \>(가) $\\log _2(n-a)^2$ 과 $\\log _2(n+b)^2$ 은 같은 자연수이다.<br \>(나) $a+b \\leq 4^n$<br \>$f(1)+f(2)+f(4)$ 의 값을 구하시오.",
+        "text": "자연수 $n$ 에 대하여 다음 조건을 모두 만족시키는 두 자연수 $a, b$ 의 순서쌍 $(a, b)$ 의 개수 를 $f(n)$ 이라 하자.<br />(가) $\\log _2(n-a)^2$ 과 $\\log _2(n+b)^2$ 은 같은 자연수이다.<br />(나) $a+b \\leq 4^n$<br />$f(1)+f(2)+f(4)$ 의 값을 구하시오.",
         "options": ["$$ 8 $$", "$$ 5 $$", "$$ 6 $$", "$$ 10 $$", "$$ 7 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -375,7 +375,7 @@ export const questions: Question[] = [
     },
     {
         "id": 37,
-        "text": "$\\log _5 \\sqrt{2}$ 를 소수로 나타내면 $0 . a b c \\cdots$ 일 때, $a$ 의 값을 구하시오.<br \>(단, $a, b, c, \\cdots$ 는 0 또는 한 자리 자연수이다.)",
+        "text": "$\\log _5 \\sqrt{2}$ 를 소수로 나타내면 $0 . a b c \\cdots$ 일 때, $a$ 의 값을 구하시오.<br />(단, $a, b, c, \\cdots$ 는 0 또는 한 자리 자연수이다.)",
         "options": ["$$ 2 $$", "$$ 4 $$", "$$ 6 $$", "$$ 5 $$", "$$ 8 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -395,7 +395,7 @@ export const questions: Question[] = [
     },
     {
         "id": 39,
-        "text": "자연수 $k$ 에 대하여 $a_k$ 가 0 또는 1 이고<br \><br \>$$\\log _5 2=\\frac{a_1}{2}+\\frac{a_2}{2^2}+\\frac{a_3}{2^3}+\\frac{a_4}{2^4}+\\cdots$$<br \><br \><br \>일 때, $a_1+a_2+a_3$ 의 값을 구하시오.",
+        "text": "자연수 $k$ 에 대하여 $a_k$ 가 0 또는 1 이고<br /><br />$$\\log _5 2=\\frac{a_1}{2}+\\frac{a_2}{2^2}+\\frac{a_3}{2^3}+\\frac{a_4}{2^4}+\\cdots$$<br /><br /><br />일 때, $a_1+a_2+a_3$ 의 값을 구하시오.",
         "options": ["$$ 2 $$", "$$ 1 $$", "$$ 0 $$", "$$ 3 $$", "$$ 4 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -405,7 +405,7 @@ export const questions: Question[] = [
     },
     {
         "id": 40,
-        "text": "1 보다 큰 서로 다른 두 자연수 $m, n$ 이 다음 조건을 모두 만족시킬 때, $m, n$ 의 순서쌍 $(m, n)$ 의 개수는?<br \>(가) $m n<200$<br \>(나) $\\log _m n$ 은 유리수이다.",
+        "text": "1 보다 큰 서로 다른 두 자연수 $m, n$ 이 다음 조건을 모두 만족시킬 때, $m, n$ 의 순서쌍 $(m, n)$ 의 개수는?<br />(가) $m n<200$<br />(나) $\\log _m n$ 은 유리수이다.",
         "options": ["$$ 24 $$", "$$ 22 $$", "$$ 18 $$", "$$ 20 $$", "$$ 26 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -425,7 +425,7 @@ export const questions: Question[] = [
     },
     {
         "id": 42,
-        "text": "함수 $f(x)=a^x(a>0, a \<br \>eq 1)$ 에 대하여 $f(2)=\\frac{1}{9}$ 일 때, $y=f(x)$ 에 대한 설명으로 옳은 것만을 [보기]에서 있는 대로 고른 것은?$$\\text{ㄱ.} f(-4)=16$$ $$\\text{ㄴ. 그래프는 점 } (-1,3) \\text{을 지난다.}$$ $$\\text{ㄷ. 그래프의 점근선은} $x$ \\text{축이다.}$$ $$ \\text{ㄹ.} x \\text{의 값이 증가하면} y \\text{의 값도 증가한다.}$$",
+        "text": "함수 $f(x)=a^x(a>0, a \<br />eq 1)$ 에 대하여 $f(2)=\\frac{1}{9}$ 일 때, $y=f(x)$ 에 대한 설명으로 옳은 것만을 [보기]에서 있는 대로 고른 것은?$$\\text{ㄱ.} f(-4)=16$$ $$\\text{ㄴ. 그래프는 점 } (-1,3) \\text{을 지난다.}$$ $$\\text{ㄷ. 그래프의 점근선은} $x$ \\text{축이다.}$$ $$ \\text{ㄹ.} x \\text{의 값이 증가하면} y \\text{의 값도 증가한다.}$$",
         "options": ["$$text{ㄱ,ㄴ}$$", "$$text{ㄱ,ㄷ}$$", "$$text{ㄱ,ㄹ}$$", "$$text{ㄴ,ㄷ}$$", "$$text{ㄷ,ㄹ}$$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -485,7 +485,7 @@ export const questions: Question[] = [
     },
     {
         "id": 48,
-        "text": "어느 호수에서 수면에서의 빛의 밝기가 $I_0 \\operatorname{cd}$ (칸델라)일 때, 수심이 $x \\mathrm{~m}$ 인 곳에서의 빛의 밝기를 $I_x \\mathrm{~cd}$ 라 하면<br \><br \>$$I_x=I_0 \\cdot 4^{-0.2 x}$$<br \><br \><br \>이 성립한다고 한다. 이 호수의 물속 어느 지점에서의 빛의 밝기가 수면에서의 빛의 밝기의 $\\frac{1}{64}$ 이라 할 때, 이 지점의 수심은 몇 m 인가?",
+        "text": "어느 호수에서 수면에서의 빛의 밝기가 $I_0 \\operatorname{cd}$ (칸델라)일 때, 수심이 $x \\mathrm{~m}$ 인 곳에서의 빛의 밝기를 $I_x \\mathrm{~cd}$ 라 하면<br /><br />$$I_x=I_0 \\cdot 4^{-0.2 x}$$<br /><br /><br />이 성립한다고 한다. 이 호수의 물속 어느 지점에서의 빛의 밝기가 수면에서의 빛의 밝기의 $\\frac{1}{64}$ 이라 할 때, 이 지점의 수심은 몇 m 인가?",
         "options": ["$$ 15 $$", "$$ 10 $$", "$$ 12 $$", "$$ 16 $$", "$$ 18 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -558,7 +558,7 @@ export const questions: Question[] = [
     },
     {
         "id": 55,
-        "text": "부등식 $\\left(x^2-2 x+1\\right)^{x-1}<1$ 의 해의 집합을 $S$ 라 할 때, 다음 중 집합 $S$ 의 원소가 아닌 것은? (단, $x \<br \>eq 1$ )",
+        "text": "부등식 $\\left(x^2-2 x+1\\right)^{x-1}<1$ 의 해의 집합을 $S$ 라 할 때, 다음 중 집합 $S$ 의 원소가 아닌 것은? (단, $x \<br />eq 1$ )",
         "options": ["$$\\frac{1}{2}$$", "$$\\frac{3}{2}$$", "$$-\\frac{3}{2}$$", "$$-\\frac{1}{2}$$", "$$-\\frac{5}{2}$$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -578,13 +578,13 @@ export const questions: Question[] = [
     },
     {
         "id": 57,
-        "text": "자연수 $n$ 에 대하여 직선 $x=n$ 이 두 함수<br \>$y=3^{-2 x+11}-9, y=12-2^{-x+4}$ 의 그래프와 만나는 점을 각각 $\\mathrm{A}_n, \\mathrm{~B}_n$ 이라 하자. 선분 $\\mathrm{A}_{\\mathrm{n}} \\mathrm{B}_{\\mathrm{n}}$ 위에 있는 $y$ 좌표가 정수인 점의 개수를 $f(n)$ 이라 할 때,<br \>$f(n)=f(n+1)$ 을 만족시키는 $n$ 의 최솟값은?",
+        "text": "자연수 $n$ 에 대하여 직선 $x=n$ 이 두 함수<br />$y=3^{-2 x+11}-9, y=12-2^{-x+4}$ 의 그래프와 만나는 점을 각각 $\\mathrm{A}_n, \\mathrm{~B}_n$ 이라 하자. 선분 $\\mathrm{A}_{\\mathrm{n}} \\mathrm{B}_{\\mathrm{n}}$ 위에 있는 $y$ 좌표가 정수인 점의 개수를 $f(n)$ 이라 할 때,<br />$f(n)=f(n+1)$ 을 만족시키는 $n$ 의 최솟값은?",
         "options": ["$$ 6 $$", "$$ 3 $$", "$$ 4 $$", "$$ 5 $$", "$$ 7 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
         "concept": 3,
         "hasImage": false,
-        "imageUrl": "https://ibb.co/yP7YsRq"
+        "imageUrl": "https://i.ibb.co/KhSLyGW/image.png"
     },
     {
         "id": 58,
@@ -668,7 +668,7 @@ export const questions: Question[] = [
     },
     {
         "id": 66,
-        "text": "$x>0$ 일 때, 자연수 $n$ 에 대하여 합수 $f_n(x)$ 가 다음 조건을 모두 만족시킨다.<br \>(가) $f_1(x)=\\log _2 x$<br \>(나) $f_{n+1}(x)=f_n\\left(x^3\\right)+f_n(x)$<br \>이때 $\\log _4\\left\{f_4(16)\\right\}$ 의 값을 구하시오.",
+        "text": "$x>0$ 일 때, 자연수 $n$ 에 대하여 합수 $f_n(x)$ 가 다음 조건을 모두 만족시킨다.<br />(가) $f_1(x)=\\log _2 x$<br />(나) $f_{n+1}(x)=f_n\\left(x^3\\right)+f_n(x)$<br />이때 $\\log _4\\left\{f_4(16)\\right\}$ 의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 3 $$", "$$ 2 $$", "$$ 6 $$", "$$ 5 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -688,7 +688,7 @@ export const questions: Question[] = [
     },
     {
         "id": 68,
-        "text": "이차방정식<br \><br \>$$x^2-2\\left(1+\\log _3 a\\right) x+4\\left(1+\\log _3 a\\right)=0$$<br \><br \><br \>이 실근을 갖지 않도륵 하는 양수 $a$ 의 값의 범위는?",
+        "text": "이차방정식<br /><br />$$x^2-2\\left(1+\\log _3 a\\right) x+4\\left(1+\\log _3 a\\right)=0$$<br /><br /><br />이 실근을 갖지 않도륵 하는 양수 $a$ 의 값의 범위는?",
         "options": ["$$\\frac{1}{3} < a < 27$$", "$$\\frac{1}{4} < a < 27$$", "$$a < \\frac{1}{3}$$", "$$a > 27$$", "$$1 < a < 3$$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -698,7 +698,7 @@ export const questions: Question[] = [
     },
     {
         "id": 69,
-        "text": "임의의 양수 $x$ 에 대하여 부등식<br \>$(\\log x)^2-\\log x+k>0$ 이 성립하도록 하는 실수 $k$ 의 값의 범위를 구하시오.",
+        "text": "임의의 양수 $x$ 에 대하여 부등식<br />$(\\log x)^2-\\log x+k>0$ 이 성립하도록 하는 실수 $k$ 의 값의 범위를 구하시오.",
         "options": ["$$ 10 $$", "$$ 100 $$", "$$ 1 $$", "$$ 50 $$", "$$ 5 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -708,7 +708,7 @@ export const questions: Question[] = [
     },
     {
         "id": 70,
-        "text": "유입되는 불순믈의 $\\frac{1}{5}$ 을 걸러내는 여과기가 있다. 이 여과기를 여러 개 겹쳐서 설치하여 전체 불순믈의 $\\frac{1}{10}$ 만 여과기를 통과하게 하려고 한다. 이때 필요한 여과기의 개수를 구하시오.<br \>(단, $\\log 2=0.3$ 으로 계산한다.)",
+        "text": "유입되는 불순믈의 $\\frac{1}{5}$ 을 걸러내는 여과기가 있다. 이 여과기를 여러 개 겹쳐서 설치하여 전체 불순믈의 $\\frac{1}{10}$ 만 여과기를 통과하게 하려고 한다. 이때 필요한 여과기의 개수를 구하시오.<br />(단, $\\log 2=0.3$ 으로 계산한다.)",
         "options": ["$$k > \\frac{1}{4}$$", "$$k < \\frac{1}{4}$$", "$$k = \\frac{1}{4}$$", "$$k \\geq \\frac{1}{4}$$", "$$k \\leq \\frac{1}{4}$$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -718,7 +718,7 @@ export const questions: Question[] = [
     },
     {
         "id": 71,
-        "text": "부등식 $\\left|\\log _3 x\\right|^2-\\left|\\log _3 x\\right|-6<0$ 의 해를 구하시오.<br \>(단, $[x]$ 는 $x$ 보다 크지 않은 최대의 정수이다.)",
+        "text": "부등식 $\\left|\\log _3 x\\right|^2-\\left|\\log _3 x\\right|-6<0$ 의 해를 구하시오.<br />(단, $[x]$ 는 $x$ 보다 크지 않은 최대의 정수이다.)",
         "options": ["$$\\frac{1}{3} \\leq x < 27$$", "$$x < \\frac{1}{3}$$", "$$x \\geq 27$$", "$$x \\leq 27$$", "$$\\frac{1}{4} \\leq x < 27$$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -748,7 +748,7 @@ export const questions: Question[] = [
     },
     {
         "id": 74,
-        "text": "$1<x<4$ 일 때, 세 수<br \><br \>$$A=\\log _2 x^2, B=\\left(\\log _2 x\\right)^2, \\quad C=\\log _2\\left(\\log _2 x\\right)$$<br \><br \><br \>의 대소 관계는?",
+        "text": "$1<x<4$ 일 때, 세 수<br /><br />$$A=\\log _2 x^2, B=\\left(\\log _2 x\\right)^2, \\quad C=\\log _2\\left(\\log _2 x\\right)$$<br /><br /><br />의 대소 관계는?",
         "options": ["$$A > B > C$$", "$$A > C > B$$", "$$B > A > C$$", "$$C > B > A$$", "$$B > C > A$$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -758,7 +758,7 @@ export const questions: Question[] = [
     },
     {
         "id": 75,
-        "text": "오른쪽 그림과 같이 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프가 직선 $y=k$ 와 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}$ 라 하고, 두 점 $\\mathrm{A}, \\mathrm{B}$ 들 지나면서 $x$ 축에 수직인 직선이 다른 함수의 그래프와 만나는 점을<br \><br \>각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. $\\overline{\\mathrm{AB}}=5$ 일 때, 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프와 두 선분 $\\mathrm{AC}, \\mathrm{BD}$ 로 둘러싸인 도형의 넓이들 구하시오.",
+        "text": "오른쪽 그림과 같이 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프가 직선 $y=k$ 와 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}$ 라 하고, 두 점 $\\mathrm{A}, \\mathrm{B}$ 들 지나면서 $x$ 축에 수직인 직선이 다른 함수의 그래프와 만나는 점을<br /><br />각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. $\\overline{\\mathrm{AB}}=5$ 일 때, 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프와 두 선분 $\\mathrm{AC}, \\mathrm{BD}$ 로 둘러싸인 도형의 넓이들 구하시오.",
         "options": ["$$ 10 $$", "$$ 15 $$", "$$ 5 $$", "$$ 20 $$", "$$ 25 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -768,8 +768,8 @@ export const questions: Question[] = [
     },
     {
         "id": 76,
-        "text": "옳은 것만을 보기에서 있는 대로 고르시오.<br \>[보 기]<br \>ㄱ. $x>1$ 이면 $\\log _2 x>\\log _3 x$ 이다.<br \>ㄴ. $1<x<2$ 이면 $\\log _2 x<\\log _3(x+1)$ 이다.<br \>ㄷ. 방정식 $2^x+\\log _2 x=0$ 의 해를 $x=\\alpha$ 라 하면 $\\frac{1}{2}<\\alpha<1$ 이다.",
-        "options": ["$$text{ㄱ,ㄴ}$$", "$$text{ㄱ}$$", "$$text{ㄱ,ㄴ,ㄷ}$$", "$$text{ㄴ}$$", "$$text{ㄴ,ㄷ}$$"],
+        "text": "옳은 것만을 보기에서 있는 대로 고르시오.<br />[보 기]<br />ㄱ. $x>1$ 이면 $\\log _2 x>\\log _3 x$ 이다.<br />ㄴ. $1<x<2$ 이면 $\\log _2 x<\\log _3(x+1)$ 이다.<br />ㄷ. 방정식 $2^x+\\log _2 x=0$ 의 해를 $x=\\alpha$ 라 하면 $\\frac{1}{2}<\\alpha<1$ 이다.",
+        "options": ["$$\\text{ㄱ,ㄴ}$$", "$$\\text{ㄱ}$$", "$$\\text{ㄱ,ㄴ,ㄷ}$$", "$$\\text{ㄴ}$$", "$$\\text{ㄴ,ㄷ}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
         "concept": 1,
@@ -778,7 +778,7 @@ export const questions: Question[] = [
     },
     {
         "id": 77,
-        "text": "직선 $y=x$ 위의<br \><br \>한 점 P를 지나고 $x$ 축에 평행한 직선이 곡선<br \>$y=\\log _4\\left(x-\\frac{1}{4}\\right)$ 과<br \>만나는 점을 Q , 점 P 를 지나고 $y$ 축에 평행한<br \>직선이 곡선 $y=2^x$ 과 만나는 점을 R라 하자. 삼각형 PQR 가 $\\overline{\\mathrm{PQ}}=\\overline{\\mathrm{PR}}$ 인 이등변삼각형일 때, 삼각형 PQR 의 넓이는?",
+        "text": "직선 $y=x$ 위의<br /><br />한 점 P를 지나고 $x$ 축에 평행한 직선이 곡선<br />$y=\\log _4\\left(x-\\frac{1}{4}\\right)$ 과<br />만나는 점을 Q , 점 P 를 지나고 $y$ 축에 평행한<br />직선이 곡선 $y=2^x$ 과 만나는 점을 R라 하자. 삼각형 PQR 가 $\\overline{\\mathrm{PQ}}=\\overline{\\mathrm{PR}}$ 인 이등변삼각형일 때, 삼각형 PQR 의 넓이는?",
         "options": ["$$\\frac{9}{8}$$", "$$\\frac{7}{6}$$", "$$\\frac{8}{7}$$", "$$\\frac{10}{9}$$", "$$\\frac{11}{10}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -788,7 +788,7 @@ export const questions: Question[] = [
     },
     {
         "id": 78,
-        "text": "함수 $y=\\log _2 x$ 의 그래프가<br \>$x$ 축과 만나는 점을 A 라 하자. 선분 OA 를 $x$ 축의 방향으로 5 만큼,<br \>$y$ 축의 방향으로 3 만큼 평행이동한<br \>선분과 $y=\\log _2(x+a)$ 의 그래프가 만날 때, 실수 $a$ 의 최댓값과 최솟값의 합을 구하시오. (단, O 는 원점이다.)",
+        "text": "함수 $y=\\log _2 x$ 의 그래프가<br />$x$ 축과 만나는 점을 A 라 하자. 선분 OA 를 $x$ 축의 방향으로 5 만큼,<br />$y$ 축의 방향으로 3 만큼 평행이동한<br />선분과 $y=\\log _2(x+a)$ 의 그래프가 만날 때, 실수 $a$ 의 최댓값과 최솟값의 합을 구하시오. (단, O 는 원점이다.)",
         "options": ["$$ 5 $$", "$$ 4 $$", "$$ 8 $$", "$$ 7 $$", "$$ 6 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -798,7 +798,7 @@ export const questions: Question[] = [
     },
     {
         "id": 79,
-        "text": "모든 실수 $x$ 에 대하여 부등식<br \><br \>$$\\left(1-\\log _3 a\\right) x^2-2\\left(1-\\log _3 a\\right) x+\\log _3 a>0$$<br \><br \><br \>이 성립하도록 하는 모든 자연수 $a$ 의 값의 합을 구하시오.",
+        "text": "모든 실수 $x$ 에 대하여 부등식<br /><br />$$\\left(1-\\log _3 a\\right) x^2-2\\left(1-\\log _3 a\\right) x+\\log _3 a>0$$<br /><br /><br />이 성립하도록 하는 모든 자연수 $a$ 의 값의 합을 구하시오.",
         "options": ["$$ 5 $$", "$$ 6 $$", "$$ 3 $$", "$$ 9 $$", "$$ 10 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
