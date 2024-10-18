@@ -140,7 +140,8 @@ const DiagnosticTest: React.FC = () => {
             로그아웃
           </button>
         </div>*/}
-        <div className="flex justify-between items-center mb-6 p-4">
+        <div className="flex justify-between items-center mb-6 py-1 px-4">
+
           <p className="text-lg font-semibold">
             문제 {answeredQuestions.length + 1} / 10
           </p>
