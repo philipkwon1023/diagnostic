@@ -49,6 +49,38 @@ const parseMathText = (text: string) => {
   });
 };
 
+const callGeminiAPI = async (userRawData: string, prompt: string) => {
+  try {
+    const response = await fetch('/api/gemini', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userRawData, prompt }),
+    });
+
+    if (!response.ok) {
+      throw new Error('API 요청이 실패했습니다.');
+    }
+
+    const data = await response.json();
+    console.log('API 응답 데이터:', data.response);
+
+    return data.response;
+  } catch (error) {
+    console.error('API 요청 중 오류 발생:', error);
+    return '진단 결과를 생성하는 중 오류가 발생했습니다. 네트워크 상태를 확인하거나 나중에 다시 시도해주세요.';
+  }
+};
+
+const DiagnosticResult: React.FC<{ content: string }> = ({ content }) => {
+  return (
+    <div className="markdown-content bg-gray-100 p-4 rounded-lg shadow-md">
+      <div dangerouslySetInnerHTML={{ __html: content }} />
+    </div>
+  );
+};
+
 const Results: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -69,11 +101,86 @@ const Results: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // 진단 결과 생성 로직...
-    // 이 부분은 기존 코드와 동일하게 유지됩니다.
     const generateDiagnosticResult = async () => {
-      // 진단 결과 생성 로직
-      setIsLoading(false);
+      setIsLoading(true);
+      setDebugInfo(''); // 디버그 정보 초기화
+      const userRawData = 
+        총점: ${score}/${totalQuestions}
+        평균 소요 시간: ${averageTime.toFixed(2)}초
+        문항별 결과:
+        ${questions.map((q, i) => 
+          문제 ${i + 1}: ${userAnswers[i] === q.correctAnswer ? '정답' : '오답'}
+          문제 원문: ${q.text}
+          소요 시간: ${timeSpent[i].toFixed(2)}초
+          난이도: ${q.difficulty}
+          개념: ${q.concept}
+        ).join('\n')}
+      ;
+
+      const prompt = 
+위 데이터를 바탕으로 사용자의 수학 학습 상태를 진단하고, 강점과 약점을 분석해주세요. 
+참고로 난이도는 1~4 사이의 정수로 표현되며, 난이도가 높을수록 어려운 문제를 의미합니다. 
+출력 형식은 불필요한 제목은 없이 바로 다음 structure와 유사한 구조를 유지하고 마크다운 언어로 출력해주세요. 
+구조를 유지하는 것이지 내용이 같으면 안됩니다. 내용은 userRawData를 분석하여 다양하게 분석해주세요.
+따뜻한 한마디도 분석결과에 맞게 적절히 만들어주세요. 수학공부를 응원하는 메세지를 담을 수 있도록.
+(주의)1.structure 양식 이외의 얘기는 일절 하지않는다!
+2."따뜻한 한마디"는 다양하게 사용자를 위로하고 격려하는 멘트를 제공한다.
+
+structure={
+**총평** 
+*총점이 3점으로 아직 수학 개념에 대한 이해도가 부족한 것으로 판단됩니다.*
+
+**강점**
+*문제에서 정답을 맞힌 부분에 대한 강점 분석*
+
+**약점**
+*문제에서 틀린 부분에 대한 약점 분석*
+
+**학습 조언**
+*기본 개념부터 탄탄하게 학습.*
+*오답 노트를 활용하여 반복 학습.*
+*다양한 문제 유형을 풀어보면서 문제 해결 전략을 익히기.*
+*꾸준한 학습을 통해 실력 향상 가능.*
+
+**따뜻한 한마디**
+*수학은 조금만 노력하면 재미를 느낄 수 있는 학문입니다. 꾸준한 노력과 재미를 느끼며 수학을 공부해보세요. 힘내요!*
+}
+;
+
+       try {
+        const result = await callGeminiAPI(userRawData, prompt);
+        console.log('API 응답:', result);
+        setDebugInfo(prev => prev + API 응답 타입: ${typeof result}\n);
+        setDebugInfo(prev => prev + API 응답 내용: ${JSON.stringify(result, null, 2)}\n);
+
+        let contentToDisplay = '';
+
+        if (typeof result === 'string') {
+          // 문자열인 경우 그대로 사용
+          contentToDisplay = result;
+        } else if (typeof result === 'object') {
+          // 객체인 경우 'content' 필드 확인
+          contentToDisplay = result.content || JSON.stringify(result);
+        } else {
+          // 예상치 못한 타입인 경우
+          throw new Error(Unexpected response type: ${typeof result});
+        }
+
+        // Markdown을 간단한 HTML로 변환
+        const formattedContent = contentToDisplay
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/\n/g, '<br>');
+
+        setDiagnosticResult(formattedContent);
+        setDebugInfo(prev => prev + 처리된 내용: ${formattedContent}\n);
+      } catch (error) {
+        console.error("Gemini API 호출 오류:", error);
+        setDiagnosticResult(진단 결과를 불러오는 중 오류가 발생했습니다: ${error.message});
+        setDebugInfo(prev => prev + 오류 발생: ${error.message}\n);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     generateDiagnosticResult();
@@ -182,7 +289,7 @@ const Results: React.FC = () => {
             >
               <h3 className="text-xl font-semibold mb-2">
                 문제 {index + 1}{' '}
-                {Array(5)
+                {Array(4)
                   .fill('★')
                   .fill('☆', question.difficulty)
                   .join('')}
