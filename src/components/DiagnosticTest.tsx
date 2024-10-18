@@ -148,9 +148,10 @@ const DiagnosticTest: React.FC = () => {
         <div className="mb-6">
           <div className="text-lg">{parseMathText(currentQuestion.text)}</div>
           {currentQuestion.hasImage && (
-            <div className="mt-4">
+            <div className="mt-4 flex justify-center">
               <img src={currentQuestion.imageUrl} alt="문제 이미지" className="max-w-full h-auto" />
             </div>
+
           )}
         </div>
         <div className="space-y-2">
