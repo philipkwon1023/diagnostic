@@ -119,7 +119,7 @@ const DiagnosticTest: React.FC = () => {
     // 정답 여부를 검토 (correctAnswer에 -1을 해줌)
     const isCorrect = originalAnswerIndex === currentQuestion!.correctAnswer - 1;
 
-    console.log(`선택한 원본 인덱스: ${originalAnswerIndex + 1}, 정답 인덱스: ${currentQuestion!.correctAnswer}, 정답 여부: ${isCorrect}`);
+    //console.log(`선택한 원본 인덱스: ${originalAnswerIndex + 1}, 정답 인덱스: ${currentQuestion!.correctAnswer}, 정답 여부: ${isCorrect}`);
 
     setUserAnswers(newUserAnswers);
     setTimeSpent(newTimeSpent);
