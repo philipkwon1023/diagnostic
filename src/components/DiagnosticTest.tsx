@@ -50,11 +50,16 @@ const DiagnosticTest: React.FC = () => {
 
   // 선지를 섞고 정답의 새로운 위치를 반환하는 함수
   const shuffleOptions = (options: string[], correctAnswerIndex: number) => {
-    const shuffled = [...options]
-      .map((value, index) => ({ value, index }))
-      .sort(() => Math.random() - 0.5);
-    const newOptions = shuffled.map(item => item.value);
-    const newCorrectIndex = shuffled.findIndex(item => item.index === correctAnswerIndex); // 정답의 새로운 인덱스를 추적
+    // 각 옵션을 원래 인덱스와 함께 배열로 묶음
+    const indexedOptions = options.map((option, index) => ({ option, index }));
+
+    // 옵션을 섞음
+    const shuffled = indexedOptions.sort(() => Math.random() - 0.5);
+
+    // 섞인 배열에서의 새로운 옵션과 새로운 정답 인덱스를 반환
+    const newOptions = shuffled.map(item => item.option);
+    const newCorrectIndex = shuffled.findIndex(item => item.index === correctAnswerIndex); // 섞인 배열에서 정답 인덱스 찾기
+
     return { newOptions, newCorrectIndex };
   };
 
@@ -106,7 +111,7 @@ const DiagnosticTest: React.FC = () => {
     // 정답 여부를 검토
     const isCorrect = answerIndex === shuffledCorrectIndex;
 
-    console.log(`답변 인덱스: ${answerIndex}, 실제 정답 인덱스: ${shuffledCorrectIndex}, 정답 여부: ${isCorrect}`);
+    console.log(`선택: ${answerIndex+1}, 정답: ${shuffledCorrectIndex+1}, 정답 여부: ${isCorrect}`);
 
     setUserAnswers(newUserAnswers);
     setTimeSpent(newTimeSpent);
