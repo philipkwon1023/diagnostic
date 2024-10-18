@@ -54,7 +54,7 @@ const parseMathText = (text: string) => {
 // Google Gemini API 호출 함수
 const callGeminiAPI = async (userRawData: string, prompt: string) => {
   try {
-    const response = await fetch('/api/gemini', {  // Vercel의 프록시를 사용하도록 상대 경로로 설정
+    const response = await fetch('/api/gemini', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -67,6 +67,13 @@ const callGeminiAPI = async (userRawData: string, prompt: string) => {
     }
 
     const data = await response.json();
+    
+    // 데이터가 문자열 형식일 경우 객체로 변환
+    if (typeof data.response === 'string') {
+      const parsedData = JSON.parse(data.response.replace(/```json|```/g, '')); // JSON의 백틱 제거 후 파싱
+      return parsedData;
+    }
+    
     return data;
   } catch (error) {
     console.error('API 요청 중 오류 발생:', error);
