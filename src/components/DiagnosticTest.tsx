@@ -140,7 +140,7 @@ const DiagnosticTest: React.FC = () => {
             로그아웃
           </button>
         </div>*/}
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-6 p-4">
           <p className="text-lg font-semibold">
             문제 {answeredQuestions.length + 1} / 10
           </p>
@@ -148,7 +148,7 @@ const DiagnosticTest: React.FC = () => {
             경과 시간: {elapsedTime.toFixed(0)}초
           </p>
         </div>
-        <div className="mb-6">
+        <div className="mb-6 p-4">
           <div className="text-lg">{parseMathText(currentQuestion.text)}</div>
           {currentQuestion.hasImage && (
             <div className="mt-4 flex justify-center">
