@@ -256,7 +256,7 @@ structure={
             </h3>
             <div className="mb-2">{parseMathText(question.text)}</div>
             {question.hasImage && (
-              <div className="mt-2 mb-2">
+              <div className="mt-2 mb-2 flex justify-center">
                 <img src={question.imageUrl} alt="문제 이미지" className="max-w-full h-auto" />
               </div>
             )}
