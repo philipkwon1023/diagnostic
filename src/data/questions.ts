@@ -3,7 +3,7 @@ import { Question } from '../types/question';
 export const questions: Question[] = [
     {
         "id": 1,
-        "text": "다음을 계산하시오.<br /><br />$$\\sqrt{(-2)^2}+\\sqrt[3]{(-3)^3}+\\sqrt[4]{(-4)^4}+\\cdots+\\sqrt[10]{(-10)^{10}}$$",
+        "text": "다음을 계산하시오.$$\\sqrt{(-2)^2}+\\sqrt[3]{(-3)^3}+\\sqrt[4]{(-4)^4}+\\cdots+\\sqrt[10]{(-10)^{10}}$$",
         "options": ["$$ 6 $$", "$$ -6 $$", "$$ 54 $$", "$$ 5 $$", "$$ 4 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -107,7 +107,7 @@ export const questions: Question[] = [
     },
     {
         "id": 11,
-        "text": "실수 $x$ 와 자연수 $n$ 에 대하여 $x$ 의 $n$ 제곱근 중에서 실수인 것의 개수를 $R(x, n)$ )이라 하자.<br /><br />이때<br /><br />$$R(10,10)+R(\\sqrt{10}, 5)+R(-\\sqrt{10}, 5)+R(-10,10)$$<br /><br /><br />의 값을 구하시오.",
+        "text": "실수 $x$ 와 자연수 $n$ 에 대하여 $x$ 의 $n$ 제곱근 중에서 실수인 것의 개수를 $R(x, n)$ )이라 하자. 이때 $$R(10,10)+R(\\sqrt{10}, 5)+R(-\\sqrt{10}, 5)+R(-10,10)$$의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 5 $$", "$$ 6 $$", "$$ 2 $$", "$$ 3 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -142,7 +142,7 @@ export const questions: Question[] = [
     },
     {
         "id": 14,
-        "text": "$2^x=3^{-y}, 9^y=6^z$ 일 때, $\\frac{1}{x}-\\frac{1}{y}$ 을 $z$ 를 이용하여 나타내면? (단, $x y z \<br />eq 0$ )",
+        "text": "$2^x=3^{-y}, 9^y=6^z$ 일 때, $\\frac{1}{x}-\\frac{1}{y}$ 을 $z$ 를 이용하여 나타내면? (단, $x y z \\neq 0$ )",
         "options": ["$$-\\frac{2}{z}$$", "$$-\\frac{1}{z}$$", "$$\\frac{1}{z}$$", "$$ z $$", "$$ 2z $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -205,7 +205,7 @@ export const questions: Question[] = [
     },
     {
         "id": 20,
-        "text": "실수 $x$ 와 2 이상의 자연수 $n$ 에 대하여 $x$ 의 $n$ 제곱근 중에서 실수인 것의 개수를 $f_n(x)$ 라 할 때,<br /><br />$$f_3\\left(\\sqrt[5]{(-1)^5}\\right)+f_4\\left(\\sqrt[3]{-\\frac{27}{8}}\\right)+f_5\\left(\\left(-\\frac{1}{3}\\right)^4\\right)$$<br /><br /><br />의 값을 구하시오.",
+        "text": "실수 $x$ 와 2 이상의 자연수 $n$ 에 대하여 $x$ 의 $n$ 제곱근 중에서 실수인 것의 개수를 $f_n(x)$ 라 할 때,$$f_3\\left(\\sqrt[5]{(-1)^5}\\right)+f_4\\left(\\sqrt[3]{-\\frac{27}{8}}\\right)+f_5\\left(\\left(-\\frac{1}{3}\\right)^4\\right)$$<br />의 값을 구하시오.",
         "options": ["$$ 2 $$", "$$ 3 $$", "$$ 4 $$", "$$ 5 $$", "$$ 1 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -235,7 +235,7 @@ export const questions: Question[] = [
     },
     {
         "id": 23,
-        "text": "1 이 아닌 양수 $x$ 에 대하여<br /><br />$$\\frac{1}{\\log _2 x}+\\frac{1}{\\log _3 x}+\\frac{1}{\\log _4 x}=\\log _x k$$<br /><br /><br />를 만족시키는 $k$ 의 값을 구하시오.",
+        "text": "1 이 아닌 양수 $x$ 에 대하여$$\\frac{1}{\\log _2 x}+\\frac{1}{\\log _3 x}+\\frac{1}{\\log _4 x}=\\log _x k$$<br />를 만족시키는 $k$ 의 값을 구하시오.",
         "options": ["$$ 24 $$", "$$ 12 $$", "$$ 9 $$", "$$ 8 $$", "$$ 16 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -265,7 +265,7 @@ export const questions: Question[] = [
     },
     {
         "id": 26,
-        "text": "다음 그림과 같이 $\\overline{\\mathrm{AB}}=3, \\overline{\\mathrm{AC}}=2$ 인 삼각형 ABC 에서 $\\angle \\mathrm{A}$ 의 이 등분선이 변 BC 와 만나는 점을 D 라 할 때, $\\overline{\\mathrm{BD}}=\\log _3 x^2, \\overline{\\mathrm{CD}}=\\log _3 y$ 이 다. 1 보다 큰 두 양수 $x, y$ 에 대하여 $x=y^k$ 일 때, 상수 $k$ 의 값을 구하시 오.",
+        "text": "다음 그림과 같이 $\\overline{\\mathrm{AB}}=3, \\overline{\\mathrm{AC}}=2$ 인 삼각형 ABC 에서 $\\angle \\mathrm{A}$ 의 이 등분선이 변 BC 와 만나는 점을 D 라 할 때, $\\overline{\\mathrm{BD}}=\\log _3 x^2, \\overline{\\mathrm{CD}}=\\log _3 y$ 이다. 1 보다 큰 두 양수 $x, y$ 에 대하여 $x=y^k$ 일 때, 상수 $k$ 의 값을 구하시 오.",
         "options": ["$$\\frac{3}{4}$$", "$$\\frac{1}{2}$$", "$$\\frac{3}{5}$$", "$$\\frac{2}{3}$$", "$$\\frac{5}{4}$$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -345,7 +345,7 @@ export const questions: Question[] = [
     },
     {
         "id": 34,
-        "text": "216 의 모든 양의 약수를 $a_1, a_2, a_3, \\cdots, a_{10}$ 이라 할 때,<br /><br />$$\\log _6 a_1+\\log _6 a_2+\\log _6 a_3+\\cdots+\\log _6 a_{10}$$\"<br /><br /><br />의 값을 구하시오.",
+        "text": "216 의 모든 양의 약수를 $a_1, a_2, a_3, \\cdots, a_{10}$ 이라 할 때,$$\\log _6 a_1+\\log _6 a_2+\\log _6 a_3+\\cdots+\\log _6 a_{10}$$ 의 값을 구하시오.",
         "options": ["$$ 24 $$", "$$ 26 $$", "$$ 22 $$", "$$ 20 $$", "$$ 18 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -395,7 +395,7 @@ export const questions: Question[] = [
     },
     {
         "id": 39,
-        "text": "자연수 $k$ 에 대하여 $a_k$ 가 0 또는 1 이고<br /><br />$$\\log _5 2=\\frac{a_1}{2}+\\frac{a_2}{2^2}+\\frac{a_3}{2^3}+\\frac{a_4}{2^4}+\\cdots$$<br /><br /><br />일 때, $a_1+a_2+a_3$ 의 값을 구하시오.",
+        "text": "자연수 $k$ 에 대하여 $a_k$ 가 0 또는 1 이고$$\\log _5 2=\\frac{a_1}{2}+\\frac{a_2}{2^2}+\\frac{a_3}{2^3}+\\frac{a_4}{2^4}+\\cdots$$일 때, $a_1+a_2+a_3$ 의 값을 구하시오.",
         "options": ["$$ 2 $$", "$$ 1 $$", "$$ 0 $$", "$$ 3 $$", "$$ 4 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -485,7 +485,7 @@ export const questions: Question[] = [
     },
     {
         "id": 48,
-        "text": "어느 호수에서 수면에서의 빛의 밝기가 $I_0 \\operatorname{cd}$ (칸델라)일 때, 수심이 $x \\mathrm{~m}$ 인 곳에서의 빛의 밝기를 $I_x \\mathrm{~cd}$ 라 하면<br /><br />$$I_x=I_0 \\cdot 4^{-0.2 x}$$<br /><br /><br />이 성립한다고 한다. 이 호수의 물속 어느 지점에서의 빛의 밝기가 수면에서의 빛의 밝기의 $\\frac{1}{64}$ 이라 할 때, 이 지점의 수심은 몇 m 인가?",
+        "text": "어느 호수에서 수면에서의 빛의 밝기가 $I_0 \\operatorname{cd}$ (칸델라)일 때, 수심이 $x \\mathrm{~m}$ 인 곳에서의 빛의 밝기를 $I_x \\mathrm{~cd}$ 라 하면$$I_x=I_0 \\cdot 4^{-0.2 x}$$이 성립한다고 한다. 이 호수의 물속 어느 지점에서의 빛의 밝기가 수면에서의 빛의 밝기의 $\\frac{1}{64}$ 이라 할 때, 이 지점의 수심은 몇 m 인가?",
         "options": ["$$ 15 $$", "$$ 10 $$", "$$ 12 $$", "$$ 16 $$", "$$ 18 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -668,7 +668,7 @@ export const questions: Question[] = [
     },
     {
         "id": 66,
-        "text": "$x>0$ 일 때, 자연수 $n$ 에 대하여 합수 $f_n(x)$ 가 다음 조건을 모두 만족시킨다.<br />(가) $f_1(x)=\\log _2 x$<br />(나) $f_{n+1}(x)=f_n\\left(x^3\\right)+f_n(x)$<br />이때 $\\log _4\\left\{f_4(16)\\right\}$ 의 값을 구하시오.",
+        "text": "$x>0$ 일 때, 자연수 $n$ 에 대하여 합수 $f_n(x)$ 가 다음 조건을 모두 만족시킨다.<br />(가) $f_1(x)=\\log _2 x$<br />(나) $f_{n+1}(x)=f_n\\left(x^3\\right)+f_n(x)$<br />이때 $\\log_4\\left\\{f_4(16)\\right\\}$ 의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 3 $$", "$$ 2 $$", "$$ 6 $$", "$$ 5 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -748,7 +748,7 @@ export const questions: Question[] = [
     },
     {
         "id": 74,
-        "text": "$1<x<4$ 일 때, 세 수<br /><br />$$A=\\log _2 x^2, B=\\left(\\log _2 x\\right)^2, \\quad C=\\log _2\\left(\\log _2 x\\right)$$<br /><br /><br />의 대소 관계는?",
+        "text": "$1<x<4$ 일 때, 세 수$$A=\\log _2 x^2, B=\\left(\\log _2 x\\right)^2, \\quad C=\\log _2\\left(\\log _2 x\\right)$$의 대소 관계는?",
         "options": ["$$A > B > C$$", "$$A > C > B$$", "$$B > A > C$$", "$$C > B > A$$", "$$B > C > A$$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -758,7 +758,7 @@ export const questions: Question[] = [
     },
     {
         "id": 75,
-        "text": "다음 그림과 같이 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프가 직선 $y=k$ 와 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}$ 라 하고, 두 점 $\\mathrm{A}, \\mathrm{B}$ 들 지나면서 $x$ 축에 수직인 직선이 다른 함수의 그래프와 만나는 점을<br /><br />각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. $\\overline{\\mathrm{AB}}=5$ 일 때, 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프와 두 선분 $\\mathrm{AC}, \\mathrm{BD}$ 로 둘러싸인 도형의 넓이들 구하시오.",
+        "text": "다음 그림과 같이 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프가 직선 $y=k$ 와 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}$ 라 하고, 두 점 $\\mathrm{A}, \\mathrm{B}$ 들 지나면서 $x$ 축에 수직인 직선이 다른 함수의 그래프와 만나는 점을 각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. $\\overline{\\mathrm{AB}}=5$ 일 때, 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프와 두 선분 $\\mathrm{AC}, \\mathrm{BD}$ 로 둘러싸인 도형의 넓이들 구하시오.",
         "options": ["$$ 10 $$", "$$ 15 $$", "$$ 5 $$", "$$ 20 $$", "$$ 25 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
@@ -778,7 +778,7 @@ export const questions: Question[] = [
     },
     {
         "id": 77,
-        "text": "직선 $y=x$ 위의<br /><br />한 점 P를 지나고 $x$ 축에 평행한 직선이 곡선<br />$y=\\log _4\\left(x-\\frac{1}{4}\\right)$ 과<br />만나는 점을 Q , 점 P 를 지나고 $y$ 축에 평행한<br />직선이 곡선 $y=2^x$ 과 만나는 점을 R라 하자. 삼각형 PQR 가 $\\overline{\\mathrm{PQ}}=\\overline{\\mathrm{PR}}$ 인 이등변삼각형일 때, 삼각형 PQR 의 넓이는?",
+        "text": "직선 $y=x$ 위의 한 점 P를 지나고 $x$ 축에 평행한 직선이 곡선<br />$y=\\log _4\\left(x-\\frac{1}{4}\\right)$ 과<br />만나는 점을 Q , 점 P 를 지나고 $y$ 축에 평행한<br />직선이 곡선 $y=2^x$ 과 만나는 점을 R라 하자. 삼각형 PQR 가 $\\overline{\\mathrm{PQ}}=\\overline{\\mathrm{PR}}$ 인 이등변삼각형일 때, 삼각형 PQR 의 넓이는?",
         "options": ["$$\\frac{9}{8}$$", "$$\\frac{7}{6}$$", "$$\\frac{8}{7}$$", "$$\\frac{10}{9}$$", "$$\\frac{11}{10}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -798,7 +798,7 @@ export const questions: Question[] = [
     },
     {
         "id": 79,
-        "text": "모든 실수 $x$ 에 대하여 부등식<br /><br />$$\\left(1-\\log _3 a\\right) x^2-2\\left(1-\\log _3 a\\right) x+\\log _3 a>0$$<br /><br /><br />이 성립하도록 하는 모든 자연수 $a$ 의 값의 합을 구하시오.",
+        "text": "모든 실수 $x$ 에 대하여 부등식$$\\left(1-\\log _3 a\\right) x^2-2\\left(1-\\log _3 a\\right) x+\\log _3 a>0$$이 성립하도록 하는 모든 자연수 $a$ 의 값의 합을 구하시오.",
         "options": ["$$ 5 $$", "$$ 6 $$", "$$ 3 $$", "$$ 9 $$", "$$ 10 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
