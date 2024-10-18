@@ -50,7 +50,9 @@ const DiagnosticTest: React.FC = () => {
 
   // 선지를 섞고 정답의 새로운 위치를 반환하는 함수
   const shuffleOptions = (options: string[], correctAnswerIndex: number) => {
-    const shuffled = [...options].map((value, index) => ({ value, index })).sort(() => Math.random() - 0.5);
+    const shuffled = [...options]
+      .map((value, index) => ({ value, index }))
+      .sort(() => Math.random() - 0.5);
     const newOptions = shuffled.map(item => item.value);
     const newCorrectIndex = shuffled.findIndex(item => item.index === correctAnswerIndex); // 정답의 새로운 인덱스를 추적
     return { newOptions, newCorrectIndex };
@@ -100,11 +102,16 @@ const DiagnosticTest: React.FC = () => {
     const newUserAnswers = [...userAnswers, answerIndex];
     const newTimeSpent = [...timeSpent, timeElapsed];
     const newAnsweredQuestions = [...answeredQuestions, currentQuestion!.id];
-  
+
+    // 정답 여부를 검토
+    const isCorrect = answerIndex === shuffledCorrectIndex;
+
+    console.log(`답변 인덱스: ${answerIndex}, 실제 정답 인덱스: ${shuffledCorrectIndex}, 정답 여부: ${isCorrect}`);
+
     setUserAnswers(newUserAnswers);
     setTimeSpent(newTimeSpent);
     setAnsweredQuestions(newAnsweredQuestions);
-  
+
     if (!isTestComplete(newAnsweredQuestions)) {
       const nextQuestion = selectNextQuestion(allQuestions, newAnsweredQuestions, newUserAnswers);
       setCurrentQuestion(nextQuestion);
