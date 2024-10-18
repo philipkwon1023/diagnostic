@@ -67,7 +67,7 @@ export const questions: Question[] = [
     },
     {
         "id": 7,
-        "text": "오른쪽 그림과 같은 정육면체의 부피가 $\\sqrt{3}$ 일 때, 삼각형 AFC의 넓이는 $\\frac{\\sqrt{3^m}}{2}$ 이다. 이때 서로소인 두 자연수 $m, n$ 에 대하여 $m+n$ 의 값 을 구하시오. (단, $n \\geq 2$ )",
+        "text": "다음 그림과 같은 정육면체의 부피가 $\\sqrt{3}$ 일 때, 삼각형 AFC의 넓이는 $\\frac{\\sqrt{3^m}}{2}$ 이다. 이때 서로소인 두 자연수 $m, n$ 에 대하여 $m+n$ 의 값 을 구하시오. (단, $n \\geq 2$ )",
         "options": ["$$ 11 $$", "$$ 13 $$", "$$ 3 $$", "$$ 8 $$", "$$ 7 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -162,7 +162,7 @@ export const questions: Question[] = [
     },
     {
         "id": 16,
-        "text": "오른쪽 그림과 같이 선분 AB 를 지름으로 하는 원 위의 두 점 $\\mathrm{P}, \\mathrm{Q}$ 에 대하여 두 선분 $\\mathrm{AB}, \\mathrm{PQ}$ 의 교점을 R 라 하자. $\\overline{\\mathrm{AP}}=\\overline{\\mathrm{BP}}$ 이 고, $\\overline{\\mathrm{AR}}=4 \\sqrt[3]{3}, \\overline{\\mathrm{BR}}=3 \\sqrt[3]{3}$ 일 때, $\\frac{5}{7} \\overline{\\mathrm{BQ}}$ 의 값은?",
+        "text": "다음 그림과 같이 선분 AB 를 지름으로 하는 원 위의 두 점 $\\mathrm{P}, \\mathrm{Q}$ 에 대하여 두 선분 $\\mathrm{AB}, \\mathrm{PQ}$ 의 교점을 R 라 하자. $\\overline{\\mathrm{AP}}=\\overline{\\mathrm{BP}}$ 이 고, $\\overline{\\mathrm{AR}}=4 \\sqrt[3]{3}, \\overline{\\mathrm{BR}}=3 \\sqrt[3]{3}$ 일 때, $\\frac{5}{7} \\overline{\\mathrm{BQ}}$ 의 값은?",
         "options": ["$$\\sqrt[]{81}$$",
             "$$24\\sqrt[3]{27}$$", "$$24\\sqrt[]{27}$$",
             "$$24\\sqrt[3]{3}$$", "$$24\\sqrt[]{3}$$"
@@ -215,7 +215,7 @@ export const questions: Question[] = [
     },
     {
         "id": 21,
-        "text": "이차방정식 $x^2-6 x+2=0$ 의 두 근을 $\\alpha, \\beta$ 라 할 때,<br /><br />$$\\log _3(\\alpha+1)+\\log _3(\\beta+1)$$<br /><br /><br />의 값을 구하시오.",
+        "text": "이차방정식 $x^2-6 x+2=0$ 의 두 근을 $\\alpha, \\beta$ 라 할 때,$$\\log _3(\\alpha+1)+\\log _3(\\beta+1)$$의 값을 구하시오.",
         "options": ["$$ 2 $$", "$$ 3 $$", "$$ 4 $$", "$$ 1 $$", "$$ 0 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -265,7 +265,7 @@ export const questions: Question[] = [
     },
     {
         "id": 26,
-        "text": "오른쪽 그림과 같이 $\\overline{\\mathrm{AB}}=3, \\overline{\\mathrm{AC}}=2$ 인 삼각형 ABC 에서 $\\angle \\mathrm{A}$ 의 이 등분선이 변 BC 와 만나는 점을 D 라 할 때, $\\overline{\\mathrm{BD}}=\\log _3 x^2, \\overline{\\mathrm{CD}}=\\log _3 y$ 이 다. 1 보다 큰 두 양수 $x, y$ 에 대하여 $x=y^k$ 일 때, 상수 $k$ 의 값을 구하시 오.",
+        "text": "다음 그림과 같이 $\\overline{\\mathrm{AB}}=3, \\overline{\\mathrm{AC}}=2$ 인 삼각형 ABC 에서 $\\angle \\mathrm{A}$ 의 이 등분선이 변 BC 와 만나는 점을 D 라 할 때, $\\overline{\\mathrm{BD}}=\\log _3 x^2, \\overline{\\mathrm{CD}}=\\log _3 y$ 이 다. 1 보다 큰 두 양수 $x, y$ 에 대하여 $x=y^k$ 일 때, 상수 $k$ 의 값을 구하시 오.",
         "options": ["$$\\frac{3}{4}$$", "$$\\frac{1}{2}$$", "$$\\frac{3}{5}$$", "$$\\frac{2}{3}$$", "$$\\frac{5}{4}$$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -525,7 +525,7 @@ export const questions: Question[] = [
     },
     {
         "id": 52,
-        "text": "오른쪽 그림과 같이 $y$ 축 위의 두 점 $\\mathrm{A}, \\mathrm{B}$ 에 대하여 두 함수 $y=2^x, y=a^x$ 의 그래프와 점 B 를 지나는 직선 $y=k(k>1)$ 가 만나는 점을 각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. 삼각형 ACB 의 넓이가 삼각형 ADC 의 넓이의 2 배일 때, 상수 $a$ 의 값을 구하시오. (단, $1<a<2$ )",
+        "text": "다음 그림과 같이 $y$ 축 위의 두 점 $\\mathrm{A}, \\mathrm{B}$ 에 대하여 두 함수 $y=2^x, y=a^x$ 의 그래프와 점 B 를 지나는 직선 $y=k(k>1)$ 가 만나는 점을 각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. 삼각형 ACB 의 넓이가 삼각형 ADC 의 넓이의 2 배일 때, 상수 $a$ 의 값을 구하시오. (단, $1<a<2$ )",
         "options": ["$$\\sqrt[]{4}$$",
             "$$\\sqrt[2]{4}$$", "$$\\sqrt[]{2}$$", "$$\\sqrt[]{8}$$",
             "$$\\sqrt[2]{8}$$"
@@ -568,7 +568,7 @@ export const questions: Question[] = [
     },
     {
         "id": 56,
-        "text": "오른쪽 그림과 같이 직선 $x=a$ $(a>0)$ 가 두 함수 $y=8^x, y=4^x$ 의 그래프 및 $x$ 축과 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}, \\mathrm{C}$ 라 하고, 점 A 에서 $y$ 축에 내린 수선의 발을 D , 점 B 를 지나고 $x$ 축에 평행한 직선이 함수 $y=8^x$ 의 그래프와 만나는 점을 E 라 하자. 이때 세 점 $\\mathrm{D}, \\mathrm{E}, \\mathrm{C}$ 가 한 직선 위에 놓이도록 하는 $a$ 의 값을 구하시오.",
+        "text": "다음 그림과 같이 직선 $x=a$ $(a>0)$ 가 두 함수 $y=8^x, y=4^x$ 의 그래프 및 $x$ 축과 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}, \\mathrm{C}$ 라 하고, 점 A 에서 $y$ 축에 내린 수선의 발을 D , 점 B 를 지나고 $x$ 축에 평행한 직선이 함수 $y=8^x$ 의 그래프와 만나는 점을 E 라 하자. 이때 세 점 $\\mathrm{D}, \\mathrm{E}, \\mathrm{C}$ 가 한 직선 위에 놓이도록 하는 $a$ 의 값을 구하시오.",
         "options": ["$$\\log_{2}{3}$$", "$$\\log_{3}{2}$$", "$$\\log_{2}{6}$$", "$$\\log_{3}{6}$$", "$$\\log_{2}{5}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
@@ -628,7 +628,7 @@ export const questions: Question[] = [
     },
     {
         "id": 62,
-        "text": "$y=\\log (x+a)+b$ 의 그래프가 오른쪽 그림과 같을 때, 상수 $a, b$ 에 대하여 $a+b$ 의 값을 구하시오.",
+        "text": "$y=\\log (x+a)+b$ 의 그래프가 다음 그림과 같을 때, 상수 $a, b$ 에 대하여 $a+b$ 의 값을 구하시오.",
         "options": ["$$ 1 $$", "$$ 0 $$", "$$ -1 $$", "$$ -2 $$", "$$ 2 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
@@ -688,7 +688,7 @@ export const questions: Question[] = [
     },
     {
         "id": 68,
-        "text": "이차방정식<br /><br />$$x^2-2\\left(1+\\log _3 a\\right) x+4\\left(1+\\log _3 a\\right)=0$$<br /><br /><br />이 실근을 갖지 않도륵 하는 양수 $a$ 의 값의 범위는?",
+        "text": "이차방정식$$x^2-2\\left(1+\\log _3 a\\right) x+4\\left(1+\\log _3 a\\right)=0$$이 실근을 갖지 않도록 하는 양수 $a$ 의 값의 범위는?",
         "options": ["$$\\frac{1}{3} < a < 27$$", "$$\\frac{1}{4} < a < 27$$", "$$a < \\frac{1}{3}$$", "$$a > 27$$", "$$1 < a < 3$$"],
         "correctAnswer": 1,
         "difficulty": 2,
@@ -758,7 +758,7 @@ export const questions: Question[] = [
     },
     {
         "id": 75,
-        "text": "오른쪽 그림과 같이 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프가 직선 $y=k$ 와 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}$ 라 하고, 두 점 $\\mathrm{A}, \\mathrm{B}$ 들 지나면서 $x$ 축에 수직인 직선이 다른 함수의 그래프와 만나는 점을<br /><br />각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. $\\overline{\\mathrm{AB}}=5$ 일 때, 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프와 두 선분 $\\mathrm{AC}, \\mathrm{BD}$ 로 둘러싸인 도형의 넓이들 구하시오.",
+        "text": "다음 그림과 같이 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프가 직선 $y=k$ 와 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}$ 라 하고, 두 점 $\\mathrm{A}, \\mathrm{B}$ 들 지나면서 $x$ 축에 수직인 직선이 다른 함수의 그래프와 만나는 점을<br /><br />각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. $\\overline{\\mathrm{AB}}=5$ 일 때, 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프와 두 선분 $\\mathrm{AC}, \\mathrm{BD}$ 로 둘러싸인 도형의 넓이들 구하시오.",
         "options": ["$$ 10 $$", "$$ 15 $$", "$$ 5 $$", "$$ 20 $$", "$$ 25 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
