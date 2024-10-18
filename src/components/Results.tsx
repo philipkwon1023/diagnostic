@@ -102,23 +102,23 @@ const Results: React.FC = () => {
   const [debugInfo, setDebugInfo] = useState<string>('');
   
   useEffect(() => {
-    const generateDiagnosticResult = async () => {
-      setIsLoading(true);
-      
-      const userRawData = `
-        총점: ${score}/${totalQuestions}
-        평균 소요 시간: ${averageTime.toFixed(2)}초
-        문항별 결과:
-        ${questions.map((q, i) => 
-          문제 ${i + 1}: ${userAnswers[i] === q.correctAnswer ? '정답' : '오답'}
-          문제 원문: ${q.text}
-          소요 시간: ${timeSpent[i].toFixed(2)}초
-          난이도: ${q.difficulty}
-          개념: ${q.concept}
-        ).join('\n')}`
-      ;
+  const generateDiagnosticResult = async () => {
+    setIsLoading(true);
+    
+    const userRawData = `
+      총점: ${score}/${totalQuestions}
+      평균 소요 시간: ${averageTime.toFixed(2)}초
+      문항별 결과:
+      ${questions.map((q, i) => 
+        `문제 ${i + 1}: ${userAnswers[i] === q.correctAnswer - 1 ? '정답' : '오답'}
+        문제 원문: ${q.text}
+        소요 시간: ${timeSpent[i].toFixed(2)}초
+        난이도: ${q.difficulty}
+        개념: ${q.concept}`
+      ).join('\n')}`
+    ;
 
-      const prompt = `
+    const prompt = `
 위 데이터를 바탕으로 사용자의 수학 학습 상태를 진단하고, 강점과 약점을 분석해주세요. 
 참고로 난이도는 1~4 사이의 정수로 표현되며, 난이도가 높을수록 어려운 문제를 의미합니다. 
 출력 형식은 불필요한 제목은 없이 바로 다음 structure와 유사한 구조를 유지하고 마크다운 언어로 출력해주세요. 
@@ -145,45 +145,43 @@ structure={
 
 **따뜻한 한마디**
 *수학은 조금만 노력하면 재미를 느낄 수 있는 학문입니다. 꾸준한 노력과 재미를 느끼며 수학을 공부해보세요. 힘내요!*
-}`
-;
+}`;
+    
+    try {
+      const result = await callGeminiAPI(userRawData, prompt);
+      console.log('API 응답:', result);
+      setDebugInfo(prev => prev + `API 응답 타입: ${typeof result}\n`);
+      setDebugInfo(prev => prev + `API 응답 내용: ${JSON.stringify(result, null, 2)}\n`);
 
-       try {
-        const result = await callGeminiAPI(userRawData, prompt);
-        console.log('API 응답:', result);
-        setDebugInfo(prev => prev + API 응답 타입: ${typeof result}\n);
-        setDebugInfo(prev => prev + API 응답 내용: ${JSON.stringify(result, null, 2)}\n);
+      let contentToDisplay = '';
 
-        let contentToDisplay = '';
-
-        if (typeof result === 'string') {
-          // 문자열인 경우 그대로 사용
-          contentToDisplay = result;
-        } else if (typeof result === 'object') {
-          // 객체인 경우 'content' 필드 확인
-          contentToDisplay = result.content || JSON.stringify(result);
-        } else {
-          // 예상치 못한 타입인 경우
-          throw new Error(Unexpected response type: ${typeof result});
-        }
-
-        // Markdown을 간단한 HTML로 변환
-        const formattedContent = contentToDisplay
-          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-          .replace(/\*(.*?)\*/g, '<em>$1</em>')
-          .replace(/\n/g, '<br>');
-
-        setDiagnosticResult(formattedContent);
-        setDebugInfo(prev => prev + 처리된 내용: ${formattedContent}\n);
-      } catch (error) {
-        console.error("Gemini API 호출 오류:", error);
-        setDiagnosticResult(진단 결과를 불러오는 중 오류가 발생했습니다: ${error.message});
-        setDebugInfo(prev => prev + 오류 발생: ${error.message}\n);
-      } finally {
-        setIsLoading(false);
+      if (typeof result === 'string') {
+        // 문자열인 경우 그대로 사용
+        contentToDisplay = result;
+      } else if (typeof result === 'object') {
+        // 객체인 경우 'content' 필드 확인
+        contentToDisplay = result.content || JSON.stringify(result);
+      } else {
+        // 예상치 못한 타입인 경우
+        throw new Error(`Unexpected response type: ${typeof result}`);
       }
-    };
 
+      // Markdown을 간단한 HTML로 변환
+      const formattedContent = contentToDisplay
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\n/g, '<br>');
+
+      setDiagnosticResult(formattedContent);
+      setDebugInfo(prev => prev + `처리된 내용: ${formattedContent}\n`);
+    } catch (error) {
+      console.error("Gemini API 호출 오류:", error);
+      setDiagnosticResult(`진단 결과를 불러오는 중 오류가 발생했습니다: ${error.message}`);
+      setDebugInfo(prev => prev + `오류 발생: ${error.message}\n`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
     generateDiagnosticResult();
   }, [score, totalQuestions, averageTime, questions, userAnswers, timeSpent]);
 
