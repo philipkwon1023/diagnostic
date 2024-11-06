@@ -816,4 +816,14 @@ export const questions: Question[] = [
         "hasImage": false,
         "imageUrl": ""
     }
+        {
+        "id": 80,
+        "text": "부등식 $\\log _2(3 x+3) \\geq \\log _2\\left(x^2+k\\right)$ 들 만족시키는 정수 $x$ 의 개수가 2 일 때, 상수 $k$ 의 값의 범위를 구하시오. (단, $k>0$)",
+        "options": ["$$3 \\leq x < 5$$", "$$2 \\leq x < 5$$", "$$2 < k < 3$$", "$$k > 5$$", "$$k < 3$$"],
+        "correctAnswer": 1,
+        "difficulty": 4,
+        "concept": 6,
+        "hasImage": false,
+        "imageUrl": ""
+    }
 ];
