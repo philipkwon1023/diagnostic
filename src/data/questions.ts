@@ -316,8 +316,8 @@ export const questions: Question[] = [
     {
         "id": 31,
         "text": "$\\log _2 3=a, \\log _3 5=b, \\log _5 7=c$ 일 때, $\\log _{14} 105$ 를 $a, b, c$ 에 대한 식으로 나타내시오.",
-        "options": ["$$\\frac{a + ab + ac}{1 + abc}$$", "$$\\frac{a + ab - ac}{1 - abc}$$",  "$$\\frac{a + ab + ac}{abc + 1}$$", "$$\\frac{a + ab + ac}{a + b + c}$$", "$$\\frac{a(b + c)}{1 + abc}$$"],
-        "correctAnswer": 1,
+        "options": ["$$\\frac{a + ab - ac}{1 + abc}$$", "$$\\frac{a + ab - ac}{1 - abc}$$",  "$$\\frac{a + ab + ac}{abc + 1}$$", "$$\\frac{a + ab + ac}{a + b + c}$$", "$$\\frac{a(b + c)}{1 + abc}$$"],
+        "correctAnswer": 3,
         "difficulty": 3,
         "concept": 2,
         "hasImage": false,
