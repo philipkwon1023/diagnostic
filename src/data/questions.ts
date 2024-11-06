@@ -419,7 +419,7 @@ export const questions: Question[] = [
         "options": ["$$\\sqrt{q} + \\frac{1}{\\sqrt{q}}$$", "$$\\sqrt{q} - \\frac{1}{\\sqrt{q}}$$", "$$\\frac{1}{\\sqrt{q}} - \\sqrt{q}$$", "$$\\frac{1}{q} + \\sqrt{q}$$", "$$q + \\frac{1}{q}$$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 1,
+        "concept": ['3-1'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -429,7 +429,7 @@ export const questions: Question[] = [
         "options": ["$$\\text{ㄱ,ㄴ}$$", "$$\\text{ㄱ,ㄷ}$$", "$$\\text{ㄱ,ㄹ}$$", "$$\\text{ㄴ,ㄷ}$$", "$$\\text{ㄷ,ㄹ}$$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 2,
+        "concept": ['3-2'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -439,7 +439,7 @@ export const questions: Question[] = [
         "options": ["$$ 15 $$", "$$ -15 $$", "$$ 12 $$", "$$ -12 $$", "$$ 8 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 3,
+        "concept": ['3-3'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -449,7 +449,7 @@ export const questions: Question[] = [
         "options": ["$$ 11 $$", "$$ 13 $$", "$$ 15 $$", "$$ 17 $$", "$$ 19 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 4,
+        "concept": ['3-4'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -459,7 +459,7 @@ export const questions: Question[] = [
         "options": ["$$ 2 $$", "$$ -3 $$", "$$ -2 $$", "$$ -1 $$", "$$ 1 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 5,
+        "concept": ['3-5'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -469,7 +469,7 @@ export const questions: Question[] = [
         "options": ["$$-1 < a < 0$$", "$$0 < a < 1$$", "$$a > 1$$", "$$a < -1$$", "$$a = 0$$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 2,
+        "concept": ['3-2'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -479,7 +479,7 @@ export const questions: Question[] = [
         "options": ["$$a < a^{a^{a}} < a^{a}$$", "$$a^{a} < a^{a^{a}} < a$$", "$$a^{a^{a}} < a < a^{a}$$", "$$a^{a} < a < a^{a^{a}}$$", "$$a < a^{a} < a^{a^{a}}$$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 2,
+        "concept": ['3-2'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -489,7 +489,7 @@ export const questions: Question[] = [
         "options": ["$$ 15 $$", "$$ 10 $$", "$$ 12 $$", "$$ 16 $$", "$$ 18 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 5,
+        "concept": ['3-5','3-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -499,7 +499,7 @@ export const questions: Question[] = [
         "options": ["$$\\frac{5}{2}$$", "$$ 2 $$", "$$\\frac{9}{4}$$", "$$ 1 $$", "$$\\frac{3}{2}$$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 4,
+        "concept": ['3-4'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -509,7 +509,7 @@ export const questions: Question[] = [
         "options": ["$$ -2 $$", "$$ -1 $$", "$$-\\frac{1}{2}$$", "$$ 1 $$", "$$ 2 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 3,
+        "concept": ['3-3'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -519,7 +519,7 @@ export const questions: Question[] = [
         "options": ["$$k \\leq -5 \\text{ 또는 } k > -4$$", "$$k \\geq -5 \\text{ 또는 } k < -4$$", "$$k < -5 \\text{ 또는 } k \\geq -4$$", "$$k > -5 \\text{ 또는 } k < -4$$", "$$k \\leq -5 \\text{ 또는 } k \\geq -4$$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 3,
+        "concept": ['3-3'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -532,7 +532,7 @@ export const questions: Question[] = [
         ],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 2,
+        "concept": ['3-2'],
         "hasImage": true,
         "imageUrl": "https://i.ibb.co/jgWw4hJ/image.png"
     },
@@ -542,7 +542,7 @@ export const questions: Question[] = [
         "options": ["$$ 101 $$", "$$ 100 $$", "$$ 102 $$", "$$ 103 $$", "$$ 104 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 4,
+        "concept": ['3-4'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -552,7 +552,7 @@ export const questions: Question[] = [
         "options": ["$$ -5 $$", "$$ -4 $$", "$$ -3 $$", "$$ -2 $$", "$$ -1 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 5,
+        "concept": ['3-5'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -562,7 +562,7 @@ export const questions: Question[] = [
         "options": ["$$\\frac{1}{2}$$", "$$\\frac{3}{2}$$", "$$-\\frac{3}{2}$$", "$$-\\frac{1}{2}$$", "$$-\\frac{5}{2}$$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 6,
+        "concept": ['3-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -572,7 +572,7 @@ export const questions: Question[] = [
         "options": ["$$\\log_{2}{3}$$", "$$\\log_{3}{2}$$", "$$\\log_{2}{6}$$", "$$\\log_{3}{6}$$", "$$\\log_{2}{5}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 2,
+        "concept": ['3-2','3-5'],
         "hasImage": true,
         "imageUrl": "https://i.ibb.co/JRLcHLj/20241017-182055.png"
     },
@@ -582,7 +582,7 @@ export const questions: Question[] = [
         "options": ["$$ 6 $$", "$$ 3 $$", "$$ 4 $$", "$$ 5 $$", "$$ 7 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 3,
+        "concept": ['3-3','3-6'],
         "hasImage": false,
         "imageUrl": "https://i.ibb.co/KhSLyGW/image.png"
     },
@@ -592,7 +592,7 @@ export const questions: Question[] = [
         "options": ["$$\\frac{15}{2}$$", "$$ 7 $$", "$$ 8 $$", "$$\\frac{17}{2}$$", "$$ 9 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 5,
+        "concept": ['3-5','3-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -602,7 +602,7 @@ export const questions: Question[] = [
         "options": ["$$ 10 $$", "$$ 9 $$", "$$ 11 $$", "$$ 12 $$", "$$ 13 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 5,
+        "concept": ['3-5','3-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -612,7 +612,7 @@ export const questions: Question[] = [
         "options": ["$$ 45 $$", "$$ 55 $$", "$$ 44 $$", "$$ 36 $$", "$$ 46 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 2,
+        "concept": ['3-2'],
         "hasImage": true,
         "imageUrl": "https://i.ibb.co/B6wRdSz/image.png"
     },
@@ -622,7 +622,7 @@ export const questions: Question[] = [
         "options": ["$$ 4 $$", "$$ 1 $$", "$$ 2 $$", "$$ 3 $$", "$$ 5 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 1,
+        "concept": ['4-1'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -632,7 +632,7 @@ export const questions: Question[] = [
         "options": ["$$ 1 $$", "$$ 0 $$", "$$ -1 $$", "$$ -2 $$", "$$ 2 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 3,
+        "concept": ['4-3'],
         "hasImage": true,
         "imageUrl": "https://i.ibb.co/749QzTQ/image.png"
     },
@@ -642,7 +642,7 @@ export const questions: Question[] = [
         "options": ["$$A < C < B$$", "$$A < B < C$$", "$$C < A < B$$", "$$B < C < A$$", "$$B < A < C$$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 2,
+        "concept": ['4-2'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -652,7 +652,7 @@ export const questions: Question[] = [
         "options": ["$$ 6 $$", "$$ 2 $$", "$$ 4 $$", "$$ 8 $$", "$$ 10 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 4,
+        "concept": ['4-4'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -662,7 +662,7 @@ export const questions: Question[] = [
         "options": ["$$ 8 $$", "$$ 1 $$", "$$ 2 $$", "$$ 4 $$", "$$ 16 $$"],
         "correctAnswer": 1,
         "difficulty": 1,
-        "concept": 5,
+        "concept": ['4-5'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -672,7 +672,7 @@ export const questions: Question[] = [
         "options": ["$$ 4 $$", "$$ 3 $$", "$$ 2 $$", "$$ 6 $$", "$$ 5 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 2,
+        "concept": ['4-2'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -682,7 +682,7 @@ export const questions: Question[] = [
         "options": ["$$ 9 $$", "$$ 10 $$", "$$ 11 $$", "$$ 12 $$", "$$ 13 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 1,
+        "concept": ['4-1','4-2'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -692,7 +692,7 @@ export const questions: Question[] = [
         "options": ["$$\\frac{1}{3} < a < 27$$", "$$\\frac{1}{4} < a < 27$$", "$$a < \\frac{1}{3}$$", "$$a > 27$$", "$$1 < a < 3$$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 5,
+        "concept": ['4-5','4-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -702,7 +702,7 @@ export const questions: Question[] = [
         "options": ["$$ 10 $$", "$$ 100 $$", "$$ 1 $$", "$$ 50 $$", "$$ 5 $$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 5,
+        "concept": ['4-5','4-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -712,7 +712,7 @@ export const questions: Question[] = [
         "options": ["$$k > \\frac{1}{4}$$", "$$k < \\frac{1}{4}$$", "$$k = \\frac{1}{4}$$", "$$k \\geq \\frac{1}{4}$$", "$$k \\leq \\frac{1}{4}$$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": 5,
+        "concept": ['4-5','4-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -722,7 +722,7 @@ export const questions: Question[] = [
         "options": ["$$\\frac{1}{3} \\leq x < 27$$", "$$x < \\frac{1}{3}$$", "$$x \\geq 27$$", "$$x \\leq 27$$", "$$\\frac{1}{4} \\leq x < 27$$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 6,
+        "concept": ['4-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -732,7 +732,7 @@ export const questions: Question[] = [
         "options": ["$$ -6 $$", "$$ 6 $$", "$$ -3 $$", "$$ 3 $$", "$$ 4 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 6,
+        "concept": ['4-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -742,7 +742,7 @@ export const questions: Question[] = [
         "options": ["$$ 25 $$", "$$ 17 $$", "$$ 19 $$", "$$ 13 $$", "$$ 41 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 5,
+        "concept": ['4-5'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -752,7 +752,7 @@ export const questions: Question[] = [
         "options": ["$$A > B > C$$", "$$A > C > B$$", "$$B > A > C$$", "$$C > B > A$$", "$$B > C > A$$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 2,
+        "concept": ['4-2'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -762,7 +762,7 @@ export const questions: Question[] = [
         "options": ["$$ 10 $$", "$$ 15 $$", "$$ 5 $$", "$$ 20 $$", "$$ 25 $$"],
         "correctAnswer": 1,
         "difficulty": 3,
-        "concept": 3,
+        "concept": ['4-3'],
         "hasImage": true,
         "imageUrl": "https://i.ibb.co/g31snpN/image.png"
     },
@@ -772,7 +772,7 @@ export const questions: Question[] = [
         "options": ["$$\\text{ㄱ,ㄴ}$$", "$$\\text{ㄱ}$$", "$$\\text{ㄱ,ㄴ,ㄷ}$$", "$$\\text{ㄴ}$$", "$$\\text{ㄴ,ㄷ}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 1,
+        "concept": ['4-1','4-2','4-3'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -782,7 +782,7 @@ export const questions: Question[] = [
         "options": ["$$\\frac{9}{8}$$", "$$\\frac{7}{6}$$", "$$\\frac{8}{7}$$", "$$\\frac{10}{9}$$", "$$\\frac{11}{10}$$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 2,
+        "concept": ['4-2','4-3'],
         "hasImage": true,
         "imageUrl": "https://i.ibb.co/6nhNf57/image.png"
     },
@@ -792,7 +792,7 @@ export const questions: Question[] = [
         "options": ["$$ 5 $$", "$$ 4 $$", "$$ 8 $$", "$$ 7 $$", "$$ 6 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 2,
+        "concept": ['4-2','4-3'],
         "hasImage": true,
         "imageUrl": "https://i.ibb.co/hcHPm7h/image.png"
     },
@@ -802,7 +802,7 @@ export const questions: Question[] = [
         "options": ["$$ 5 $$", "$$ 6 $$", "$$ 3 $$", "$$ 9 $$", "$$ 10 $$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 5,
+        "concept": ['4-5','4-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -812,7 +812,7 @@ export const questions: Question[] = [
         "options": ["$$3 \\leq x < 5$$", "$$2 \\leq x < 5$$", "$$2 < k < 3$$", "$$k > 5$$", "$$k < 3$$"],
         "correctAnswer": 1,
         "difficulty": 4,
-        "concept": 6,
+        "concept": ['4-6'],
         "hasImage": false,
         "imageUrl": ""
     }
