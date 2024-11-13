@@ -1,7 +1,7 @@
 import { Question } from '../types/question';
 
 export const questions: Question[] = [
-    {
+    [{
         "id": 1,
         "text": "다음을 계산하시오.$$\\sqrt{(-2)^2}+\\sqrt[3]{(-3)^3}+\\sqrt[4]{(-4)^4}+\\cdots+\\sqrt[10]{(-10)^{10}}$$",
         "options": ["$$ 6 $$", "$$ -6 $$", "$$ 54 $$", "$$ 5 $$", "$$ 4 $$"],
@@ -212,8 +212,8 @@ export const questions: Question[] = [
         "concept": ['1-1','1-2'],
         "hasImage": false,
         "imageUrl": ""
-    },
-    {
+    }],
+    [{
         "id": 21,
         "text": "이차방정식 $x^2-6 x+2=0$ 의 두 근을 $\\alpha, \\beta$ 라 할 때,$$\\log _3(\\alpha+1)+\\log _3(\\beta+1)$$의 값을 구하시오.",
         "options": ["$$ 2 $$", "$$ 3 $$", "$$ 4 $$", "$$ 1 $$", "$$ 0 $$"],
@@ -309,7 +309,7 @@ export const questions: Question[] = [
         "options": ["$$\\frac{2}{3}$$", "$$ 2 $$", "$$\\frac{1}{3}$$", "$$ 1 $$", "$$\\frac{1}{2}$$"],
         "correctAnswer": 1,
         "difficulty": 2,
-        "concept": ['2-2','2-3],
+        "concept": ['2-2','2-3'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -412,8 +412,8 @@ export const questions: Question[] = [
         "concept": ['2-1'],
         "hasImage": false,
         "imageUrl": ""
-    },
-    {
+    }],
+    [{
         "id": 41,
         "text": "함수 $f(x)=2^x$ 에 대하여 $f(p)=q$ 라 할 때, $f\\left(\\frac{p}{2}\\right)+f\\left(-\\frac{p}{2}\\right)$ 의 값은 $q$ 로 나타내면?",
         "options": ["$$\\sqrt{q} + \\frac{1}{\\sqrt{q}}$$", "$$\\sqrt{q} - \\frac{1}{\\sqrt{q}}$$", "$$\\frac{1}{\\sqrt{q}} - \\sqrt{q}$$", "$$\\frac{1}{q} + \\sqrt{q}$$", "$$q + \\frac{1}{q}$$"],
@@ -454,16 +454,6 @@ export const questions: Question[] = [
         "imageUrl": ""
     },
     {
-        "id": 45,
-        "text": "연립방정식 $2^{x-1} + 3^{y+1} = 11$, $2^{x+2} - 3^{y-1} = 15$ 의 해를 $x = \\alpha$, $y = \\beta$ 라 할 때, $\\alpha \\beta$ 의 값은?",
-        "options": ["$$ 2 $$", "$$ -3 $$", "$$ -2 $$", "$$ -1 $$", "$$ 1 $$"],
-        "correctAnswer": 1,
-        "difficulty": 1,
-        "concept": ['3-5'],
-        "hasImage": false,
-        "imageUrl": ""
-    },
-    {
         "id": 46,
         "text": "함수 $y=\\left(a^2+a+1\\right)^x$ 에서 $x$ 의 값이 증가할 때 $y$ 의 값은 감소하도록 하는 실수 $a$ 의 값의 범위를 구하시오.",
         "options": ["$$-1 < a < 0$$", "$$0 < a < 1$$", "$$a > 1$$", "$$a < -1$$", "$$a = 0$$"],
@@ -480,16 +470,6 @@ export const questions: Question[] = [
         "correctAnswer": 1,
         "difficulty": 2,
         "concept": ['3-2'],
-        "hasImage": false,
-        "imageUrl": ""
-    },
-    {
-        "id": 48,
-        "text": "어느 호수에서 수면에서의 빛의 밝기가 $I_0 \\operatorname{cd}$ (칸델라)일 때, 수심이 $x \\mathrm{~m}$ 인 곳에서의 빛의 밝기를 $I_x \\mathrm{~cd}$ 라 하면$$I_x=I_0 \\cdot 4^{-0.2 x}$$이 성립한다고 한다. 이 호수의 물속 어느 지점에서의 빛의 밝기가 수면에서의 빛의 밝기의 $\\frac{1}{64}$ 이라 할 때, 이 지점의 수심은 몇 m 인가?",
-        "options": ["$$ 15 $$", "$$ 10 $$", "$$ 12 $$", "$$ 16 $$", "$$ 18 $$"],
-        "correctAnswer": 1,
-        "difficulty": 2,
-        "concept": ['3-5','3-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -543,6 +523,36 @@ export const questions: Question[] = [
         "correctAnswer": 1,
         "difficulty": 3,
         "concept": ['3-4'],
+        "hasImage": false,
+        "imageUrl": ""
+    },
+    {
+        "id": 60,
+        "text": "함수 $f(x)=2^x$ 에 대하여 $y=f(x)$ 의 그래프와 두 직선 $x=k, x=k+1$ 의 교점을 각각 $\\mathrm{A}_k, \\mathrm{~A}_{k+1}$ 이라 하고, 점 $\\mathrm{A}_k$ 를 지나고 $x$ 축에 평행한 직선이 직선 $x=k+1$ 과 만나는 점을 $\\mathrm{B}_{k+1}$ 이라 하자. 삼각형 $\\mathrm{A}_k \\mathrm{~B}_{k+1} \\mathrm{~A}_{k+1}$ 의 넓이를 $S(k)$ 라 할 때, $f(a)=S(1) S(2) S(3) \\cdots S(10)$ 을 만족시키는 실수 $a$ 의 값을 구하시오.",
+        "options": ["$$ 45 $$", "$$ 55 $$", "$$ 44 $$", "$$ 36 $$", "$$ 46 $$"],
+        "correctAnswer": 1,
+        "difficulty": 4,
+        "concept": ['3-2'],
+        "hasImage": true,
+        "imageUrl": "https://i.ibb.co/B6wRdSz/image.png"
+    }],
+    [{
+        "id": 45,
+        "text": "연립방정식 $2^{x-1} + 3^{y+1} = 11$, $2^{x+2} - 3^{y-1} = 15$ 의 해를 $x = \\alpha$, $y = \\beta$ 라 할 때, $\\alpha \\beta$ 의 값은?",
+        "options": ["$$ 2 $$", "$$ -3 $$", "$$ -2 $$", "$$ -1 $$", "$$ 1 $$"],
+        "correctAnswer": 1,
+        "difficulty": 1,
+        "concept": ['3-5'],
+        "hasImage": false,
+        "imageUrl": ""
+    },
+    {
+        "id": 48,
+        "text": "어느 호수에서 수면에서의 빛의 밝기가 $I_0 \\operatorname{cd}$ (칸델라)일 때, 수심이 $x \\mathrm{~m}$ 인 곳에서의 빛의 밝기를 $I_x \\mathrm{~cd}$ 라 하면$$I_x=I_0 \\cdot 4^{-0.2 x}$$이 성립한다고 한다. 이 호수의 물속 어느 지점에서의 빛의 밝기가 수면에서의 빛의 밝기의 $\\frac{1}{64}$ 이라 할 때, 이 지점의 수심은 몇 m 인가?",
+        "options": ["$$ 15 $$", "$$ 10 $$", "$$ 12 $$", "$$ 16 $$", "$$ 18 $$"],
+        "correctAnswer": 1,
+        "difficulty": 2,
+        "concept": ['3-5','3-6'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -605,18 +615,8 @@ export const questions: Question[] = [
         "concept": ['3-5','3-6'],
         "hasImage": false,
         "imageUrl": ""
-    },
-    {
-        "id": 60,
-        "text": "함수 $f(x)=2^x$ 에 대하여 $y=f(x)$ 의 그래프와 두 직선 $x=k, x=k+1$ 의 교점을 각각 $\\mathrm{A}_k, \\mathrm{~A}_{k+1}$ 이라 하고, 점 $\\mathrm{A}_k$ 를 지나고 $x$ 축에 평행한 직선이 직선 $x=k+1$ 과 만나는 점을 $\\mathrm{B}_{k+1}$ 이라 하자. 삼각형 $\\mathrm{A}_k \\mathrm{~B}_{k+1} \\mathrm{~A}_{k+1}$ 의 넓이를 $S(k)$ 라 할 때, $f(a)=S(1) S(2) S(3) \\cdots S(10)$ 을 만족시키는 실수 $a$ 의 값을 구하시오.",
-        "options": ["$$ 45 $$", "$$ 55 $$", "$$ 44 $$", "$$ 36 $$", "$$ 46 $$"],
-        "correctAnswer": 1,
-        "difficulty": 4,
-        "concept": ['3-2'],
-        "hasImage": true,
-        "imageUrl": "https://i.ibb.co/B6wRdSz/image.png"
-    },
-    {
+    }],
+    [{
         "id": 61,
         "text": "함수 $f(x)=\\log _3 x+k \\log _x 9$ 에 대하여 $f(9)=f(81)$ 일 때, 상수 $k$ 의 값은?",
         "options": ["$$ 4 $$", "$$ 1 $$", "$$ 2 $$", "$$ 3 $$", "$$ 5 $$"],
@@ -657,16 +657,6 @@ export const questions: Question[] = [
         "imageUrl": ""
     },
     {
-        "id": 65,
-        "text": "방정식 $\\log _4 x^2+\\log _x 4-3=0$ 의 두 근의 곱은?",
-        "options": ["$$ 8 $$", "$$ 1 $$", "$$ 2 $$", "$$ 4 $$", "$$ 16 $$"],
-        "correctAnswer": 1,
-        "difficulty": 1,
-        "concept": ['4-5'],
-        "hasImage": false,
-        "imageUrl": ""
-    },
-    {
         "id": 66,
         "text": "$x>0$ 일 때, 자연수 $n$ 에 대하여 합수 $f_n(x)$ 가 다음 조건을 모두 만족시킨다.<br />(가) $f_1(x)=\\log _2 x$<br />(나) $f_{n+1}(x)=f_n\\left(x^3\\right)+f_n(x)$<br />이때 $\\log_4\\left\\{f_4(16)\\right\\}$ 의 값을 구하시오.",
         "options": ["$$ 4 $$", "$$ 3 $$", "$$ 2 $$", "$$ 6 $$", "$$ 5 $$"],
@@ -683,6 +673,66 @@ export const questions: Question[] = [
         "correctAnswer": 1,
         "difficulty": 2,
         "concept": ['4-1','4-2'],
+        "hasImage": false,
+        "imageUrl": ""
+    },
+    {
+        "id": 74,
+        "text": "$1<x<4$ 일 때, 세 수$$A=\\log _2 x^2, B=\\left(\\log _2 x\\right)^2, \\quad C=\\log _2\\left(\\log _2 x\\right)$$의 대소 관계는?",
+        "options": ["$$A > B > C$$", "$$A > C > B$$", "$$B > A > C$$", "$$C > B > A$$", "$$B > C > A$$"],
+        "correctAnswer": 1,
+        "difficulty": 3,
+        "concept": ['4-2'],
+        "hasImage": false,
+        "imageUrl": ""
+    },
+    {
+        "id": 75,
+        "text": "다음 그림과 같이 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프가 직선 $y=k$ 와 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}$ 라 하고, 두 점 $\\mathrm{A}, \\mathrm{B}$ 들 지나면서 $x$ 축에 수직인 직선이 다른 함수의 그래프와 만나는 점을 각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. $\\overline{\\mathrm{AB}}=5$ 일 때, 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프와 두 선분 $\\mathrm{AC}, \\mathrm{BD}$ 로 둘러싸인 도형의 넓이들 구하시오.",
+        "options": ["$$ 10 $$", "$$ 15 $$", "$$ 5 $$", "$$ 20 $$", "$$ 25 $$"],
+        "correctAnswer": 1,
+        "difficulty": 3,
+        "concept": ['4-3'],
+        "hasImage": true,
+        "imageUrl": "https://i.ibb.co/g31snpN/image.png"
+    },
+    {
+        "id": 76,
+        "text": "옳은 것만을 보기에서 있는 대로 고르시오.<br />[보 기]<br />ㄱ. $x>1$ 이면 $\\log _2 x>\\log _3 x$ 이다.<br />ㄴ. $1<x<2$ 이면 $\\log _2 x<\\log _3(x+1)$ 이다.<br />ㄷ. 방정식 $2^x+\\log _2 x=0$ 의 해를 $x=\\alpha$ 라 하면 $\\frac{1}{2}<\\alpha<1$ 이다.",
+        "options": ["$$\\text{ㄱ,ㄴ}$$", "$$\\text{ㄱ}$$", "$$\\text{ㄱ,ㄴ,ㄷ}$$", "$$\\text{ㄴ}$$", "$$\\text{ㄴ,ㄷ}$$"],
+        "correctAnswer": 1,
+        "difficulty": 4,
+        "concept": ['4-1','4-2','4-3'],
+        "hasImage": false,
+        "imageUrl": ""
+    },
+    {
+        "id": 77,
+        "text": "직선 $y=x$ 위의 한 점 P를 지나고 $x$ 축에 평행한 직선이 곡선<br />$y=\\log _4\\left(x-\\frac{1}{4}\\right)$ 과<br />만나는 점을 Q , 점 P 를 지나고 $y$ 축에 평행한<br />직선이 곡선 $y=2^x$ 과 만나는 점을 R라 하자. 삼각형 PQR 가 $\\overline{\\mathrm{PQ}}=\\overline{\\mathrm{PR}}$ 인 이등변삼각형일 때, 삼각형 PQR 의 넓이는?",
+        "options": ["$$\\frac{9}{8}$$", "$$\\frac{7}{6}$$", "$$\\frac{8}{7}$$", "$$\\frac{10}{9}$$", "$$\\frac{11}{10}$$"],
+        "correctAnswer": 1,
+        "difficulty": 4,
+        "concept": ['4-2','4-3'],
+        "hasImage": true,
+        "imageUrl": "https://i.ibb.co/6nhNf57/image.png"
+    },
+    {
+        "id": 78,
+        "text": "함수 $y=\\log _2 x$ 의 그래프가<br />$x$ 축과 만나는 점을 A 라 하자. 선분 OA 를 $x$ 축의 방향으로 5 만큼,<br />$y$ 축의 방향으로 3 만큼 평행이동한<br />선분과 $y=\\log _2(x+a)$ 의 그래프가 만날 때, 실수 $a$ 의 최댓값과 최솟값의 합을 구하시오. (단, O 는 원점이다.)",
+        "options": ["$$ 5 $$", "$$ 4 $$", "$$ 8 $$", "$$ 7 $$", "$$ 6 $$"],
+        "correctAnswer": 1,
+        "difficulty": 4,
+        "concept": ['4-2','4-3'],
+        "hasImage": true,
+        "imageUrl": "https://i.ibb.co/hcHPm7h/image.png"
+    }],
+    [{
+        "id": 65,
+        "text": "방정식 $\\log _4 x^2+\\log _x 4-3=0$ 의 두 근의 곱은?",
+        "options": ["$$ 8 $$", "$$ 1 $$", "$$ 2 $$", "$$ 4 $$", "$$ 16 $$"],
+        "correctAnswer": 1,
+        "difficulty": 1,
+        "concept": ['4-5'],
         "hasImage": false,
         "imageUrl": ""
     },
@@ -747,56 +797,6 @@ export const questions: Question[] = [
         "imageUrl": ""
     },
     {
-        "id": 74,
-        "text": "$1<x<4$ 일 때, 세 수$$A=\\log _2 x^2, B=\\left(\\log _2 x\\right)^2, \\quad C=\\log _2\\left(\\log _2 x\\right)$$의 대소 관계는?",
-        "options": ["$$A > B > C$$", "$$A > C > B$$", "$$B > A > C$$", "$$C > B > A$$", "$$B > C > A$$"],
-        "correctAnswer": 1,
-        "difficulty": 3,
-        "concept": ['4-2'],
-        "hasImage": false,
-        "imageUrl": ""
-    },
-    {
-        "id": 75,
-        "text": "다음 그림과 같이 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프가 직선 $y=k$ 와 만나는 점을 각각 $\\mathrm{A}, \\mathrm{B}$ 라 하고, 두 점 $\\mathrm{A}, \\mathrm{B}$ 들 지나면서 $x$ 축에 수직인 직선이 다른 함수의 그래프와 만나는 점을 각각 $\\mathrm{C}, \\mathrm{D}$ 라 하자. $\\overline{\\mathrm{AB}}=5$ 일 때, 두 함수 $y=\\log _3 3 x, y=\\log _3 \\frac{x}{3}$ 의 그래프와 두 선분 $\\mathrm{AC}, \\mathrm{BD}$ 로 둘러싸인 도형의 넓이들 구하시오.",
-        "options": ["$$ 10 $$", "$$ 15 $$", "$$ 5 $$", "$$ 20 $$", "$$ 25 $$"],
-        "correctAnswer": 1,
-        "difficulty": 3,
-        "concept": ['4-3'],
-        "hasImage": true,
-        "imageUrl": "https://i.ibb.co/g31snpN/image.png"
-    },
-    {
-        "id": 76,
-        "text": "옳은 것만을 보기에서 있는 대로 고르시오.<br />[보 기]<br />ㄱ. $x>1$ 이면 $\\log _2 x>\\log _3 x$ 이다.<br />ㄴ. $1<x<2$ 이면 $\\log _2 x<\\log _3(x+1)$ 이다.<br />ㄷ. 방정식 $2^x+\\log _2 x=0$ 의 해를 $x=\\alpha$ 라 하면 $\\frac{1}{2}<\\alpha<1$ 이다.",
-        "options": ["$$\\text{ㄱ,ㄴ}$$", "$$\\text{ㄱ}$$", "$$\\text{ㄱ,ㄴ,ㄷ}$$", "$$\\text{ㄴ}$$", "$$\\text{ㄴ,ㄷ}$$"],
-        "correctAnswer": 1,
-        "difficulty": 4,
-        "concept": ['4-1','4-2','4-3'],
-        "hasImage": false,
-        "imageUrl": ""
-    },
-    {
-        "id": 77,
-        "text": "직선 $y=x$ 위의 한 점 P를 지나고 $x$ 축에 평행한 직선이 곡선<br />$y=\\log _4\\left(x-\\frac{1}{4}\\right)$ 과<br />만나는 점을 Q , 점 P 를 지나고 $y$ 축에 평행한<br />직선이 곡선 $y=2^x$ 과 만나는 점을 R라 하자. 삼각형 PQR 가 $\\overline{\\mathrm{PQ}}=\\overline{\\mathrm{PR}}$ 인 이등변삼각형일 때, 삼각형 PQR 의 넓이는?",
-        "options": ["$$\\frac{9}{8}$$", "$$\\frac{7}{6}$$", "$$\\frac{8}{7}$$", "$$\\frac{10}{9}$$", "$$\\frac{11}{10}$$"],
-        "correctAnswer": 1,
-        "difficulty": 4,
-        "concept": ['4-2','4-3'],
-        "hasImage": true,
-        "imageUrl": "https://i.ibb.co/6nhNf57/image.png"
-    },
-    {
-        "id": 78,
-        "text": "함수 $y=\\log _2 x$ 의 그래프가<br />$x$ 축과 만나는 점을 A 라 하자. 선분 OA 를 $x$ 축의 방향으로 5 만큼,<br />$y$ 축의 방향으로 3 만큼 평행이동한<br />선분과 $y=\\log _2(x+a)$ 의 그래프가 만날 때, 실수 $a$ 의 최댓값과 최솟값의 합을 구하시오. (단, O 는 원점이다.)",
-        "options": ["$$ 5 $$", "$$ 4 $$", "$$ 8 $$", "$$ 7 $$", "$$ 6 $$"],
-        "correctAnswer": 1,
-        "difficulty": 4,
-        "concept": ['4-2','4-3'],
-        "hasImage": true,
-        "imageUrl": "https://i.ibb.co/hcHPm7h/image.png"
-    },
-    {
         "id": 79,
         "text": "모든 실수 $x$ 에 대하여 부등식$$\\left(1-\\log _3 a\\right) x^2-2\\left(1-\\log _3 a\\right) x+\\log _3 a>0$$이 성립하도록 하는 모든 자연수 $a$ 의 값의 합을 구하시오.",
         "options": ["$$ 5 $$", "$$ 6 $$", "$$ 3 $$", "$$ 9 $$", "$$ 10 $$"],
@@ -815,5 +815,5 @@ export const questions: Question[] = [
         "concept": ['4-6'],
         "hasImage": false,
         "imageUrl": ""
-    }
+    }]
 ];
