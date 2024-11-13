@@ -20,6 +20,7 @@ export const selectNextQuestion = (
   allQuestions: Question[],
   answeredQuestions: number[],
   userAnswers: number[]
+  ability: number
 ): Question => {
   const remainingQuestions = allQuestions.filter(q => !answeredQuestions.includes(q.id));
 
