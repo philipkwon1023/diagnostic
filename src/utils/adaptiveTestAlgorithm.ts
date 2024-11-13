@@ -1,5 +1,21 @@
 import { Question } from '../types/question';
 
+// 사용자 능력 초기화 및 업데이트를 위한 객체
+let userAbility = 0.0; // 전반적인 사용자 능력 초기화
+
+// 1PL 모델 기반 정답 확률 계산 함수
+function probabilityCorrect(ability: number, difficulty: number): number {
+  return 1 / (1 + Math.exp(-(ability - difficulty)));
+}
+
+// 사용자 능력 업데이트 함수 (우도 함수를 기반으로 업데이트)
+function updateUserAbility(isCorrect: boolean, difficulty: number): void {
+  const learningRate = 0.1; // 학습률 설정
+  const probCorrect = probabilityCorrect(userAbility, difficulty);
+  const gradient = isCorrect ? 1 - probCorrect : -probCorrect;
+  userAbility += learningRate * gradient; // 사용자 능력 업데이트
+}
+
 export const selectNextQuestion = (
   allQuestions: Question[],
   answeredQuestions: number[],
