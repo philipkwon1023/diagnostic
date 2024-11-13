@@ -42,6 +42,15 @@ export const selectNextQuestion = (
 
   let isCorrect = lastAnswer === lastQuestionCorrectAnswerIndex;
 
+  
+  // 사용자가 문제를 맞췄는지 여부 계산
+  let isCorrect = lastAnswer === lastQuestionCorrectAnswerIndex;
+
+  // 사용자 능력 업데이트 (수정된 부분)
+  if (lastQuestion) {
+    updateUserAbility(isCorrect, lastQuestion.difficulty);
+  }
+  
   // 최근 몇 개의 답변을 고려하여 정답률 계산 (예: 최근 3개)
   const recentAnswers = userAnswers.slice(-3);
   const recentQuestions = answeredQuestions.slice(-3).map(id => allQuestions.find(q => q.id === id)!);
