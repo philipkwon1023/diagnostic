@@ -16,11 +16,11 @@ function updateUserAbility(isCorrect: boolean, difficulty: number): void {
   userAbility += learningRate * gradient; // 사용자 능력 업데이트
 }
 
+// 문제 선택 함수
 export const selectNextQuestion = (
   allQuestions: Question[],
   answeredQuestions: number[],
   userAnswers: number[]
-  ability: number
 ): Question => {
   const remainingQuestions = allQuestions.filter(q => !answeredQuestions.includes(q.id));
 
@@ -41,9 +41,6 @@ export const selectNextQuestion = (
   // correctAnswer가 1부터 시작하는 경우 인덱스 보정 필요
   const lastQuestionCorrectAnswerIndex = (lastQuestion?.correctAnswer || 1) - 1;
 
-  let isCorrect = lastAnswer === lastQuestionCorrectAnswerIndex;
-
-  
   // 사용자가 문제를 맞췄는지 여부 계산
   let isCorrect = lastAnswer === lastQuestionCorrectAnswerIndex;
 
@@ -51,7 +48,7 @@ export const selectNextQuestion = (
   if (lastQuestion) {
     updateUserAbility(isCorrect, lastQuestion.difficulty);
   }
-  
+
   // 최근 몇 개의 답변을 고려하여 정답률 계산 (예: 최근 3개)
   const recentAnswers = userAnswers.slice(-3);
   const recentQuestions = answeredQuestions.slice(-3).map(id => allQuestions.find(q => q.id === id)!);
@@ -87,6 +84,7 @@ export const selectNextQuestion = (
   return sortedByDifficulty[0];
 };
 
+// 테스트 완료 여부 판단 함수
 export const isTestComplete = (answeredQuestions: number[]): boolean => {
   return answeredQuestions.length >= 10;
 };
