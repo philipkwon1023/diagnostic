@@ -24,8 +24,6 @@ export const selectNextQuestion = (
   // correctAnswer가 1부터 시작하는 경우 인덱스 보정 필요
   const lastQuestionCorrectAnswerIndex = (lastQuestion?.correctAnswer || 1) - 1;
 
-  let isCorrect = lastAnswer === lastQuestionCorrectAnswerIndex;
-
   // 최근 몇 개의 답변을 고려하여 정답률 계산 (예: 최근 3개)
   const recentAnswers = userAnswers.slice(-3);
   const recentQuestions = answeredQuestions.slice(-3).map(id => allQuestions.find(q => q.id === id)!);
