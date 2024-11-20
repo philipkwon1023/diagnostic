@@ -10,7 +10,7 @@ function probabilityCorrect(ability: number, difficulty: number): number {
 
 // 사용자 능력 업데이트 함수 (우도 함수를 기반으로 업데이트)
 function updateUserAbility(isCorrect: boolean, difficulty: number): void {
-  const learningRate = 0.1; // 학습률 설정
+  const learningRate = 0.01; // 학습률 설정
   const probCorrect = probabilityCorrect(userAbility, difficulty);
   const gradient = isCorrect ? 1 - probCorrect : -probCorrect;
   userAbility += learningRate * gradient; // 사용자 능력 업데이트
