@@ -14,6 +14,9 @@ function updateUserAbility(isCorrect: boolean, difficulty: number): void {
   const probCorrect = probabilityCorrect(userAbility, difficulty);
   const gradient = isCorrect ? 1 - probCorrect : -probCorrect;
   userAbility += learningRate * gradient; // 사용자 능력 업데이트
+
+  // 사용자 능력의 범위를 1~4로 제한
+  userAbility = Math.max(1, Math.min(userAbility, 4));
 }
 
 // 문제 선택 함수
@@ -55,36 +58,9 @@ export const selectNextQuestion = (
     updateUserAbility(isCorrect, lastQuestion.difficulty);
   }
 
-  // 최근 몇 개의 답변을 고려하여 정답률 계산 (예: 최근 3개)
-  const recentAnswers = userAnswers.slice(-3);
-  const recentQuestions = answeredQuestions.slice(-3).map(id => allQuestions.find(q => q.id === id)!);
-  const recentCorrectAnswers = recentQuestions.map(q => q.correctAnswer - 1);
-  const recentScore = recentAnswers.reduce((acc, answer, idx) => acc + (answer === recentCorrectAnswers[idx] ? 1 : 0), 0);
-  const recentAccuracy = recentAnswers.length > 0 ? recentScore / recentAnswers.length : 0;
-
-  // 정답률에 따라 난이도 조정
-  let nextDifficulty;
-  if (recentAccuracy >= 0.8) {
-    // 최근 정답률이 높으면 난이도를 올림
-    nextDifficulty = Math.min((lastQuestion?.difficulty || 1) + 1, 4); // 난이도 4가 최대값
-  } else if (recentAccuracy <= 0.4) {
-    // 최근 정답률이 낮으면 난이도를 내림
-    nextDifficulty = Math.max((lastQuestion?.difficulty || 3) - 1, 1); // 난이도 1이 최소값
-  } else {
-    // 정답률이 중간이면 동일한 난이도 유지
-    nextDifficulty = lastQuestion?.difficulty || 2;
-  }
-
-  // 남아 있는 문제 중에서 해당 난이도의 문제를 랜덤 선택
-  const candidateQuestions = remainingQuestions.filter(q => q.difficulty === nextDifficulty);
-
-  if (candidateQuestions.length > 0) {
-    return candidateQuestions[Math.floor(Math.random() * candidateQuestions.length)];
-  }
-
-  // 해당 난이도의 문제가 없으면 가장 가까운 난이도의 문제를 선택
+  // 사용자 능력에 기반하여 난이도가 1~4 범위 내에서 가장 가까운 문제를 선택
   const sortedByDifficulty = remainingQuestions.sort(
-    (a, b) => Math.abs(a.difficulty - nextDifficulty) - Math.abs(b.difficulty - nextDifficulty)
+    (a, b) => Math.abs(a.difficulty - userAbility) - Math.abs(b.difficulty - userAbility)
   );
 
   if (sortedByDifficulty.length === 0) {
@@ -97,5 +73,8 @@ export const selectNextQuestion = (
 
 // 테스트 완료 여부 판단 함수
 export const isTestComplete = (answeredQuestions: number[]): boolean => {
+  return answeredQuestions.length >= 10;
+};
+
   return answeredQuestions.length >= 10;
 };
